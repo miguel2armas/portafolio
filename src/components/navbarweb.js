@@ -1,0 +1,82 @@
+import React, {Component} from 'react';
+import {Container, Navbar, Nav} from "react-bootstrap";
+import { ReactComponent as Moon } from '../assets/img/icons/moon-fill.svg'
+import { ReactComponent as Sun } from '../assets/img/icons/sun-fill.svg'
+import { ReactComponent as House } from '../assets/img/icons/house.svg'
+import { ReactComponent as Joystick } from '../assets/img/icons/joystick.svg'
+import { ReactComponent as PersonSquare } from '../assets/img/icons/person-square.svg'
+import { ReactComponent as InboxFill } from '../assets/img/icons/inbox-fill.svg'
+import {Animated} from "react-animated-css";
+class Navbarweb extends Component {
+    render() {
+        return (
+            <Navbar  bg={this.props.checkedTheme?('dark'):('light')} variant={this.props.checkedTheme?('dark'):('light')} expand="lg">
+                <Container>
+                    <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="navbarScroll" />
+                    <Navbar.Collapse id="navbarScroll">
+                        <Animated className="me-auto" animationIn="bounceInLeft" isVisible={true}>
+                            <Nav>
+                                <Nav.Link href="#home" className="border-end">
+                                    <div className="text-center ">
+                                        <House fill={this.props.checkedTheme?('white'):('black')}/>
+                                    </div>
+                                    <div className="text-center">
+                                        Home
+                                    </div>
+                                </Nav.Link>
+                                <Nav.Link href="#features" className="border-end">
+                                    <div className="text-center">
+                                        <Joystick fill={this.props.checkedTheme?('white'):('black')}/>
+                                    </div>
+                                    <div className="text-center">
+                                        Games
+                                    </div>
+                                </Nav.Link>
+                                <Nav.Link href="#pricing" className="border-end">
+                                    <div className="text-center">
+                                        <PersonSquare fill={this.props.checkedTheme?('white'):('black')}/>
+                                    </div>
+                                    <div className="text-center">
+                                        About
+                                    </div>
+                                </Nav.Link>
+                                <Nav.Link href="#pricing">
+                                    <div className="text-center">
+                                        <InboxFill fill={this.props.checkedTheme?('white'):('black')}/>
+                                    </div>
+                                    <div className="text-center">
+                                        Contact
+                                    </div>
+                                </Nav.Link>
+                            </Nav>
+                        </Animated>
+
+                        <Nav>
+                            <Nav.Link className="text-center">
+
+                                {this.props.checkedTheme?(
+                                    <div onClick={() => this.props.changeThemeDark()}>
+                                        <Animated animationIn="rotateIn" isVisible={this.props.checkedTheme}>
+                                            <Sun fill={this.props.checkedTheme?('white'):('black')}/>
+                                        </Animated>
+                                    </div>
+                                ):(
+                                    <div onClick={() => this.props.changeThemeDark()}>
+                                        <Animated animationIn="rotateIn" isVisible={this.props.checkedTheme}>
+                                            <Moon fill={this.props.checkedTheme?('white'):('black')}/>
+                                        </Animated>
+                                    </div>
+                                )}
+
+                            </Nav.Link>
+                        </Nav>
+
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+        );
+    }
+}
+
+export default Navbarweb;
