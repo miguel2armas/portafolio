@@ -12,9 +12,15 @@ import Img7 from "../../assets/img/7.webp"
 import Img8 from "../../assets/img/8.webp"
 import Img9 from "../../assets/img/9.webp"
 import Check from "../../assets/img/check.webp"
-import useSound from 'use-sound';
 import ReactCardFlip from "react-card-flip";
+import BiteSound from '../../assets/sounds/bite.mp3'
+import useSound from 'use-sound';
 
+const BoopButton = () => {
+    const [play] = useSound(BiteSound);
+
+    return <button onClick={play}>Boop!</button>;
+};
 class Memory extends Component {
     state={
         data:[],
@@ -27,7 +33,6 @@ class Memory extends Component {
         countFail:0,
         endCaseGame:false
     }
-
     setdata = ()=>{
         let data = []
         for(let i=1; i<10; i++){
@@ -170,11 +175,14 @@ class Memory extends Component {
                         </Col>
                         <Col>tiempo transcurrido: {this.state.seconds}</Col>
                         <Col>{this.state.endCaseGame?('Juego finalizado'):('')} </Col>
+                        <Col>
+                            <button onClick={BoopButton}>asd</button>
+                        </Col>
                         <Row>
                             {this.state.data.map((data, key)=>{
                                 return (
                                     <Col className="px-0" sm={2} key={key}>
-                                        <Shake spy={data.countfail}>
+                                        <Shake spy={data.countfail} >
                                             <Pulse spy={data.countcorrect}>
                                                 <ReactCardFlip isFlipped={data.check} flipDirection="horizontal">
                                                     <Card className="shadow-lg m-1 rounded" onClick={(e)=>this.onCheck(e, key)}>

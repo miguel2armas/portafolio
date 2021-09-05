@@ -1,0 +1,23 @@
+/* Variables de color si el tema es nulo o light */
+html {
+    --primary-color: #282c34;
+    --secondary-color: #fff;
+}
+
+/* Variables de color si el tema es dark */
+html[data-theme="dark"] {
+    --primary-color: #fff;
+    --secondary-color: #282c34;
+}
+
+body{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: all 0.3s linear;
+}
+nav{
+    transition: all 0.3s linear;
+}
+.nav_style_new{
+    width: 4.5rem;
+}

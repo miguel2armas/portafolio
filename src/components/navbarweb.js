@@ -6,6 +6,7 @@ import { ReactComponent as House } from '../assets/img/icons/house.svg'
 import { ReactComponent as Joystick } from '../assets/img/icons/joystick.svg'
 import { ReactComponent as PersonSquare } from '../assets/img/icons/person-square.svg'
 import { ReactComponent as InboxFill } from '../assets/img/icons/inbox-fill.svg'
+import Roll from 'react-reveal/Roll';
 import {Animated} from "react-animated-css";
 class Navbarweb extends Component {
     render() {
@@ -54,20 +55,17 @@ class Navbarweb extends Component {
 
                         <Nav>
                             <Nav.Link className="text-center">
-
-                                {this.props.checkedTheme?(
-                                    <div onClick={() => this.props.changeThemeDark()}>
-                                        <Animated animationIn="rotateIn" isVisible={this.props.checkedTheme}>
-                                            <Sun fill={this.props.checkedTheme?('white'):('black')}/>
-                                        </Animated>
-                                    </div>
-                                ):(
-                                    <div onClick={() => this.props.changeThemeDark()}>
-                                        <Animated animationIn="rotateIn" isVisible={this.props.checkedTheme}>
-                                            <Moon fill={this.props.checkedTheme?('white'):('black')}/>
-                                        </Animated>
-                                    </div>
-                                )}
+                                <Roll spy={this.props.checkedThemecount}>
+                                    {this.props.checkedTheme?(
+                                        <div onClick={() => this.props.changeThemeDark()}>
+                                                <Sun width="26" height="26" fill={this.props.checkedTheme?('white'):('black')}/>
+                                        </div>
+                                    ):(
+                                        <div onClick={() => this.props.changeThemeDark()}>
+                                                <Moon width="26" height="26" fill={this.props.checkedTheme?('white'):('black')}/>
+                                        </div>
+                                    )}
+                                </Roll>
 
                             </Nav.Link>
                         </Nav>

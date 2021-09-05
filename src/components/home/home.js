@@ -7,7 +7,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Navbarweb changeThemeDark={this.props.changeThemeDark} checkedTheme={this.props.checkedTheme}/>
+                <Navbarweb changeThemeDark={this.props.changeThemeDark} checkedTheme={this.props.checkedTheme} checkedThemecount={this.props.checkedThemecount}/>
                 <Container>
                     <Memory/>
                 </Container>
