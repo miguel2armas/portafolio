@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Card, CardImg, Col, Row} from "react-bootstrap";
+import Shake from 'react-reveal/Shake';
+import Pulse from 'react-reveal/Pulse';
 import Img1 from "../../assets/img/1.webp"
 import Img2 from "../../assets/img/2.webp"
 import Img3 from "../../assets/img/3.webp"
@@ -10,6 +12,8 @@ import Img7 from "../../assets/img/7.webp"
 import Img8 from "../../assets/img/8.webp"
 import Img9 from "../../assets/img/9.webp"
 import Check from "../../assets/img/check.webp"
+import useSound from 'use-sound';
+import ReactCardFlip from "react-card-flip";
 
 class Memory extends Component {
     state={
@@ -23,6 +27,7 @@ class Memory extends Component {
         countFail:0,
         endCaseGame:false
     }
+
     setdata = ()=>{
         let data = []
         for(let i=1; i<10; i++){
@@ -40,6 +45,8 @@ class Memory extends Component {
                 "id": `${i}`,
                 "img": imgselect,
                 "check" : false,
+                "countfail":0,
+                "countcorrect":0
             }
             data.push(data1);
         }
@@ -95,11 +102,18 @@ class Memory extends Component {
             if(this.state.datakeyselect>=0){
                 if(this.state.dataidselect===data[key].id){
                     data[key].check = true;
-                    this.setState({
-                        data,
-                        datakeyselect:-1,
-                        dataidselect:0
+                    data.forEach((dat)=>{
+                        if(dat.id===this.state.dataidselect) dat.countcorrect = 1;
                     })
+                    setTimeout(
+                        ()=>{
+                            this.setState({
+                                data,
+                                datakeyselect:-1,
+                                dataidselect:0
+                            })
+                        },
+                        300);
                 }else{
                     data[key].check = true;
                     this.setState({
@@ -107,6 +121,15 @@ class Memory extends Component {
                         loadcompro:true,
                         countFail
                     })
+                    setTimeout(
+                        ()=>{
+                            data[key].countfail = data[key].countfail+1;
+                            data[datakeyselect].countfail = data[datakeyselect].countfail+1;
+                            this.setState({
+                                data
+                            })
+                        },
+                        300);
                     setTimeout(
                         ()=>{
                             data[key].check = false;
@@ -151,9 +174,19 @@ class Memory extends Component {
                             {this.state.data.map((data, key)=>{
                                 return (
                                     <Col className="px-0" sm={2} key={key}>
-                                        <Card className="shadow-lg m-1 rounded" onClick={(e)=>this.onCheck(e, key)}>
-                                            <CardImg src={data.check? data.img : Check}/>
-                                        </Card>
+                                        <Shake spy={data.countfail}>
+                                            <Pulse spy={data.countcorrect}>
+                                                <ReactCardFlip isFlipped={data.check} flipDirection="horizontal">
+                                                    <Card className="shadow-lg m-1 rounded" onClick={(e)=>this.onCheck(e, key)}>
+                                                        <CardImg src={Check}/>
+                                                    </Card>
+                                                    <Card className="shadow-lg m-1 rounded" onClick={(e)=>this.onCheck(e, key)}>
+                                                        <CardImg src={data.check? data.img : Check}/>
+                                                    </Card>
+                                                </ReactCardFlip>
+                                            </Pulse>
+                                        </Shake>
+
                                     </Col>
                                 );
                             })}
