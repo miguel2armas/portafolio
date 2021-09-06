@@ -167,7 +167,7 @@ class Memory extends Component {
     }
     render() {
         return (
-            <section>
+            <section className="py-5">
                 <Row>
                     <Col sm={9}>
                         <Col>
