@@ -2,12 +2,14 @@
 html {
     --primary-color: #282c34;
     --secondary-color: #fff;
+    --border-color-page: 1px solid rgba(0,0,0,.125);
 }
 
 /* Variables de color si el tema es dark */
 html[data-theme="dark"] {
     --primary-color: #fff;
     --secondary-color: #282c34;
+    --border-color-page: 1px solid rgba(255, 255, 255, 0.12);
 }
 .pr-3 {
     padding-right: 1rem!important;
@@ -15,6 +17,18 @@ html[data-theme="dark"] {
 .pl-3 {
     padding-left: 1rem!important;
 }
+.accordion-item {
+    border: var(--border-color-page);
+    transition: all 0.3s linear;
+}
+.accordion-button:not(.collapsed) {
+    color: #388E3C;
+}
+.accordion-button:focus {
+    border-color: #00BCD4;
+    box-shadow: 0 0 0 .25rem rgb(0, 188, 212);
+}
+
 .btn-theme {
     color: #fff;
     background-color: #388E3C;
