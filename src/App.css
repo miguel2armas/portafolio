@@ -51,46 +51,11 @@ nav{
 .text-theme-2{
     color: #388E3C;
 }
-.img-home-init{
+.carousel-caption {
     position: absolute;
-}
-@media (min-width: 120px) {
-    .img-home-init1{
-        height: 150px;
-    }
-}
-@media (min-width: 320px) {
-    .img-home-init1{
-        height: 200px;
-    }
-}
-@media (min-width: 480px) {
-    .img-home-init1{
-        height: 330px;
-    }
-}
-@media (min-width: 575px) {
-    .img-home-init1{
-        height: 210px;
-    }
-}
-@media (min-width: 770px) {
-    .img-home-init1{
-        height: 280px;
-    }
-}
-@media (min-width: 990px) {
-    .img-home-init1{
-        height: 380px;
-    }
-}
-@media (min-width: 1199px) {
-    .img-home-init1{
-        height: 450px;
-    }
-}
-@media (min-width: 1399px) {
-    .img-home-init1{
-        height: 530px;
-    }
+    right: 5%;
+    top: 2.25rem;
+    left: 5%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
 }
