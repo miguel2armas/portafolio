@@ -53,9 +53,9 @@ nav{
 }
 .carousel-caption {
     position: absolute;
-    right: 5%;
-    top: 2.25rem;
-    left: 5%;
+    right: 10%;
+    top: 0.15rem;
+    left: 10%;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
 }
