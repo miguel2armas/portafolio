@@ -15,7 +15,7 @@ class Navbarweb extends Component {
             <Navbar className="nav-masthead" bg={this.props.checkedTheme?('dark'):('light')} variant={this.props.checkedTheme?('dark'):('light')} expand="lg">
                 <Container>
                     <Navbar.Brand href="#">
-                        <Logo width="96" height="50" />
+                        <Logo height="50" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
