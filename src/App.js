@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Home from "./components/home/home";
+import MemoryPage from "./components/game_memory/memory_page";
 
 
 const App = () => {
@@ -36,6 +37,9 @@ const App = () => {
           <main className="main minh-100vh">
               <Route exact path="/" >
                   <Home changeThemeDark={changeThemeDark} checkedTheme={checkedTheme} checkedThemecount={checkedThemecount}/>
+              </Route>
+              <Route path="/memory">
+                  <MemoryPage changeThemeDark={changeThemeDark} checkedTheme={checkedTheme} checkedThemecount={checkedThemecount}/>
               </Route>
           </main>
       </Router>

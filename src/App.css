@@ -42,6 +42,9 @@ body{
 nav{
     transition: all 0.3s linear;
 }
+li{
+     transition: all 0.3s linear;
+ }
 .nav_style_new{
     width: 4.5rem;
 }

@@ -4,7 +4,6 @@ import EtournamentImg from "../../assets/img/img_page/e-tournament.webp"
 import TallmobileImg from "../../assets/img/img_page/tallmobile.webp"
 import TallmobileApkImg from "../../assets/img/img_page/tallmobile_apk.webp"
 import AllCodeReaderImg from "../../assets/img/img_page/allcodereader.webp"
-import Enfersalud24horasImg from "../../assets/img/img_page/enfersalud24horas.webp"
 import Enfermedic24Img from "../../assets/img/img_page/enfermedic24.webp"
 import SaludMedicosImg from "../../assets/img/img_page/saludmedicos.webp"
 import VerificarPep from "../../assets/img/img_page/verificarPep.webp"
@@ -118,28 +117,6 @@ class Portafolio extends Component {
                                            target="_blank" rel="noreferrer" className="btn btn-theme my-sm-5">Visitar</a>
                                         <a href="https://github.com/miguel2armas/VerificarPEP"
                                            target="_blank" rel="noreferrer" className="mx-2 btn btn-theme my-sm-5">Codigo Fuente</a>
-                                    </div>
-                                </Col>
-                            </Row>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item interval={4500}>
-                        <img src={FondTransp} alt="fondo-transparente"/>
-                        <Carousel.Caption>
-                            <Row>
-                                <Col xs={8} sm={6}>
-                                    <img src={Enfersalud24horasImg} className="rounded img-fluid" alt="Enfersalud24horas"/>
-                                </Col>
-                                <Col xs={12} sm={6}>
-                                    <div className="text-start">
-                                        <h3 className={this.props.checkedTheme?('text-white'):('text-dark')}>
-                                            <span className="fs-1 fs-sm-2">Enfersalud24horas</span></h3>
-                                        <h4 className={this.props.checkedTheme?('text-white'):('text-dark')}>
-                                            <span className="fs-0 fs-sm-1">Pagina de publicidad creada
-                                        segun espesificaciones del cliente con contador de visitas, con backend en laravel y
-                                        sistema de historial medico para pacientes personalizado.</span></h4>
-                                        <a href="https://enfersalud24horas.com"
-                                           target="_blank" rel="noreferrer" className="btn btn-theme my-sm-5">Visitar</a>
                                     </div>
                                 </Col>
                             </Row>
