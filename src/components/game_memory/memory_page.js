@@ -1,17 +1,17 @@
 import React from "react";
-import Navbarweb from "../navbarweb";
 import Footerweb from "../footerweb";
 import {Container} from "react-bootstrap";
 import GameMemory from "./game_memory";
+import Heading from "../heading";
 
 
 const MemoryPage = (props) => {
 
   return(
       <div>
-          <Navbarweb changeThemeDark={props.changeThemeDark} checkedTheme={props.checkedTheme} checkedThemecount={props.checkedThemecount}/>
+          <Heading/>
           <Container>
-              <GameMemory changeThemeDark={props.changeThemeDark} checkedTheme={props.checkedTheme} checkedThemecount={props.checkedThemecount}/>
+              <GameMemory/>
           </Container>
           <Footerweb checkedTheme={props.checkedTheme}/>
       </div>

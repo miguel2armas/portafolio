@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useContext, useState} from "react";
 import {Badge, Card, CardImg, Col, Row} from "react-bootstrap";
 import Shake from "react-reveal/Shake";
 import Pulse from "react-reveal/Pulse";
@@ -7,8 +7,10 @@ import Check from "../../assets/img/check.webp";
 import { setDataImg } from "./const_memory";
 import useSound from "use-sound";
 import SoundCard from "../../assets/sounds/plunger.mp3";
+import {GlobalContext} from "../../context/GlobalContext";
 
-export default function GameMemory(props){
+export default function GameMemory(){
+    const context = useContext(GlobalContext)
     const [play] = useSound(SoundCard);
     let initData = ()=>{
         let data1 = setDataImg();
@@ -115,19 +117,19 @@ export default function GameMemory(props){
             <Row>
                 <Col sm={9}>
                     <ul className="list-group mb-2">
-                        <li className={props.checkedTheme?('list-group-item d-flex justify-content-between align-items-center bg-dark'):
+                        <li className={context.state.darkTheme?('list-group-item d-flex justify-content-between align-items-center bg-dark'):
                             ('list-group-item d-flex justify-content-between align-items-center')}>
-                            <span className={props.checkedTheme?('text-white'):('text-dark')}>Cantidad de fallas:</span>
+                            <span className={context.state.darkTheme?('text-white'):('text-dark')}>Cantidad de fallas:</span>
                             <Badge bg="secondary"><h5 className="m-0">{countFail}</h5></Badge>
                         </li>
-                        <li className={props.checkedTheme?('list-group-item d-flex justify-content-between align-items-center bg-dark'):
+                        <li className={context.state.darkTheme?('list-group-item d-flex justify-content-between align-items-center bg-dark'):
                             ('list-group-item d-flex justify-content-between align-items-center')}>
-                            <span className={props.checkedTheme?('text-white'):('text-dark')}>tiempo transcurrido:</span>
+                            <span className={context.state.darkTheme?('text-white'):('text-dark')}>tiempo transcurrido:</span>
                             <Badge bg="secondary"><h5 className="m-0">{endSecondsGame===-1? secondsGame : endSecondsGame}</h5></Badge>
                         </li>
-                        <li className={props.checkedTheme?('list-group-item d-flex justify-content-between align-items-center bg-dark'):
+                        <li className={context.state.darkTheme?('list-group-item d-flex justify-content-between align-items-center bg-dark'):
                             ('list-group-item d-flex justify-content-between align-items-center')}>
-                            <span className={props.checkedTheme?('text-white'):('text-dark')}>
+                            <span className={context.state.darkTheme?('text-white'):('text-dark')}>
                                 {timeStart?endCaseGame?('Juego finalizado'):('En proceso'):('Inicia el juego')}
                             </span>
 
@@ -156,8 +158,8 @@ export default function GameMemory(props){
                     </Row>
                 </Col>
                 <Col sm={3}>
-                    <Card>
-                        datos de los demas
+                    <Card className={context.state.darkTheme?('bg-dark'):('bg-white')}>
+                        <span className={context.state.darkTheme?('text-white'):('text-dark')}>datos de los demas:</span>
                     </Card>
                 </Col>
 

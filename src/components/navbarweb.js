@@ -1,21 +1,24 @@
 import React, {Component} from 'react';
 import {Container, Navbar, Nav} from "react-bootstrap";
-import { ReactComponent as Moon } from '../assets/img/icons/moon-fill.svg'
-import { ReactComponent as Sun } from '../assets/img/icons/sun-fill.svg'
-import { ReactComponent as House } from '../assets/img/icons/house.svg'
-import { ReactComponent as Joystick } from '../assets/img/icons/joystick.svg'
-import { ReactComponent as PersonSquare } from '../assets/img/icons/person-square.svg'
-import { ReactComponent as InboxFill } from '../assets/img/icons/inbox-fill.svg'
 import { ReactComponent as Logo } from '../assets/img/logo.svg'
+import {RiHomeLine, RiSunLine, RiMoonClearFill} from 'react-icons/ri'
+import {MdGames, MdContactMail} from 'react-icons/md'
+import {FaBook} from 'react-icons/fa'
 import Roll from 'react-reveal/Roll';
 import {Animated} from "react-animated-css";
+import {Link} from "react-router-dom";
+
 class Navbarweb extends Component {
+
     render() {
         return (
             <Navbar className="nav-masthead" bg={this.props.checkedTheme?('dark'):('light')} variant={this.props.checkedTheme?('dark'):('light')} expand="lg">
                 <Container>
-                    <Navbar.Brand href="#">
-                        <Logo height="50" />
+                    <Navbar.Brand>
+
+                        <Link to="/">
+                            <Logo height="50" />
+                        </Link>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
@@ -23,7 +26,7 @@ class Navbarweb extends Component {
                             <Nav>
                                 <Nav.Link href="#home" className="border-end">
                                     <div className="text-center ">
-                                        <House fill={this.props.checkedTheme?('white'):('black')}/>
+                                        <RiHomeLine color={this.props.checkedTheme?('white'):('black')}/>
                                     </div>
                                     <div className="text-center">
                                         <span className="text-theme-1">Home</span>
@@ -31,7 +34,7 @@ class Navbarweb extends Component {
                                 </Nav.Link>
                                 <Nav.Link href="#features" className="border-end">
                                     <div className="text-center">
-                                        <Joystick fill={this.props.checkedTheme?('white'):('black')}/>
+                                        <MdGames color={this.props.checkedTheme?('white'):('black')}/>
                                     </div>
                                     <div className="text-center">
                                         <span className="text-theme-2">Games</span>
@@ -39,7 +42,7 @@ class Navbarweb extends Component {
                                 </Nav.Link>
                                 <Nav.Link href="#pricing" className="border-end">
                                     <div className="text-center">
-                                        <PersonSquare fill={this.props.checkedTheme?('white'):('black')}/>
+                                        <FaBook color={this.props.checkedTheme?('white'):('black')}/>
                                     </div>
                                     <div className="text-center">
                                         <span className="text-theme-2">About</span>
@@ -47,7 +50,7 @@ class Navbarweb extends Component {
                                 </Nav.Link>
                                 <Nav.Link href="#pricing">
                                     <div className="text-center">
-                                        <InboxFill fill={this.props.checkedTheme?('white'):('black')}/>
+                                        <MdContactMail color={this.props.checkedTheme?('white'):('black')}/>
                                     </div>
                                     <div className="text-center">
                                         <span className="text-theme-2">Contact</span>
@@ -58,14 +61,17 @@ class Navbarweb extends Component {
 
                         <Nav>
                             <Nav.Link className="text-center">
+                                <span className="py-1">{this.props.checkedTheme?('EN'):('ES')}</span>
+                            </Nav.Link>
+                            <Nav.Link className="text-center">
                                 <Roll spy={this.props.checkedThemecount}>
                                     {this.props.checkedTheme?(
                                         <div onClick={() => this.props.changeThemeDark()}>
-                                                <Sun width="26" height="26" fill={this.props.checkedTheme?('white'):('black')}/>
+                                            <RiSunLine title="sun" size="2em" color={this.props.checkedTheme?('white'):('black')}/>
                                         </div>
                                     ):(
                                         <div onClick={() => this.props.changeThemeDark()}>
-                                                <Moon width="26" height="26" fill={this.props.checkedTheme?('white'):('black')}/>
+                                            <RiMoonClearFill title="moon" size="2em" color={this.props.checkedTheme?('white'):('black')}/>
                                         </div>
                                     )}
                                 </Roll>
