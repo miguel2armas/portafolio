@@ -24,6 +24,7 @@ html[data-theme="dark"] {
 .accordion-button:not(.collapsed) {
     color: #388E3C;
 }
+
 .accordion-button:focus {
     border-color: #00BCD4;
     box-shadow: 0 0 0 .25rem rgb(0, 188, 212);
@@ -33,6 +34,9 @@ html[data-theme="dark"] {
     color: #fff;
     background-color: #388E3C;
     border-color: #388E3C;
+}
+.form-floating>label{
+    color: #282c34;
 }
 body{
     background-color: var(--secondary-color);
@@ -61,6 +65,29 @@ li{
     left: 10%;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
+}
+.only-movil{
+    display: inline;
+}
+.text-nav-decoration{
+    text-decoration: none;
+}
+.only-web{
+    display: none;
+}
+.img-top{
+    height: 40px;
+}
+@media (min-width: 992px) {
+    .img-top-md{
+        height: 50px;
+    }
+    .only-movil{
+        display: none;
+    }
+    .only-web{
+        display: inline;
+    }
 }
 /*-----------------------------------------------
 |   Font Sizes

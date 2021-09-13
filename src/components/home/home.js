@@ -22,7 +22,7 @@ class Home extends Component {
                     <TimeLine/>
                     <Portafolio/>
                 </Container>
-                <Footerweb checkedTheme={this.props.checkedTheme}/>
+                <Footerweb/>
             </div>
         );
     }
