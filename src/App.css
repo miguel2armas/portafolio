@@ -29,7 +29,9 @@ html[data-theme="dark"] {
     border-color: #00BCD4;
     box-shadow: 0 0 0 .25rem rgb(0, 188, 212);
 }
-
+.nav-link {
+    color: var(--primary-color);
+}
 .btn-theme {
     color: #fff;
     background-color: #388E3C;

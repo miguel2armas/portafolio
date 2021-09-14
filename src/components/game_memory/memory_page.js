@@ -1,21 +1,41 @@
-import React from "react";
-import Footerweb from "../footerweb";
+import React, {Component} from 'react';
+import Heading from "../heading";
 import {Container} from "react-bootstrap";
 import GameMemory from "./game_memory";
-import Heading from "../heading";
+import Footerweb from "../footerweb";
 
+class MemoryPage extends Component {
+    state = {
+        seconds: 0
+    }
+    tick() {
+        this.setState({
+            seconds: this.state.seconds + 1
+        });
+    }
+    setStart=()=>{
+        this.interval = setInterval(() => this.tick(), 1000);
+    }
+    setPause=()=>{
+        clearInterval(this.interval);
+    }
+    setReset=()=>{
+        this.setState({
+            seconds:0
+        })
+    }
 
-const MemoryPage = (props) => {
-
-  return(
-      <div>
-          <Heading/>
-          <Container>
-              <GameMemory/>
-          </Container>
-          <Footerweb checkedTheme={props.checkedTheme}/>
-      </div>
-  );
+    render() {
+        return (
+            <div>
+                <Heading/>
+                <Container>
+                    <GameMemory setStart={this.setStart} setPause={this.setPause} setReset={this.setReset} seconds={this.state.seconds}/>
+                </Container>
+                <Footerweb/>
+            </div>
+        );
+    }
 }
 
-export default MemoryPage
+export default MemoryPage;

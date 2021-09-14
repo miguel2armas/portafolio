@@ -1,5 +1,5 @@
-import React, {useContext, useState} from "react";
-import {Badge, Button, Card, CardImg, Col, Form, FormControl, Row, Table} from "react-bootstrap";
+import React, {useContext, useState, useEffect} from "react";
+import {Badge, Button, Card, CardImg, Col, Form, FormControl, Row, Spinner, Table} from "react-bootstrap";
 import Shake from "react-reveal/Shake";
 import Pulse from "react-reveal/Pulse";
 import ReactCardFlip from "react-card-flip";
@@ -13,8 +13,37 @@ import initGameSound from '../../assets/sounds/startgame.mp3'
 import endGameSonund from '../../assets/sounds/endgame.mp3'
 import {GlobalContext} from "../../context/GlobalContext";
 import {Flip} from "react-reveal";
+import {db} from "../../firebase";
+import moment from "moment";
 
-export default function GameMemory(){
+export default function GameMemory(props){
+
+    const [historyGame, setHistoryGame] = useState([])
+    const getLink = ()=>{
+        db.collection("history_memory")
+            .onSnapshot((res)=>{
+                const docs = [];
+                let key = 0
+                res.forEach((doc) =>{
+                    if(key<10) docs.push({...doc.data(), id: doc.id});
+                    key++;
+                });
+
+                docs.sort(function (a, b) {
+                    if (a.time > b.time) {
+                        return 1;
+                    }
+                    if (a.time < b.time) {
+                        return -1;
+                    }
+                    return 0;
+                });
+                setHistoryGame(docs)
+            })
+    }
+    useEffect(()=>{
+        getLink();
+    }, []);
     const context = useContext(GlobalContext)
     const [play] = useSound(SoundCard,
         { volume: 0.25 }
@@ -48,30 +77,21 @@ export default function GameMemory(){
         shuffle(data1);
         return data1;
     }
-    let counvar=0;
-    let intervalTime
     const [data, setData] = useState(initData());
+    const [userGame, setUserGame]=useState('');
     const [dataKeySelect, setDataKeySelect] = useState(-1);
     const [dataIdSelect, setDataIdSelect] = useState(0);
     const [loadCompro, setLoadCompro] = useState(false);
     const [timeStart, setTimeStart] = useState(false);
-    const [secondsGame, setSecondsGame] = useState(0);
-    const [endSecondsGame, setEndSecondsGame] = useState(-1);
     const [countFail, setCountFail] = useState(0);
     const [endCaseGame, setendCaseGame] = useState(false);
+    const [btnLoad, setBtnLoad] = useState(false);
 
-    const tick = () => {
-        counvar = counvar+1;
-        setSecondsGame(counvar);
-    }
-    const setTimeStart1 = ()=>{
-        intervalTime = setInterval(() => tick(), 1000);
-    }
     const setTimeOut = () =>{
         play5();
-        clearInterval(intervalTime);
+        //pause
+        props.setPause();
         setendCaseGame(true);
-        setEndSecondsGame(secondsGame);
     }
     const onCheck = (e, key) =>{
         let newcountFail = countFail+1;
@@ -129,12 +149,33 @@ export default function GameMemory(){
         }
         if(!timeStart){
             play4();
-            setTimeStart1();
+            //iniciar
+            props.setStart();
             setTimeStart(true)
         }
         if(endgame) setTimeOut()
     }
-
+    const sendDataGamer = async () =>{
+        setBtnLoad(true)
+        const data = {
+            name:userGame,
+            time:props.seconds,
+            failCount:countFail,
+            create_at: moment().format()
+        }
+        await db.collection('history_memory').doc().set(data);
+        setData(initData());
+        setUserGame('');
+        setDataKeySelect(-1);
+        setDataIdSelect(0);
+        setLoadCompro(false);
+        setTimeStart(false);
+        //reset
+        props.setReset();
+        setCountFail(0);
+        setendCaseGame(false);
+        setBtnLoad(false);
+    }
     return (
         <section className="py-5">
             <div>
@@ -156,7 +197,7 @@ export default function GameMemory(){
                             <span className={context.state.darkTheme?('text-white'):('text-dark')}>
                                 {context.state.leng==='en'?('Time elapsed:'):('Tiempo transcurrido:')}
                             </span>
-                            <Badge bg="secondary"><h5 className="m-0">{endSecondsGame===-1? secondsGame : endSecondsGame}</h5></Badge>
+                            <Badge bg="secondary"><h5 className="m-0">{props.seconds}</h5></Badge>
                         </li>
                         <li className={context.state.darkTheme?('list-group-item bg-dark'):
                             ('list-group-item')}>
@@ -164,27 +205,25 @@ export default function GameMemory(){
                                 {timeStart?endCaseGame?(
                                     <div>
                                         <Flip right spy={context.state.checkedLengcount}>
-                                            {context.state.leng==='en'?(
-                                                <Form className="d-flex">
-                                                    <Col xs={3}>Game over</Col>
-                                                    <FormControl
-                                                        type="text"
-                                                        placeholder="Enter your name (max: 10 characters) "
-                                                        className="mr-2"
-                                                    />
-                                                    <Button variant="success">Enviar</Button>
-                                                </Form>
-                                            ):(
-                                                <Form className="d-flex">
-                                                    <Col xs={3}>Fin del juego</Col>
-                                                    <FormControl
-                                                        type="text"
-                                                        placeholder="Ingresa tu nombre (max: 10 caracteres)"
-                                                        className="mr-2"
-                                                    />
-                                                    <Button variant="success">Enviar</Button>
-                                                </Form>
-                                            )}
+                                            <Form className="d-flex">
+                                                <Col xs={3}>{context.state.leng==='en'?('Game over'):('Juego terminado')}</Col>
+                                                <FormControl
+                                                    onChange={(e)=>setUserGame(e.target.value.length<9?e.target.value:userGame)}
+                                                    type="text"
+                                                    value={userGame}
+                                                    placeholder={context.state.leng==='en'?('Enter your name (max: 8 characters)'):('Ingresa tu nombre (max: 8 caracteres)')}
+                                                    className="mr-2"
+                                                />
+                                                {btnLoad?(
+                                                    <Button disabled={true} variant="success" className="py-0 px-3">
+                                                        <Spinner animation="border" variant="light" />
+                                                    </Button>
+                                                ):(
+                                                    <Button onClick={sendDataGamer} variant="success">
+                                                        {context.state.leng==='en'?('Send'):('Enviar')}
+                                                    </Button>
+                                                )}
+                                            </Form>
                                         </Flip>
                                     </div>
                                 ):(
@@ -234,56 +273,23 @@ export default function GameMemory(){
                             </tr>
                             </thead>
                             <tbody>
-                            <tr className={context.state.darkTheme?("text-white"):("text-dark")}>
-                                <td>1</td>
-                                <td>miguel</td>
-                                <td className="text-end">153</td>
-                            </tr>
-                            <tr className={context.state.darkTheme?("text-white"):("text-dark")}>
-                                <td>2</td>
-                                <td>angel</td>
-                                <td className="text-end">124</td>
-                            </tr>
-                            <tr className={context.state.darkTheme?("text-white"):("text-dark")}>
-                                <td>3</td>
-                                <td>angel</td>
-                                <td className="text-end">124</td>
-                            </tr>
-                            <tr className={context.state.darkTheme?("text-white"):("text-dark")}>
-                                <td>4</td>
-                                <td>angel</td>
-                                <td className="text-end">124</td>
-                            </tr>
-                            <tr className={context.state.darkTheme?("text-white"):("text-dark")}>
-                                <td>5</td>
-                                <td>angel</td>
-                                <td className="text-end">124</td>
-                            </tr>
-                            <tr className={context.state.darkTheme?("text-white"):("text-dark")}>
-                                <td>6</td>
-                                <td>angel</td>
-                                <td className="text-end">124</td>
-                            </tr>
-                            <tr className={context.state.darkTheme?("text-white"):("text-dark")}>
-                                <td>7</td>
-                                <td>angel</td>
-                                <td className="text-end">124</td>
-                            </tr>
-                            <tr className={context.state.darkTheme?("text-white"):("text-dark")}>
-                                <td>8</td>
-                                <td>angel</td>
-                                <td className="text-end">124</td>
-                            </tr>
-                            <tr className={context.state.darkTheme?("text-white"):("text-dark")}>
-                                <td>9</td>
-                                <td>angel</td>
-                                <td className="text-end">124</td>
-                            </tr>
-                            <tr className={context.state.darkTheme?("text-white"):("text-dark")}>
-                                <td>10</td>
-                                <td>angel</td>
-                                <td className="text-end">124</td>
-                            </tr>
+
+                            {historyGame.map((history, key)=>{
+                                return(
+                                    <tr key={key} className={context.state.darkTheme?("text-white"):("text-dark")}>
+                                        <td>{key+1}</td>
+                                        <td>{history.name}</td>
+                                        <td className="text-end">{history.time}</td>
+                                    </tr>
+                                );
+                            })}
+                            {historyGame.length===0?(
+                                <tr className={context.state.darkTheme?("text-white"):("text-dark")}>
+                                    <td colSpan={3}><div className="text-center">Cargando...</div></td>
+                                </tr>
+                            ):(
+                                <></>
+                            )}
                             </tbody>
                         </Table>
                     </Card>
