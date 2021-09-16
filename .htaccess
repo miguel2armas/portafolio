@@ -2,8 +2,3 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /index.html [L,QSA]
-RewriteCond %{HTTPS} off
-RewriteCond %{HTTP:X-Forwarded-SSL} !on
-RewriteCond %{HTTP_HOST} ^miguel-armas\.com$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.miguel-armas\.com$
-RewriteRule ^/?$ "https\:\/\/miguel-armas\.com\/" [R=301,L]
