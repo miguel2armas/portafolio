@@ -27,7 +27,7 @@ const Skills = ()=> {
             </Container>
             <Accordion defaultActiveKey="0">
                 <Row>
-                    <Col>
+                    <Col xs={12} md={4}>
                         <Accordion.Item eventKey="0" className={context.state.darkTheme?('bg-dark'):('bg-light')}>
                             <Accordion.Header className="bg-dark">
                                 <CodeSlash className="mx-2" width="30" height="30"/>
@@ -75,7 +75,7 @@ const Skills = ()=> {
                             </Accordion.Body>
                         </Accordion.Item>
                     </Col>
-                    <Col>
+                    <Col xs={12} md={4}>
                         <Accordion.Item eventKey="1" className={context.state.darkTheme?('bg-dark'):('bg-light')}>
                             <Accordion.Header>
                                 <Braces className="mx-2" width="30" height="30"/>
@@ -124,7 +124,7 @@ const Skills = ()=> {
                             </Accordion.Body>
                         </Accordion.Item>
                     </Col>
-                    <Col>
+                    <Col xs={12} md={4}>
                         <Accordion.Item eventKey="2" className={context.state.darkTheme?('bg-dark'):('bg-light')}>
                             <Accordion.Header>
                                 <Bookmark className="mx-2" width="30" height="30"/>

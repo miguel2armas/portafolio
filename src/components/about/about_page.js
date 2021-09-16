@@ -1,4 +1,4 @@
-import React, {Component, useContext} from 'react';
+import React, {Component} from 'react';
 import About from "./about";
 import Heading from "../heading";
 import {Container} from "react-bootstrap";

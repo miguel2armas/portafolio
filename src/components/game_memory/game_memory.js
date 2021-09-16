@@ -1,5 +1,5 @@
 import React, {useContext, useState, useEffect} from "react";
-import {Badge, Button, Card, CardImg, Col, Form, FormControl, Row, Spinner, Table} from "react-bootstrap";
+import {Badge, Button, Card, CardImg, Col, Form, FormControl, Modal, Row, Spinner, Table} from "react-bootstrap";
 import Shake from "react-reveal/Shake";
 import Pulse from "react-reveal/Pulse";
 import ReactCardFlip from "react-card-flip";
@@ -23,10 +23,8 @@ export default function GameMemory(props){
         db.collection("history_memory")
             .onSnapshot((res)=>{
                 const docs = [];
-                let key = 0
                 res.forEach((doc) =>{
-                    if(key<10) docs.push({...doc.data(), id: doc.id});
-                    key++;
+                    docs.push({...doc.data(), id: doc.id});
                 });
 
                 docs.sort(function (a, b) {
@@ -164,6 +162,9 @@ export default function GameMemory(props){
             create_at: moment().format()
         }
         await db.collection('history_memory').doc().set(data);
+        handleCloseModal();
+    }
+    const handleCloseModal = ()=>{
         setData(initData());
         setUserGame('');
         setDataKeySelect(-1);
@@ -202,18 +203,28 @@ export default function GameMemory(props){
                         <li className={context.state.darkTheme?('list-group-item bg-dark'):
                             ('list-group-item')}>
                             <span className={context.state.darkTheme?('text-white'):('text-dark')}>
-                                {timeStart?endCaseGame?(
-                                    <div>
-                                        <Flip right spy={context.state.checkedLengcount}>
-                                            <Form className="d-flex">
-                                                <Col xs={3}>{context.state.leng==='en'?('Game over'):('Juego terminado')}</Col>
-                                                <FormControl
-                                                    onChange={(e)=>setUserGame(e.target.value.length<9?e.target.value:userGame)}
-                                                    type="text"
-                                                    value={userGame}
-                                                    placeholder={context.state.leng==='en'?('Enter your name (max: 8 characters)'):('Ingresa tu nombre (max: 8 caracteres)')}
-                                                    className="mr-2"
-                                                />
+                                <Modal aria-labelledby="contained-modal-title-vcenter" show={endCaseGame} onHide={handleCloseModal} >
+                                    <Form>
+                                            <Modal.Header closeButton>
+                                                <Modal.Title><span className="text-dark">Ingresa tu nombre</span></Modal.Title>
+                                            </Modal.Header>
+                                            <Modal.Body>
+                                                <div>
+                                                    <Flip right spy={context.state.checkedLengcount}>
+                                                        <Col className="my-2 text-dark">{context.state.leng==='en'?('Enter your name to save your record'):('Ingresa tu nombre para guardar tu récord')}</Col>
+                                                        <Col className="my-2 text-dark">{context.state.leng==='en'?('Time elapsed:'):('Tiempo transcurrido:')} {props.seconds}</Col>
+                                                        <Col className="my-2 text-dark">{context.state.leng==='en'?('Number of errors:'):('Cantidad de errores:')} {countFail}</Col>
+                                                        <FormControl
+                                                            onChange={(e)=>setUserGame(e.target.value.length<9?e.target.value:userGame)}
+                                                            type="text"
+                                                            value={userGame}
+                                                            placeholder={context.state.leng==='en'?('Enter your name (max: 8 characters)'):('Ingresa tu nombre (max: 8 caracteres)')}
+                                                            className="mr-2"
+                                                        />
+                                                    </Flip>
+                                                </div>
+                                            </Modal.Body>
+                                            <Modal.Footer>
                                                 {btnLoad?(
                                                     <Button disabled={true} variant="success" className="py-0 px-3">
                                                         <Spinner animation="border" variant="light" />
@@ -223,9 +234,11 @@ export default function GameMemory(props){
                                                         {context.state.leng==='en'?('Send'):('Enviar')}
                                                     </Button>
                                                 )}
-                                            </Form>
-                                        </Flip>
-                                    </div>
+                                            </Modal.Footer>
+                                    </Form>
+                                </Modal>
+                                {timeStart?endCaseGame?(
+                                    <>{context.state.leng==='en'?('Game over'):('fin del juego')}</>
                                 ):(
                                     <>{context.state.leng==='en'?('In process'):('En proceso')}</>
 
@@ -239,7 +252,7 @@ export default function GameMemory(props){
                     <Row>
                         {data.map((data, key)=>{
                             return (
-                                <Col className="px-0" xs={4} sm={2} key={key}>
+                                <Col className="px-0" xs={3} sm={2} key={key}>
                                     <Shake spy={data.countfail} >
                                         <Pulse spy={data.countcorrect}>
                                             <ReactCardFlip isFlipped={data.check} flipDirection="horizontal">
@@ -275,13 +288,17 @@ export default function GameMemory(props){
                             <tbody>
 
                             {historyGame.map((history, key)=>{
-                                return(
-                                    <tr key={key} className={context.state.darkTheme?("text-white"):("text-dark")}>
-                                        <td>{key+1}</td>
-                                        <td>{history.name}</td>
-                                        <td className="text-end">{history.time}</td>
-                                    </tr>
-                                );
+                                if(key<10){
+                                    return(
+                                        <tr key={key} className={context.state.darkTheme?("text-white"):("text-dark")}>
+                                            <td>{key+1}</td>
+                                            <td>{history.name}</td>
+                                            <td className="text-end">{history.time}</td>
+                                        </tr>
+                                    );
+                                }else{
+                                    return null;
+                                }
                             })}
                             {historyGame.length===0?(
                                 <tr className={context.state.darkTheme?("text-white"):("text-dark")}>
