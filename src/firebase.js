@@ -8,13 +8,6 @@ import 'firebase/compat/firestore';
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     //code config is here
-    apiKey: "AIzaSyAtZC4j8ZnGRRh-RNJhdb-9LDMZL1UcbAI",
-    authDomain: "portafolio-miguel-ec613.firebaseapp.com",
-    projectId: "portafolio-miguel-ec613",
-    storageBucket: "portafolio-miguel-ec613.appspot.com",
-    messagingSenderId: "784016253542",
-    appId: "1:784016253542:web:37e2f5462ae544a98303a7",
-    measurementId: "G-DFF9QKG50L"
 };
 
 // Initialize Firebase
