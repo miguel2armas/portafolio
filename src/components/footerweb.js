@@ -5,6 +5,7 @@ import {FaFacebook, FaWhatsapp} from "react-icons/all";
 import {Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {GlobalContext} from "../context/GlobalContext";
+import CountPage from "./countPage";
 const Footerweb = () =>{
     const context = useContext(GlobalContext)
     const today = new Date();
@@ -29,9 +30,11 @@ const Footerweb = () =>{
                         </a></li>
                         <li className="ms-3"><a className="text-muted" href="https://wa.me/573146869798" target="_blank" rel="noreferrer">
                             <FaWhatsapp color={context.state.darkTheme?('white'):('black')} size="3rem"/>
-                        </a></li>
+                        </a>
+                        </li>
                     </Col>
                 </Row>
+                <CountPage/>
             </Container>
         </footer>
     </div>;

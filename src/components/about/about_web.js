@@ -133,7 +133,9 @@ const AboutWeb = ()=>{
         </Fade>
         <Fade right spy={context.state.checkedLengcount}>
             <div className={context.state.darkTheme?("my-3 p-3 bg-body rounded shadow-sm"):("my-3 p-3 bg-light rounded shadow-sm")}>
-                <h6 className="border-bottom pb-2 mb-0">Paginas web usadas para crear la pagina</h6>
+                <h6 className="border-bottom pb-2 mb-0">
+                    {context.state.leng==='en'?("Websites used to create the page."):("Sitios web utilizados para crear la página.")}
+                    </h6>
                 <div className="d-flex text-muted pt-3">
                     <img alt="freepik" src={freepikImg} width={32} height={32} className="m-1"/>
                     <p className="pb-3 mb-0 small lh-sm border-bottom">

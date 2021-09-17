@@ -142,7 +142,7 @@ const Skills = ()=> {
                             </Accordion.Header>
                             <Accordion.Body>
                                 <div className="d-flex justify-content-between my-2">
-                                    <b>GOOGLE ADWORDS (CEO)</b><b>90%</b>
+                                    <b>GOOGLE ADWORDS (SEM)</b><b>90%</b>
                                 </div>
                                 <ProgressBar variant="success" now={90}/>
                                 <div className="d-flex justify-content-between my-2">
