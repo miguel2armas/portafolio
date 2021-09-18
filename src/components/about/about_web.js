@@ -7,7 +7,6 @@ import githubImg from "../../assets/img/ico/github.ico";
 import vscicoImg from "../../assets/img/ico/vscico.ico";
 import reactBoostrapImg from "../../assets/img/ico/favicon.ico";
 import reactIcosImg from "../../assets/img/ico/reacticons.ico";
-import reactRouterDonImg from "../../assets/img/ico/reactRouterDom.ico";
 import firebaseIcoImg from "../../assets/img/ico/firebaseico.ico";
 import reactAnimateImg from "../../assets/img/ico/react_animated.ico";
 import npmIcoImg from "../../assets/img/ico/npmico.ico";
@@ -77,56 +76,49 @@ const AboutWeb = ()=>{
                     <img alt="reactboostrap" src={reactBoostrapImg} width={32} height={32} className="m-1"/>
                     <p className="pb-3 mb-0 small lh-sm border-bottom">
                         <strong className="d-block text-gray-dark"><a href="https://react-bootstrap.github.io/">https://react-bootstrap.github.io/</a></strong>
-                        {context.state.leng==='en'?("Library used in the aesthetic design of the website."):("Libreria usada en el diseño estetico del sitio web.")}
+                        {context.state.leng==='en'?("Library used in the aesthetic design of the website."):("Biblioteca utilizada en el diseño estético del sitio web.")}
                     </p>
                 </div>
                 <div className="d-flex text-muted pt-3">
                     <img alt="reacticons" src={reactIcosImg} width={32} height={32} className="m-1"/>
                     <p className="pb-3 mb-0 small lh-sm border-bottom">
                         <strong className="d-block text-gray-dark"><a href="https://react-icons.github.io/react-icons/">https://react-icons.github.io/react-icons/</a></strong>
-                        {context.state.leng==='en'?("Library used in website icons."):("Librería usada en los iconos del sitio web.")}
-                    </p>
-                </div>
-                <div className="d-flex text-muted pt-3">
-                    <img alt="reactrouterdon" src={reactRouterDonImg} width={32} height={32} className="m-1"/>
-                    <p className="pb-3 mb-0 small lh-sm border-bottom">
-                        <strong className="d-block text-gray-dark"><a href="https://reactrouter.com/web/guides/quick-start">https://reactrouter.com/web/guides/quick-start</a></strong>
-                        {context.state.leng==='en'?("Library used to create the website routes."):("Librería usada para crear las rutas del sitio web.")}
+                        {context.state.leng==='en'?("Library used in website icons."):("Biblioteca usada en los iconos del sitio web.")}
                     </p>
                 </div>
                 <div className="d-flex text-muted pt-3">
                     <img alt="firebase" src={firebaseIcoImg} width={32} height={32} className="m-1"/>
                     <p className="pb-3 mb-0 small lh-sm border-bottom">
                         <strong className="d-block text-gray-dark"><a href="https://firebase.google.com/docs/web/setup?hl=es">https://firebase.google.com/docs/web/setup?hl=es</a></strong>
-                        {context.state.leng==='en'?("Library used for the website database."):("Librería usada para la base de datos del sitio web.")}
+                        {context.state.leng==='en'?("Library used for the website database."):("Biblioteca usada para la base de datos del sitio web.")}
                     </p>
                 </div>
                 <div className="d-flex text-muted pt-3">
                     <img alt="firebase" src={reactAnimateImg} width={32} height={32} className="m-1"/>
                     <p className="pb-3 mb-0 small lh-sm border-bottom">
                         <strong className="d-block text-gray-dark"><a href="https://www.npmjs.com/package/react-animated-css">https://www.npmjs.com/package/react-animated-css</a></strong>
-                        {context.state.leng==='en'?("Library used for website animations."):("Librería usada para las animaciones del sitio web.")}
+                        {context.state.leng==='en'?("Library used for website animations."):("Biblioteca usada para las animaciones del sitio web.")}
                     </p>
                 </div>
                 <div className="d-flex text-muted pt-3">
                     <img alt="npm ico" src={npmIcoImg} width={32} height={32} className="m-1"/>
                     <p className="pb-3 mb-0 small lh-sm border-bottom">
                         <strong className="d-block text-gray-dark"><a href="https://www.npmjs.com/package/react-card-flip">https://www.npmjs.com/package/react-card-flip</a></strong>
-                        {context.state.leng==='en'?("Library used for the memory game."):("Librería usada para el juego de memoria.")}
+                        {context.state.leng==='en'?("Library used for the memory game."):("Biblioteca usada para el juego de memoria.")}
                     </p>
                 </div>
                 <div className="d-flex text-muted pt-3">
                     <img alt="firebase" src={reactIcoImg} width={32} height={32} className="m-1"/>
                     <p className="pb-3 mb-0 small lh-sm border-bottom">
                         <strong className="d-block text-gray-dark"><a href="https://www.react-reveal.com/">https://www.react-reveal.com/</a></strong>
-                        {context.state.leng==='en'?("Library used for animations in the memory game."):("Librería usada para animaciones en el juego de memoria.")}
+                        {context.state.leng==='en'?("Library used for animations in the memory game."):("Biblioteca usada para animaciones en el juego de memoria.")}
                     </p>
                 </div>
                 <div className="d-flex text-muted pt-3">
                     <img alt="npm ico" src={npmIcoImg} width={32} height={32} className="m-1"/>
                     <p className="pb-3 mb-0 small lh-sm border-bottom">
                         <strong className="d-block text-gray-dark"><a href="https://www.npmjs.com/package/use-sound">https://www.npmjs.com/package/use-sound</a></strong>
-                        {context.state.leng==='en'?("Library used for game sound."):("Librería usada para el sonido del juego.")}
+                        {context.state.leng==='en'?("Library used for game sound."):("Biblioteca usada para el sonido del juego.")}
                     </p>
                 </div>
             </div>

@@ -26,13 +26,12 @@ const CountPage = ()=>{
         if(count[0].id!==""){
             const newNumber = parseInt(count[0].count)+1
             await db.collection('countPage').doc(count[0].id).update({count:newNumber})
-
+            cookies.set('countPage', 'set', {path: "/", expires: new Date(Date.now()+1440000)});
         }
 
     }
     useEffect(()=>{
         if(!cookies.get('countPage')){
-            cookies.set('countPage', 'set', {path: "/", expires: new Date(Date.now()+1440000)});
             upCount();
         }
         //

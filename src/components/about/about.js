@@ -6,11 +6,10 @@ import AboutMe from "./about_me";
 
 const About = () =>{
     const context = useContext(GlobalContext)
-    const [key, setKey] = useState('home');
+    const [key, setKey] = useState('profile');
     return  <div className="py-md-5">
                 <Tabs
                     fill
-                    id="controlled-tab-example"
                     activeKey={key}
                     onSelect={(k) => setKey(k)}
                     className="mb-3"

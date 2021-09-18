@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-import {Container} from "react-bootstrap";
 import Footerweb from "../footerweb";
 import Skills from "./skills";
 import Portafolio from "./portafolio"
 import TimeLine from "./time_line";
 import Heading from "../heading";
 import HomeInit from "./home_init";
-
+import MemoryPage from "../game_memory/memory_page";
+import About from "../about/about";
+import ContactPage from "../contact/contact_page";
 class Home extends Component {
     componentDidMount() {
         window.scrollTo(0, 0);
@@ -16,12 +17,25 @@ class Home extends Component {
         return (
             <div>
                 <Heading/>
-                <Container>
-                    <HomeInit/>
+                <div className="container-lg">
+                    <div id="home">
+                        <HomeInit/>
+                    </div>
                     <Skills/>
                     <TimeLine/>
                     <Portafolio/>
-                </Container>
+                    <div id="memory">
+                        <MemoryPage/>
+                    </div>
+
+                    <div id="contact">
+                        <ContactPage/>
+                    </div>
+
+                    <div id="about">
+                        <About/>
+                    </div>
+                </div>
                 <Footerweb/>
             </div>
         );

@@ -178,10 +178,10 @@ export default function GameMemory(props){
         setBtnLoad(false);
     }
     return (
-        <section className="py-5">
+        <section className="pt-5">
             <div>
                 <h2>{context.state.leng==='en'?('Memory game'):('Juego de memoria')}</h2>
-                <h6>{context.state.leng==='en'?('More coming soon ...'):('Proximamente más...')}</h6>
+                <h5>{context.state.leng==='en'?('Exercise your memory while trying to get first place!'):('¡Ejercita tu memoria mientras intentas conseguir el primer lugar!')}</h5>
             </div>
             <Row>
                 <Col sm={9}>
@@ -206,7 +206,7 @@ export default function GameMemory(props){
                                 <Modal aria-labelledby="contained-modal-title-vcenter" show={endCaseGame} onHide={handleCloseModal} >
                                     <Form>
                                             <Modal.Header closeButton>
-                                                <Modal.Title><span className="text-dark">Ingresa tu nombre</span></Modal.Title>
+                                                <Modal.Title><span className="text-dark">{context.state.leng==='en'?('Enter your name:'):('Introduzca su nombre:')}</span></Modal.Title>
                                             </Modal.Header>
                                             <Modal.Body>
                                                 <div>
@@ -273,7 +273,7 @@ export default function GameMemory(props){
                 <Col sm={3}>
                     <Card className={context.state.darkTheme?('bg-dark'):('bg-white')}>
                         <Card.Header>
-                            <h4>
+                            <h4 className="fs-lg-1 fs-0">
                                 {context.state.leng==='en'?('Top Players:'):('Mejores jugadores:')}
                             </h4>
                         </Card.Header>

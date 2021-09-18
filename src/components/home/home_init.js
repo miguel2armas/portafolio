@@ -2,15 +2,20 @@ import React, {useContext} from "react";
 import {Col, Row} from "react-bootstrap";
 import LogMig from "../../assets/img/logomiguel.svg";
 import {Animated} from "react-animated-css";
-import {Link} from "react-router-dom";
 import {ReactComponent as ChatDots} from "../../assets/img/icons/chat-dots-fill.svg";
 import EngranajeHome from "../../assets/img/logo_inicio_miguel.svg";
 import {GlobalContext} from "../../context/GlobalContext";
 import {Flip} from "react-reveal";
 
 const HomeInit = () => {
+    const scrollContact = (e)=>{
+        e.preventDefault();
+        const element = document.getElementById('contact');
+        const y = element.getBoundingClientRect().top + window.pageYOffset -50;
+        window.scrollTo({top: y, behavior: 'smooth'});
+    }
     const context = useContext(GlobalContext)
-  return <Row>
+  return <Row className="pt-5 mt-5">
       <Col xs={12} sm={5}>
           <div className="py-4">
               <div className="py-sm-5 py-2">
@@ -34,18 +39,18 @@ const HomeInit = () => {
                               <h5>Full Stack developer</h5>
                               <p>I am passionate about programming and new challenges, creating and improving, always looking for a better level, I have great experience creating web pages using "react" in frontend and "laravel" in backend.</p>
                               <p>I work with the latest technologies, always seeking to improve and optimize the projects I work on, seeking excellence in each one of them.</p>
-                              <Link to="/contact" className="btn btn-theme btn-lg">Contact me
+                              <a href="#link" onClick={scrollContact} className="btn btn-theme btn-lg">Contact me
                                   <span className="py-1 pl-3"><ChatDots width="25" height="25"/></span>
-                              </Link>
+                              </a>
                           </>
                       ):(
                           <>
                               <h5>Desarrollador Full Stack</h5>
                               <p>Me apasiona la programación y los nuevos retos, crear y mejorar, siempre buscando un mejor nivel, tengo gran experiencia creando páginas web usando "react" en frontend y "laravel" en backend.</p>
                               <p>Trabajo con las últimas tecnologías, buscando siempre mejorar y optimizar los proyectos en los que trabajo, buscando la excelencia en cada uno de ellos.</p>
-                              <Link to="/contact" className="btn btn-theme btn-lg">Contactame
+                              <a href="#link" onClick={scrollContact} className="btn btn-theme btn-lg">Contactame
                                   <span className="py-1 pl-3"><ChatDots width="25" height="25"/></span>
-                              </Link>
+                              </a>
                           </>
                       )}
                   </Flip>

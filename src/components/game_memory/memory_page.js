@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
-import Heading from "../heading";
-import {Container} from "react-bootstrap";
 import GameMemory from "./game_memory";
-import Footerweb from "../footerweb";
 
 class MemoryPage extends Component {
     state = {
@@ -28,11 +25,7 @@ class MemoryPage extends Component {
     render() {
         return (
             <div>
-                <Heading/>
-                <Container>
-                    <GameMemory setStart={this.setStart} setPause={this.setPause} setReset={this.setReset} seconds={this.state.seconds}/>
-                </Container>
-                <Footerweb/>
+                <GameMemory setStart={this.setStart} setPause={this.setPause} setReset={this.setReset} seconds={this.state.seconds}/>
             </div>
         );
     }

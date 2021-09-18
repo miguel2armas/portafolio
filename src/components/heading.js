@@ -1,6 +1,5 @@
 import React, {useContext} from "react";
 import {Container, Nav, Navbar} from "react-bootstrap";
-import {Link} from "react-router-dom";
 import {ReactComponent as Logo} from "../assets/img/logo.svg";
 import {Animated} from "react-animated-css";
 import {RiMoonClearFill, RiSunLine} from "react-icons/ri";
@@ -8,17 +7,35 @@ import {MdContactMail, MdGames} from "react-icons/md";
 import {FaBook} from "react-icons/fa";
 import {Flip, Roll} from "react-reveal";
 import {GlobalContext} from "../context/GlobalContext";
-
  const Heading = () => {
   const context = useContext(GlobalContext)
   const {changeThemeTrue, changeThemeFalse, changeLengES, changeLengEN} = useContext(GlobalContext)
+     const scrollGame = ()=>{
+         const element = document.getElementById('memory');
+         const y = element.getBoundingClientRect().top + window.pageYOffset -40;
+         window.scrollTo({top: y, behavior: 'smooth'});
+     }
+     const scrollAbout = ()=>{
+         const element = document.getElementById('about');
+         const y = element.getBoundingClientRect().top + window.pageYOffset -70;
+         window.scrollTo({top: y, behavior: 'smooth'});
+     }
+     const scrollContact = ()=>{
+         const element = document.getElementById('contact');
+         const y = element.getBoundingClientRect().top + window.pageYOffset -50;
+         window.scrollTo({top: y, behavior: 'smooth'});
+     }
+     const scrollHome = (e)=>{
+      e.preventDefault()
+         window.scrollTo({top: 0, behavior: 'smooth'});
+     }
   return(
-      <Navbar className="nav-masthead" bg={context.state.darkTheme?('dark'):('light')} variant={context.state.darkTheme?('dark'):('light')} expand="lg">
+      <Navbar collapseOnSelect fixed={"top"} className="nav-masthead" bg={context.state.darkTheme?('dark'):('light')} variant={context.state.darkTheme?('dark'):('light')} expand="lg">
        <Container>
         <Navbar.Brand>
-         <Link to="/">
+         <a href="#link" onClick={scrollHome}>
           <Logo className="img-top img-top-md" />
-         </Link>
+         </a>
         </Navbar.Brand>
         <Nav.Link className="text-center only-movil">
          <Flip right spy={context.state.checkedLengcount}>
@@ -47,71 +64,41 @@ import {GlobalContext} from "../context/GlobalContext";
         <Navbar.Collapse id="navbarScroll">
          <Animated className="me-auto" animationIn="bounceInLeft" isVisible={true}>
           <Nav>
-           <Nav.Link className="border-end">
-            <Link className="text-nav-decoration" to="/memory">
+           <Nav.Link href="#" onClick={scrollGame} className="border-end">
               <div className="text-center">
                <MdGames color={context.state.darkTheme?('white'):('black')}/>
               </div>
               <div className="text-center">
               <span className="text-theme-2">
                  <Flip right spy={context.state.checkedLengcount}>
-                     {context.state.leng==='en'?(
-                         <>
-                          Games
-                         </>
-                     ):(
-                         <>
-                          Juegos
-                         </>
-                     )}
+                     {context.state.leng==='en'?('Games' ):('Juegos')}
                  </Flip>
               </span>
               </div>
-            </Link>
            </Nav.Link>
-           <Nav.Link href="#pricing" className="border-end">
-               <Link className="text-nav-decoration" to="/about">
+           <Nav.Link href="#" onClick={scrollAbout} className="border-end">
                    <div className="text-center">
                        <FaBook color={context.state.darkTheme?('white'):('black')}/>
                    </div>
                    <div className="text-center">
              <span className="text-theme-2">
                 <Flip right spy={context.state.checkedLengcount}>
-                    {context.state.leng==='en'?(
-                        <>
-                            About
-                        </>
-                    ):(
-                        <>
-                            Acerca de
-                        </>
-                    )}
+                    {context.state.leng==='en'?('About'):('Acerca de')}
                 </Flip>
               </span>
                    </div>
-               </Link>
            </Nav.Link>
-           <Nav.Link href="#pricing">
-               <Link className="text-nav-decoration" to="/contact">
+           <Nav.Link href="#" onClick={scrollContact}>
                    <div className="text-center">
                        <MdContactMail color={context.state.darkTheme?('white'):('black')}/>
                    </div>
                    <div className="text-center">
                      <span className="text-theme-2">
                         <Flip right spy={context.state.checkedLengcount}>
-                            {context.state.leng==='en'?(
-                                <>
-                                    Contact
-                                </>
-                            ):(
-                                <>
-                                    Contacto
-                                </>
-                            )}
+                            {context.state.leng==='en'?('Contact'):('Contacto')}
                         </Flip>
                       </span>
                    </div>
-               </Link>
            </Nav.Link>
           </Nav>
          </Animated>

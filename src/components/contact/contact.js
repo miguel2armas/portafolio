@@ -33,6 +33,9 @@ const Contact = () =>{
     }
 
     return <div className="py-md-5 my-md-5">
+                <div className="text-center py-lg-0 py-4">
+                    <h4 className="fs-xl-1 fs-0">{context.state.leng==='en'?('Write me a message, I will gladly answer you as soon as possible'):('Escríbeme un mensaje, con gusto te responderé lo antes posible')}</h4>
+                </div>
                 <Row>
                     <Col xs={12} md={6}>
                         <object type="image/svg+xml" data={EngranajeContact}>svg-animation</object>
