@@ -14,6 +14,7 @@ import endGameSonund from '../../assets/sounds/endgame.mp3'
 import {GlobalContext} from "../../context/GlobalContext";
 import {Flip} from "react-reveal";
 import {db} from "../../firebase";
+import {FaMedal, RiMedalLine, BiMedal} from "react-icons/all";
 import moment from "moment";
 
 export default function GameMemory(props){
@@ -280,7 +281,7 @@ export default function GameMemory(props){
                         <Table striped bordered hover className={context.state.darkTheme?('bg-dark mb-0'):('bg-white mb-0')}>
                             <thead>
                             <tr className={context.state.darkTheme?("text-white"):("text-dark")}>
-                                <th>#</th>
+                                <th className="text-center">#</th>
                                 {context.state.leng==='en'?(<th>Name</th>):(<th>Nombre</th>)}
                                 {context.state.leng==='en'?(<th>Time</th>):(<th>Tiempo</th>)}
                             </tr>
@@ -291,7 +292,9 @@ export default function GameMemory(props){
                                 if(key<10){
                                     return(
                                         <tr key={key} className={context.state.darkTheme?("text-white"):("text-dark")}>
-                                            <td>{key+1}</td>
+                                            <td className="text-center">{key+1===1?(<FaMedal className="shadow-black-2" size="1.5em" color={"#f8ff00"}/>):
+                                                key+1===2?(<RiMedalLine className="shadow-black-2" size="1.2em" color={"#83cc04"}/>):
+                                                    key+1===3?(<BiMedal className="shadow-black-2" size="1.1em" color={"#06ab98"}/>):(key+1)}</td>
                                             <td>{history.name}</td>
                                             <td className="text-end">{history.time}</td>
                                         </tr>
