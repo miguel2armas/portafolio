@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.9c38cb75.chunk.css",
-    "main.js": "/static/js/main.52034a9b.chunk.js",
-    "main.js.map": "/static/js/main.52034a9b.chunk.js.map",
+    "main.css": "/static/css/main.e698aac7.chunk.css",
+    "main.js": "/static/js/main.77ceb908.chunk.js",
+    "main.js.map": "/static/js/main.77ceb908.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.8832bc91.js",
     "runtime-main.js.map": "/static/js/runtime-main.8832bc91.js.map",
     "static/css/2.818011ed.chunk.css": "/static/css/2.818011ed.chunk.css",
@@ -14,7 +14,7 @@
     "static/js/4.f6d55290.chunk.js.map": "/static/js/4.f6d55290.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.818011ed.chunk.css.map": "/static/css/2.818011ed.chunk.css.map",
-    "static/css/main.9c38cb75.chunk.css.map": "/static/css/main.9c38cb75.chunk.css.map",
+    "static/css/main.e698aac7.chunk.css.map": "/static/css/main.e698aac7.chunk.css.map",
     "static/js/2.05d583da.chunk.js.LICENSE.txt": "/static/js/2.05d583da.chunk.js.LICENSE.txt",
     "static/js/3.cbb9c177.chunk.js.LICENSE.txt": "/static/js/3.cbb9c177.chunk.js.LICENSE.txt",
     "static/media/1.ad9f481e.webp": "/static/media/1.ad9f481e.webp",
@@ -34,9 +34,13 @@
     "static/media/code-slash.99b931e8.svg": "/static/media/code-slash.99b931e8.svg",
     "static/media/correct.25fe9098.wav": "/static/media/correct.25fe9098.wav",
     "static/media/e-tournament.2f155654.webp": "/static/media/e-tournament.2f155654.webp",
+    "static/media/en_img.028bc499.svg": "/static/media/en_img.028bc499.svg",
+    "static/media/en_white.3a11c189.svg": "/static/media/en_white.3a11c189.svg",
     "static/media/endgame.bdb265f3.mp3": "/static/media/endgame.bdb265f3.mp3",
     "static/media/enfermedic24.d1f31f73.webp": "/static/media/enfermedic24.d1f31f73.webp",
     "static/media/error.55b66ba8.wav": "/static/media/error.55b66ba8.wav",
+    "static/media/es_img.73a23e16.svg": "/static/media/es_img.73a23e16.svg",
+    "static/media/es_white.06c063ad.svg": "/static/media/es_white.06c063ad.svg",
     "static/media/favicon.8cb4bbb9.ico": "/static/media/favicon.8cb4bbb9.ico",
     "static/media/firebaseico.44928b0a.ico": "/static/media/firebaseico.44928b0a.ico",
     "static/media/frepikico.574f13d4.ico": "/static/media/frepikico.574f13d4.ico",
@@ -66,7 +70,7 @@
     "static/js/runtime-main.8832bc91.js",
     "static/css/2.818011ed.chunk.css",
     "static/js/2.05d583da.chunk.js",
-    "static/css/main.9c38cb75.chunk.css",
-    "static/js/main.52034a9b.chunk.js"
+    "static/css/main.e698aac7.chunk.css",
+    "static/js/main.77ceb908.chunk.js"
   ]
 }
