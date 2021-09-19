@@ -1,6 +1,10 @@
 import React, {useContext} from "react";
 import {Container, Nav, Navbar} from "react-bootstrap";
 import {ReactComponent as Logo} from "../assets/img/logo.svg";
+import {ReactComponent as EsBlack} from "../assets/img/icons/es_img.svg";
+import {ReactComponent as EnBlack} from "../assets/img/icons/en_img.svg";
+import {ReactComponent as EsWhite} from "../assets/img/icons/es_white.svg";
+import {ReactComponent as EnWhite} from "../assets/img/icons/en_white.svg";
 import {Animated} from "react-animated-css";
 import {RiMoonClearFill, RiSunLine} from "react-icons/ri";
 import {MdContactMail, MdGames} from "react-icons/md";
@@ -39,22 +43,25 @@ import {GlobalContext} from "../context/GlobalContext";
         </Navbar.Brand>
         <Nav.Link className="text-center only-movil">
          <Flip right spy={context.state.checkedLengcount}>
-          {context.state.leng==='en'?(
-              <div className={context.state.darkTheme?('text-white'):('text-dark')} onClick={() => changeLengES()}> ES </div>
-          ):(
-              <div className={context.state.darkTheme?('text-white'):('text-dark')} onClick={() => changeLengEN()}> EN </div>
-          )}
+             {context.state.leng==='en'?(
+                 <div className={context.state.darkTheme?('text-white'):('text-dark')} onClick={() => changeLengES()}>
+                     {context.state.darkTheme?(<EnWhite className="img-eng-es blob-white" />):(<EnBlack className="img-eng-es blob" />)}</div>
+             ):(
+                 <div className={context.state.darkTheme?('text-white'):('text-dark')} onClick={() => changeLengEN()}>
+                     {context.state.darkTheme?(<EsWhite className="img-eng-es blob-white" />):(<EsBlack className="img-eng-es blob"/>)}</div>
+             )}
          </Flip>
         </Nav.Link>
         <Nav.Link className="text-center only-movil">
          <Roll spy={context.state.checkedThemecount}>
           {context.state.darkTheme?(
               <div onClick={() => changeThemeFalse()}>
-               <RiSunLine title="sun" size="1.5em" color={context.state.darkTheme?('white'):('black')}/>
+
+               <RiSunLine className="blob" title="sun" size="1.5em" color={context.state.darkTheme?('white'):('black')}/>
               </div>
           ):(
               <div onClick={() => changeThemeTrue()}>
-               <RiMoonClearFill title="moon" size="1.5em" color={context.state.darkTheme?('white'):('black')}/>
+               <RiMoonClearFill className="blob" title="moon" size="1.5em" color={context.state.darkTheme?('white'):('black')}/>
               </div>
           )}
          </Roll>
@@ -106,22 +113,24 @@ import {GlobalContext} from "../context/GlobalContext";
          <Nav>
           <Nav.Link className="text-center only-web">
            <Flip right spy={context.state.checkedLengcount}>
-              {context.state.leng==='en'?(
-                  <div onClick={() => changeLengES()}> ES </div>
-              ):(
-                  <div onClick={() => changeLengEN()}> EN </div>
-              )}
+               {context.state.leng==='en'?(
+                   <div className={context.state.darkTheme?('text-white'):('text-dark')} onClick={() => changeLengES()}>
+                        {context.state.darkTheme?(<EnWhite className="img-eng-es blob-white" />):(<EnBlack className="img-eng-es blob" />)}</div>
+               ):(
+                   <div className={context.state.darkTheme?('text-white'):('text-dark')} onClick={() => changeLengEN()}>
+                        {context.state.darkTheme?(<EsWhite className="img-eng-es blob-white" />):(<EsBlack className="img-eng-es blob"/>)}</div>
+               )}
            </Flip>
           </Nav.Link>
           <Nav.Link className="text-center only-web">
            <Roll spy={context.state.checkedThemecount}>
             {context.state.darkTheme?(
                 <div onClick={() => changeThemeFalse()}>
-                 <RiSunLine title="sun" size="2em" color={context.state.darkTheme?('white'):('black')}/>
+                 <RiSunLine className="blob" title="sun" size="2em" color={context.state.darkTheme?('white'):('black')}/>
                 </div>
             ):(
                 <div onClick={() => changeThemeTrue()}>
-                 <RiMoonClearFill title="moon" size="2em" color={context.state.darkTheme?('white'):('black')}/>
+                 <RiMoonClearFill className="blob" title="moon" size="2em" color={context.state.darkTheme?('white'):('black')}/>
                 </div>
             )}
            </Roll>
