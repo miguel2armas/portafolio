@@ -245,46 +245,6 @@ const Portafolio = ()=> {
                     <Carousel.Caption>
                         <Row>
                             <Col xs={8} sm={6}>
-                                <img src={Enfermedic24Img} className="rounded img-fluid" alt="Enfermedic24"/>
-                            </Col>
-                            <Col xs={12} sm={6}>
-                                <div className="text-start">
-                                    <h3 className={context.state.darkTheme?('text-white'):('text-dark')}>
-                                        <span className="fs-1 fs-sm-2">Enfermedic24</span></h3>
-                                    <h4 className={context.state.darkTheme?('text-white'):('text-dark')}>
-                                        {context.state.leng==='en'?(
-                                            <>
-                                                <span className="fs-0 fs-sm-1">
-                                                    Advertising page created according to customer specifications with visit counter, laravel backend and personalized medical history system for patients.
-                                                </span>
-                                            </>
-                                        ):(
-                                            <>
-                                               <span className="fs-0 fs-sm-1">
-                                                    Página de publicidad creada de acuerdo con las especificaciones del cliente con contador de visitas, backend de laravel y sistema de historial médico personalizado para los pacientes.
-                                                </span>
-                                            </>
-                                        )}
-                                    </h4>
-                                    {context.state.leng==='en'?(
-                                        <>
-                                            <a href="https://enfermedic24.com" target="_blank" rel="noreferrer" className="btn btn-theme my-sm-3">Visit</a>
-                                        </>
-                                    ):(
-                                        <>
-                                            <a href="https://enfermedic24.com" target="_blank" rel="noreferrer" className="btn btn-theme my-sm-3">Visitar</a>
-                                        </>
-                                    )}
-                                </div>
-                            </Col>
-                        </Row>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item interval={4500}>
-                    <img src={FondTransp} alt="fondo-transparente"/>
-                    <Carousel.Caption>
-                        <Row>
-                            <Col xs={8} sm={6}>
                                 <img src={SaludMedicosImg} className="rounded img-fluid" alt="SaludMedicos"/>
                             </Col>
                             <Col xs={12} sm={6}>

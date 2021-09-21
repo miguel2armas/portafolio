@@ -25,9 +25,9 @@ const Skills = ()=> {
                     )}
                 </Flip>
             </Container>
-            <Accordion defaultActiveKey="0">
                 <Row>
                     <Col xs={12} md={4}>
+                        <Accordion defaultActiveKey="0">
                         <Accordion.Item eventKey="0" className={context.state.darkTheme?('bg-dark'):('bg-light')}>
                             <Accordion.Header className="bg-dark">
                                 <CodeSlash className="mx-2" width="30" height="30"/>
@@ -74,8 +74,10 @@ const Skills = ()=> {
                                 <ProgressBar variant="success" now={40}/>
                             </Accordion.Body>
                         </Accordion.Item>
+                        </Accordion>
                     </Col>
                     <Col xs={12} md={4}>
+                        <Accordion defaultActiveKey="1">
                         <Accordion.Item eventKey="1" className={context.state.darkTheme?('bg-dark'):('bg-light')}>
                             <Accordion.Header>
                                 <Braces className="mx-2" width="30" height="30"/>
@@ -123,8 +125,10 @@ const Skills = ()=> {
                                 <ProgressBar variant="success"   now={80}/>
                             </Accordion.Body>
                         </Accordion.Item>
+                        </Accordion>
                     </Col>
                     <Col xs={12} md={4}>
+                        <Accordion defaultActiveKey="2">
                         <Accordion.Item eventKey="2" className={context.state.darkTheme?('bg-dark'):('bg-light')}>
                             <Accordion.Header>
                                 <Bookmark className="mx-2" width="30" height="30"/>
@@ -168,7 +172,7 @@ const Skills = ()=> {
                                         </>
                                     ):(
                                         <>
-                                            <b>OPTIMIZACIÓN DE IMAGENES (WEBP Y SVG)</b><b>100%</b>
+                                            <b>OPTIMIZACIÓN DE IMÁGENES (WEBP Y SVG)</b><b>100%</b>
                                         </>
                                     )}
                                 </div>
@@ -211,9 +215,9 @@ const Skills = ()=> {
                                 <ProgressBar variant="success" now={60}/>
                             </Accordion.Body>
                         </Accordion.Item>
+                        </Accordion>
                     </Col>
                 </Row>
-            </Accordion>
         </div>
     );
 }

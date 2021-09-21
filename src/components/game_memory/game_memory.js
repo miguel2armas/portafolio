@@ -295,7 +295,7 @@ export default function GameMemory(props){
                                             <td className="text-center">{key+1===1?(<FaMedal className="shadow-black-2" size="1.5em" color={"#f8ff00"}/>):
                                                 key+1===2?(<RiMedalLine className="shadow-black-2" size="1.2em" color={"#83cc04"}/>):
                                                     key+1===3?(<BiMedal className="shadow-black-2" size="1.1em" color={"#06ab98"}/>):(key+1)}</td>
-                                            <td>{history.name}</td>
+                                            <td>{history.name!==''?history.name:context.state.leng==='en'?('Anonymous'):'Anónimo'}</td>
                                             <td className="text-end">{history.time}</td>
                                         </tr>
                                     );

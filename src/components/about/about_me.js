@@ -108,7 +108,7 @@ const AboutMe = ()=>{
                         <li>
                             <div className="user-timeline-date">{context.state.leng==='en'?("May 01, 2018 - March 20, 2019"):("01 de Mayo de 2018 - 20 de Marzo de 2019")}</div>
                             <div className="user-timeline-title">{context.state.leng==='en'?("University Institute of Technology Dr. Cristobal Mendoza"):
-                                ("Instituto Universitario de Tecnologia Dr. Cristobal Mendoza")}
+                                ("Instituto Universitario de Tecnología Dr. Cristóbal Mendoza")}
                                 </div>
                             <div className="user-timeline-description">{context.state.leng==='en'?("Programming teacher."):("Profesor programación.")}
                             </div>
@@ -116,9 +116,9 @@ const AboutMe = ()=>{
                         <li>
                             <div className="user-timeline-date">2016 - 2018</div>
                             <div className="user-timeline-title">{context.state.leng==='en'?("University Institute of Technology Dr. Cristobal Mendoza"):
-                                ("Instituto Universitario de Tecnologia Dr. Cristobal Mendoza")}</div>
+                                ("Instituto Universitario de Tecnología Dr. Cristóbal Mendoza")}</div>
                             <div className="user-timeline-description">{context.state.leng==='en'?("Title: Higher University Technician in Computer Science")
-                                :("Titulo: Tecnico Superior Universitario en Informatica")}
+                                :("Titulo: Técnico Superior Universitario en Informática")}
                             </div>
                         </li>
                     </ul>
