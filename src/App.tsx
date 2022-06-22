@@ -1,45 +1,19 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+
+import { Page } from "./components/Page";
+import { IntlProvider } from 'react-intl'
+import { en_US } from './lang/en-US'
+import { es_CO } from './lang/es-CO'
+import { useAppSelector } from "./redux/hooks";
+import { selectLanguage } from "./redux/reducers/languageReducer";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const currentLanguage = useAppSelector(selectLanguage);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
+          <IntlProvider messages={currentLanguage==="en-US"?en_US:es_CO} locale={currentLanguage} defaultLocale="en-US">
+            <Page/>
+          </IntlProvider>
+          );
 }
 
-export default App
+export default App;

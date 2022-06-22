@@ -1,15 +1,22 @@
 {
-  "name": "portafolio-vite",
+  "name": "miguel-armas",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.2.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "@reduxjs/toolkit": "^1.8.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.0.0",
+    "react-intl": "^6.0.3",
+    "react-redux": "^8.0.2",
+    "sass": "^1.51.0",
+    "use-sound": "^4.0.1",
+    "usehooks-ts": "^2.5.4",
+    "vite-plugin-svgr": "^2.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

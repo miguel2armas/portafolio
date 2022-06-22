@@ -1,0 +1,49 @@
+.MemoryGame{
+    &__title{
+        padding: 30px;
+    }
+    &__description{
+        align-items: center;
+        background-color: var(--game-description-back-color);
+        display: flex;
+        justify-content: space-between;
+        padding: .5rem 1rem;
+        border: 1px solid rgba(0,0,0,.125);
+        &--name{
+            display: flex;
+        }
+        &--description{
+            display: flex;
+            border-radius: 0.25rem;
+            background-color: rgba($color:#6C757D, $alpha: 1.0);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1;
+            padding: 0.3rem 0.5rem;
+            margin-left: 15px;
+        }
+        &--btn{
+            display: flex;
+        }
+        &--btnContent{
+            display: flex;
+            gap:10px
+        }
+    }
+    &__content{
+        display: flex;
+        width: 100%;
+        &--grip{
+            padding: 0 5px 0 30px;
+            display: flex;
+            width: 70%;
+        }
+        &--data{
+            padding: 0 30px 0 5px;
+            display: flex;
+            width: 30%;
+        }
+        
+    }
+}
