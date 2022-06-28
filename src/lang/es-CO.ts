@@ -20,6 +20,11 @@ export const es_CO = {
     "app.memoryBtnHard": `dificil`,
     "app.memoryBtnLegend": `leyenda`,
     "app.memoryBtnNightmare": `pesadilla`,
+    "app.memoryNameEASY": `Facil`,
+    "app.memoryNameNORMAL": `Normal`,
+    "app.memoryNameHARD": `Dificil`,
+    "app.memoryNameLEGEND": `Leyenda`,
+    "app.memoryNameNIGHTMARE": `Pesadilla`,
     "app.memoryBtnReset": `reiniciar`,
     
 }

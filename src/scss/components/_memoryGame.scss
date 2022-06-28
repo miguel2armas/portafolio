@@ -47,3 +47,44 @@
         
     }
 }
+.TableReward{
+    width: 100%;
+    border-color: #dee2e6;
+    border-collapse: collapse;
+    &__div{
+        margin: 0 auto;
+    }
+    &__content{
+        background-color: var(--game-description-back-color);
+        padding: 0.5rem 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 5px;
+        margin: 0 auto;
+    }
+    &__head{
+        &--th{
+            border: 2px solid var(--primary-color);
+            padding: 5px;
+        }
+    }
+    &__body{
+        &--td{
+            border: 2px solid var(--primary-color);
+            padding: 5px;
+        }
+        &--right{
+            text-align: end;
+        }
+        &--text{
+            padding: 5px;
+            text-align: center;
+        }
+    }
+}
+.TableIco{
+    text-align: center;
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+.TableH3{
+    margin-top:0;
+}

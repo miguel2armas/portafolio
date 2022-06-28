@@ -20,5 +20,10 @@ export const en_US = {
     "app.memoryBtnHard": `hard`,
     "app.memoryBtnLegend": `legend`,
     "app.memoryBtnNightmare": `nightmare`,
+    "app.memoryNameEASY": `Easy`,
+    "app.memoryNameNORMAL": `Normal`,
+    "app.memoryNameHARD": `Hard`,
+    "app.memoryNameLEGEND": `Legend`,
+    "app.memoryNameNIGHTMARE": `Nightmare`,
     "app.memoryBtnReset": `reset`,
 }

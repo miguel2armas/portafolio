@@ -25,8 +25,7 @@ export const GripGame = ({cardData, onCheck, cardsCorrect, progress, twoSelectCa
                   </div>
                 </div>
             </div>
-            ) 
-          
+            )
           })}
       </div>
   )

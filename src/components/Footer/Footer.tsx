@@ -1,10 +1,12 @@
-
 import { FormattedMessage } from "react-intl"
 import LogoImg from "../../assets/img/img/logo.svg"
 import {ReactComponent as Facebook} from "../../assets/img/icons/facebook.svg";
 import {ReactComponent as GitHub} from "../../assets/img/icons/git_hub.svg";
 import {ReactComponent as WhatsApp} from "../../assets/img/icons/whatsapp.svg";
+import { useCountPage } from "../../hooks/useCountPage";
+
 export const Footer = () => {
+  const { countPage } = useCountPage();
   return (
     <footer className="footer">
         <div className="footer__left">
@@ -35,7 +37,7 @@ export const Footer = () => {
                 <div>
                   Eres visitante número:
                   <span className="footer__right--span">
-                    1234
+                    {countPage}
                   </span>
                 </div>
               </div>
