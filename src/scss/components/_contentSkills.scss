@@ -1,0 +1,574 @@
+.ContentSkills{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap:15px;
+    max-width: 1350px;
+    margin: 0 auto;
+    &__h2{
+        text-align: center;
+    }
+}
+.Item{
+    background-color: var(--game-description-back-color);
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+    &__contentHtml{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #388E3C 50%, #C8E6C9 50%);
+        position: relative;
+        transform: rotate(180deg);
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-180deg);
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-180deg);
+        }
+    }
+    &__contentCss{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #388E3C 50%, #C8E6C9 50%);
+        position: relative;
+        transform: rotate(180deg);
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-180deg);
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-180deg);
+        }
+    }
+    &__contentJs{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #388E3C 50%, #C8E6C9 50%);
+        position: relative;
+        transform: rotate(171deg);
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-171deg);
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-171deg);
+        }
+    }
+    &__contentPhp{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #388E3C 50%, #C8E6C9 50%);
+        position: relative;
+        transform: rotate(171deg);
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-171deg);
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-171deg);
+        }
+    }
+    &__contentDart{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #388E3C 50%, #C8E6C9 50%);
+        position: relative;
+        transform: rotate(144deg);
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-144deg);
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-144deg);
+        }
+    }
+    &__contentJava{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #388E3C 50%, #C8E6C9 50%);
+        position: relative;
+        transform: rotate(90deg);
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-90deg);
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-90deg);
+        }
+    }
+    &__contentKotlin{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #388E3C 50%, #C8E6C9 50%);
+        position: relative;
+        transform: rotate(72deg);
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-72deg);
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-72deg);
+        }
+    }
+    &__contentReact{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #0097A7 50%, #B2EBF2 50%);
+        position: relative;
+        transform: rotate(171deg);
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-171deg);
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-171deg);
+        }
+    }
+    &__contentTs{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #0097A7 50%, #B2EBF2 50%);
+        position: relative;
+        transform: rotate(171deg);
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-171deg);
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-171deg);
+        }
+    }
+    &__contentSass{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #0097A7 50%, #B2EBF2 50%);
+        position: relative;
+        transform: rotate(171deg);
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-171deg);
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-171deg);
+        }
+    }
+    &__contentVtex{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #0097A7 50%, #B2EBF2 50%);
+        position: relative;
+        transform: rotate(153deg);
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-153deg);
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-153deg);
+        }
+    }
+    &__contentGit{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #0097A7 50%, #B2EBF2 50%);
+        position: relative;
+        transform: rotate(162deg);
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-162deg);
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-162deg);
+        }
+    }
+    &__contentFlutter{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #0097A7 50%, #B2EBF2 50%);
+        position: relative;
+        transform: rotate(144deg);
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-144deg);
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-144deg);
+        }
+    }
+    &__contentPrestashop{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #0097A7 50%, #B2EBF2 50%);
+        position: relative;
+        transform: rotate(144deg);
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-144deg);
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-144deg);
+        }
+    }
+    &__contentAndroid{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #0097A7 50%, #B2EBF2 50%);
+        position: relative;
+        transform: rotate(108deg);
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-108deg);
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-108deg);
+        }
+    }
+    &__contentLaravel{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #0097A7 50%, #B2EBF2 50%);
+        position: relative;
+        transform: rotate(162deg);
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-162deg);
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-162deg);
+        }
+    }
+    &__img{
+        width: 60%;
+        height: 60%;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        object-fit: contain;
+        margin: auto;
+        height: 105px;
+        bottom: 8px;
+        filter: drop-shadow(5px 5px 5px #222);
+    }
+    &__text{
+        top: 55px;
+        left: 0;
+        position: absolute;
+        z-index: 1;
+        right: 0;
+    }
+    &__textYear{
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        z-index: 1;
+        font-weight: 700;
+        filter: drop-shadow(2px 2px 2px rgba(34, 34, 34, 0.5)) drop-shadow(2px 2px 2px rgba(34, 34, 34, 0.5));
+    }
+}

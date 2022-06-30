@@ -16,7 +16,7 @@ interface Props {
 }
 
 export const ModalEndGame = ({modalEndGame, errorCheck, timeGame, setModalEndGame, modeGame, getCard}:Props) => {
-    const playerName = useInputValue('');
+    const playerName = useInputValue('', 8);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
     const sendResultGame = async() => {
@@ -68,7 +68,7 @@ export const ModalEndGame = ({modalEndGame, errorCheck, timeGame, setModalEndGam
                       Tiempo transcurrido: {timeGame} segundo(s)
                     </div>
                     <div className="ModalEndGame_input">
-                      <input type="text" className={`ModalEndGame_input--input ${error ? 'ModalEndGame_input--error' : ''}`} {...playerName} />
+                      <input type="text" placeholder="Nombre (max: 8 caracteres)"className={`ModalEndGame_input--input ${error ? 'ModalEndGame_input--error' : ''}`} {...playerName} />
                       <div className="ModalEndGame_input--btn">
                           <Button ClickBtn={sendResultGame} loading={loading} disabled={loading}>
                             Enviar

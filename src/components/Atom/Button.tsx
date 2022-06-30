@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import {ReactComponent as Loading} from "../../assets/img/icons/loading.svg";
-//import Loading from '../../assets/img/icons/loading.svg?component'
 interface Props {
     paddingDesktop?:number | string | undefined;
     paddingMobile?:number | string | undefined;

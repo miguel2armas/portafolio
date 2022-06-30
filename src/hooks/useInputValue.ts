@@ -1,6 +1,6 @@
 import { SyntheticEvent, useState } from 'react'
 
-export const useInputValue = (initialValue:string) => {
+export const useInputValue = (initialValue:string, maxCharter = -1) => {
   const [value, setValue] = useState(initialValue)
   const onChange = (e:SyntheticEvent | string) => {
     if(typeof e === 'string'){
@@ -9,7 +9,13 @@ export const useInputValue = (initialValue:string) => {
       const target = e.target as typeof e.target & {
         value:string
       }
-      setValue(target.value);
+      if(maxCharter>-1){
+        if(maxCharter>=value.length){
+          setValue(target.value);
+        }
+      }else{
+        setValue(target.value);
+      }
     }
     
 

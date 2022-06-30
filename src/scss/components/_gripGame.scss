@@ -3,7 +3,6 @@
     width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     &__item{
-        cursor: pointer;
         padding: .25rem;
         &--img{
             width: 100%;
