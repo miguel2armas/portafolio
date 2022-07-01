@@ -6,11 +6,13 @@ import { ContentTop } from "./contentPage/ContentTop/ContentTop"
 import { MemoryGame } from "./contentPage/MemoryGame/MemoryGame"
 import { Footer } from "./Footer/Footer"
 import { Header } from "./Header/Header"
+import { Notifications } from "./Notifications/Notifications"
 
 
 export const Page = () => {
   return (
             <>
+                <Notifications/>
                 <Header/>
                 <ContentTop/>
                 <ContentSkills/>

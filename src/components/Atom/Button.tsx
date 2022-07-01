@@ -8,8 +8,9 @@ interface Props {
     children:ReactNode
     variant?:string
     disabled?:boolean
+    type?:"button" | "submit" | "reset" | undefined
 }
-export const Button = ({paddingDesktop, paddingMobile, ClickBtn, loading, children, variant, disabled}:Props) => {
+export const Button = ({paddingDesktop, paddingMobile, ClickBtn, loading, children, variant, disabled, type="button"}:Props) => {
 
     const paddingStyle = (paddingDesktop && paddingMobile)? false?{
         paddingLeft:`${paddingMobile}px`, 
@@ -19,7 +20,7 @@ export const Button = ({paddingDesktop, paddingMobile, ClickBtn, loading, childr
         paddingRight:`${paddingDesktop}px`
     }:{}
   return (
-    <button type="button" style={paddingStyle} className={`Button__${variant ? variant:''} Button`} onClick={()=>ClickBtn()} disabled={disabled}>
+    <button type={type} style={paddingStyle} className={`Button__${variant ? variant:''} Button`} onClick={()=>ClickBtn()} disabled={disabled}>
         {loading?<Loading/>:children}
     </button>
   )

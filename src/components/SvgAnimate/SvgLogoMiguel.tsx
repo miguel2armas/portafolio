@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { ReactComponent as Svg } from '../../assets/img/img/logoMiguel.svg';
 export function SvgLogoMiguel(){
     useEffect(() => {
-            (function(s:any,i:any,u:any,o:any,c:any,w:any,d:any,t:any,n:any,x:any,e,p,a,b){
+            (function(s:any,i:any,u:string,o:any,c:string,w:any,d:any,t:string,n:string,x:string,e,p,a,b){
                 w[o]=w[o]||{};
                 w[o][s]=w[o][s]||[];w[o][s].push(i);
                 e=d.createElementNS(n,t);

@@ -1,4 +1,5 @@
-import { SyntheticEvent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { FormattedMessage, injectIntl, IntlShape } from 'react-intl';
 import { Button } from '../../Atom/Button'
 import {ReactComponent as Close} from "../../../assets/img/icons/close.svg";
 import { Modal } from "../../Atom/Modal"
@@ -13,12 +14,12 @@ interface Props {
     setModalEndGame:React.Dispatch<React.SetStateAction<boolean>>;
     modeGame:ModeGame;
     getCard:(modeGameSelect: ModeGame) => void;
+    intl:IntlShape;
 }
-
-export const ModalEndGame = ({modalEndGame, errorCheck, timeGame, setModalEndGame, modeGame, getCard}:Props) => {
+export const ModalEndGame = injectIntl(({modalEndGame, errorCheck, timeGame, setModalEndGame, modeGame, getCard, intl}:Props) => {
     const playerName = useInputValue('', 8);
-    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
     const sendResultGame = async() => {
         if(playerName.value!=='' && timeGame>0 && errorCheck>=0) {
             setLoading(true);
@@ -43,12 +44,16 @@ export const ModalEndGame = ({modalEndGame, errorCheck, timeGame, setModalEndGam
             setError(false);
         }
     }, [playerName])
+    
   return (
         <Modal show={modalEndGame} maxWidth={450}>
                 <div className="ModalEndGame">
                   <div className="ModalEndGame__top">
                     <div className="ModalEndGame__top--text">
-                      Introduzca su nombre:
+                      <FormattedMessage
+                        id="app.modalEndGameEnterName"
+                        defaultMessage={`Introduzca su nombre:`}
+                      />
                     </div>
                     <div className="ModalEndGame__top--btn" onClick={()=>{
                       setModalEndGame(false);
@@ -59,19 +64,37 @@ export const ModalEndGame = ({modalEndGame, errorCheck, timeGame, setModalEndGam
                     </div>
                   </div>
                     <div className="ModalEndGame_text">
-                      Ingresa tu nombre para guardar tu récord
+                      <FormattedMessage
+                        id="app.modalEndGameEnterNameRecord"
+                        defaultMessage={`Ingresa tu nombre para guardar tu récord`}
+                      />
                     </div>
                     <div className="ModalEndGame_text">
-                      Cantidad de errores: {errorCheck} error(es)
+                      <FormattedMessage
+                        id="app.modalEndGameEnterCantError"
+                        defaultMessage={`Cantidad de errores: {errorCheck} error(es)`}
+                        values={{errorCheck}}
+                      />
                     </div>
                     <div className="ModalEndGame_text">
-                      Tiempo transcurrido: {timeGame} segundo(s)
+                      <FormattedMessage
+                        id="app.modalEndGameEnterCantTime"
+                        defaultMessage={`Tiempo transcurrido: {timeGame} segundo(s)`}
+                        values={{timeGame}}
+                      />
+                      
                     </div>
                     <div className="ModalEndGame_input">
-                      <input type="text" placeholder="Nombre (max: 8 caracteres)"className={`ModalEndGame_input--input ${error ? 'ModalEndGame_input--error' : ''}`} {...playerName} />
+                    <input type="text" placeholder={intl.formatMessage({
+                          defaultMessage: 'Nombre (max: 8 caracteres)',
+                          id: "app.modalEndGameInputPlaceHolder",
+                        })} className={`ModalEndGame_input--input ${error ? 'ModalEndGame_input--error' : ''}`} {...playerName} />
                       <div className="ModalEndGame_input--btn">
                           <Button ClickBtn={sendResultGame} loading={loading} disabled={loading}>
-                            Enviar
+                            <FormattedMessage
+                              id="app.modalEndGameSend"
+                              defaultMessage={`Enviar`}
+                            />
                           </Button>
                       </div>
                     </div>
@@ -79,4 +102,4 @@ export const ModalEndGame = ({modalEndGame, errorCheck, timeGame, setModalEndGam
                 </div>
         </Modal>
   )
-}
+})

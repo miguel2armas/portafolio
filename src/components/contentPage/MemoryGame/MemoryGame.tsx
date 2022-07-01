@@ -23,22 +23,22 @@ export const MemoryGame = () => {
       <div className="MemoryGame__title">
         <h2>
           <FormattedMessage
-                      id="app.gameTitleMemory"
-                      defaultMessage={`Juego de memoria`}
-                    />
+            id="app.gameTitleMemory"
+            defaultMessage={`Juego de memoria`}
+          />
         </h2>
         <p>
           <FormattedMessage
-                      id="app.gameDescriptionMemory"
-                      defaultMessage={`¡Ejercita tu memoria mientras intentas conseguir el primer lugar!`}
-                    />
+            id="app.gameDescriptionMemory"
+            defaultMessage={`¡Ejercita tu memoria mientras intentas conseguir el primer lugar!`}
+          />
         </p>
           <div className="MemoryGame__description">
             <div className="MemoryGame__description--name">
               <FormattedMessage
-                      id="app.gameDescriptionMemoryFails"
-                      defaultMessage={`Cantidad de fallas:`}
-                    />
+                id="app.gameDescriptionMemoryFails"
+                defaultMessage={`Cantidad de fallas:`}
+              />
             </div>
             <div className="MemoryGame__description--description">
             {errorCheck}
@@ -47,9 +47,9 @@ export const MemoryGame = () => {
           <div className="MemoryGame__description">
             <div className="MemoryGame__description--name">
               <FormattedMessage
-                      id="app.gameDescriptionMemoryTime"
-                      defaultMessage={`Tiempo transcurrido:`}
-                    />
+                id="app.gameDescriptionMemoryTime"
+                defaultMessage={`Tiempo transcurrido:`}
+              />
             </div>
             <div className="MemoryGame__description--description">
             {timeGame}
@@ -141,20 +141,39 @@ export const MemoryGame = () => {
                     modeGame===ModeGame.LEGEND ? (<Legend/>):
                     modeGame===ModeGame.NIGHTMARE ? (<Nightmare/>):null}
                   </div>
-                  <h3 className="TableH3">Mejores jugadores: <FormattedMessage id={`app.memoryName${getTypeGame(modeGame)}`} defaultMessage={`modo`}/>
+                  <h3 className="TableH3">
+                    <FormattedMessage
+                      id="app.memoryTableTitle"
+                      defaultMessage={`Mejores jugadores`}
+                    />: <FormattedMessage id={`app.memoryName${getTypeGame(modeGame)}`} defaultMessage={`modo`}/>
                   </h3>
                   <table className="TableReward">
                     <thead className="TableReward__head">
                       <tr className="TableReward__head--tr">
                         <th className="TableReward__head--th">#</th>
-                        <th className="TableReward__head--th">Nombre</th>
-                        <th className="TableReward__head--th">Tiempo</th>
-                        <th className="TableReward__head--th">Fallas</th>
+                        <th className="TableReward__head--th">
+                          <FormattedMessage
+                              id="app.memoryTableName"
+                              defaultMessage={`Nombre`}
+                            />
+                        </th>
+                        <th className="TableReward__head--th">
+                          <FormattedMessage
+                              id="app.memoryTableTime"
+                              defaultMessage={`Tiempo`}
+                            />
+                        </th>
+                        <th className="TableReward__head--th">
+                          <FormattedMessage
+                              id="app.memoryTableFails"
+                              defaultMessage={`Fallas`}
+                            />
+                        </th>
                       </tr>
                     </thead>
                     <tbody className="TableReward__body">
                       {memoryHistory?.map((history) =>{
-                        if(history.typeGame===getTypeGame(modeGame)){
+                        if(history.typeGame===getTypeGame(modeGame) && position<20){
                           position = position+1
                           return <tr key={history.id} className="TableReward__body--tr">
                                 <td className="TableReward__body--td">{position}</td>
@@ -171,7 +190,10 @@ export const MemoryGame = () => {
                           </tr>):
                         memoryHistory.length>0 && position===0?(<tr>
                             <td className="TableReward__body--td TableReward__body--text" colSpan={4}>
-                              Se el primero en completar el reto!
+                            <FormattedMessage
+                              id="app.memoryTableEmpty"
+                              defaultMessage={`¡Se el primero en completar el reto!`}
+                            />
                             </td>
                           </tr>):null}
                       

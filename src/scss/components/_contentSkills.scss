@@ -2,8 +2,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap:15px;
-    max-width: 1350px;
+    max-width: 1545px;
     margin: 0 auto;
+    padding: 0 20px 40px 20px;
     &__h2{
         text-align: center;
     }
@@ -246,12 +247,12 @@
             transform: scale(1.1) rotate(-72deg);
         }
     }
-    &__contentReact{
+    &__contentTs{
         width: 150px;
         height: 150px;
         border-radius: 50%;
         margin: auto;
-        background: linear-gradient(0deg, #0097A7 50%, #B2EBF2 50%);
+        background: linear-gradient(0deg, #388E3C 50%, #C8E6C9 50%);
         position: relative;
         transform: rotate(171deg);
         &::before{
@@ -279,7 +280,7 @@
             transform: scale(1.1) rotate(-171deg);
         }
     }
-    &__contentTs{
+    &__contentReact{
         width: 150px;
         height: 150px;
         border-radius: 50%;

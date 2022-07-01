@@ -1,0 +1,41 @@
+.contentContact{
+    display: flex;
+    width: 100%;
+    max-width: 1245px;
+    margin: 30px auto;
+    padding: 0 20px 40px 20px;
+    justify-content: flex-end;
+    &__h3{
+        text-align: center;
+        margin-top: 70px;
+    }
+    &__left{
+        width: 60%;
+    }
+    &__right{
+        width: 40%;
+        &--content{
+            padding:10px;
+        }
+        &--contentBtn{
+            display: flex;
+            padding: 15px;
+        }
+        &--input{
+            font-size: 14px;
+            width: 90%;
+            padding: 15px 20px;
+            border-radius: 8px;
+        }
+        &--textarea{
+            font-size: 14px;
+            width: 90%;
+            padding: 15px 20px;
+            border-radius: 8px;
+            min-height: 100px;
+        }
+        &--error{
+
+        }
+    }
+}
