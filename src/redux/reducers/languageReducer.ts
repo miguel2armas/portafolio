@@ -18,12 +18,10 @@ const setInitLanguage = ()=>{
 }
 export interface LanguageState {
   value: string;
-  status: 'idle' | 'loading' | 'failed';
 }
 
 const initialState: LanguageState = {
-  value: setInitLanguage(),
-  status: 'idle',
+  value: setInitLanguage()
 };
 
 export const languageSlice = createSlice({

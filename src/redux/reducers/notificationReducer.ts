@@ -1,33 +1,36 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 
-export interface NotificationState {
-  value: string;
+export interface Notification {
+  text: string;
   type: 'warning' | 'success';
   show: boolean;
 }
-
+export interface NotificationState {
+  value: Notification;
+}
 const initialState: NotificationState = {
-  value: '',
-  type: 'warning',
-  show: false
+  value: {
+    text:'',
+    type: 'warning',
+    show: false
+  },
 };
 
-export const showNotification = createSlice({
+export const NotificationSlice = createSlice({
   name: 'notification',
   initialState,
   reducers: {
-    setShowNotification: (state, action: PayloadAction<NotificationState>) => {
-      
-      state = action.payload;
+    setShowNotification: (state, action: PayloadAction<Notification>) => {
+      state.value = action.payload;
     },
   },
 });
 
-export const { setShowNotification } = showNotification.actions;
+export const { setShowNotification } = NotificationSlice.actions;
 
-export const NotificationOptions = (state: RootState) => state;
+export const NotificationOptions = (state: RootState) => state.notification.value;
 
-export default showNotification.reducer;
+export default NotificationSlice.reducer;
 
 

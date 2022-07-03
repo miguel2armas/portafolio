@@ -6,6 +6,8 @@ import { Modal } from "../../Atom/Modal"
 import { useInputValue } from '../../../hooks/useInputValue';
 import { db } from '../../../firebase/firebase';
 import { getTypeGame, ModeGame } from '../../../hooks/useCard';
+import { useAppDispatch } from '../../../redux/hooks';
+import { setShowNotification } from '../../../redux/reducers/notificationReducer';
 
 interface Props {
     modalEndGame:boolean;
@@ -17,6 +19,7 @@ interface Props {
     intl:IntlShape;
 }
 export const ModalEndGame = injectIntl(({modalEndGame, errorCheck, timeGame, setModalEndGame, modeGame, getCard, intl}:Props) => {
+    const dispatch = useAppDispatch();
     const playerName = useInputValue('', 8);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -34,9 +37,11 @@ export const ModalEndGame = injectIntl(({modalEndGame, errorCheck, timeGame, set
             setLoading(false);
             setModalEndGame(false);
             getCard(modeGame);
-            playerName?.onChange('')
+            playerName?.onChange('');
+            setNotification('Tus datos han sido guardados', 'success');
         }else{
             setError(true);
+            setNotification('Por favor escribe un mensaje más largo', 'warning');
         }
     }
     useEffect(() => {
@@ -45,6 +50,9 @@ export const ModalEndGame = injectIntl(({modalEndGame, errorCheck, timeGame, set
         }
     }, [playerName])
     
+    const setNotification = (text:string, type:'warning' | 'success') => {
+      dispatch(setShowNotification({text, type, show: true }));
+    }
   return (
         <Modal show={modalEndGame} maxWidth={450}>
                 <div className="ModalEndGame">
