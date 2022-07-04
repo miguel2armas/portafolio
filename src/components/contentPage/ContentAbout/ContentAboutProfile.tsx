@@ -12,6 +12,7 @@ import {ReactComponent as EmailIco} from "../../../assets/img/icons/email_ico.sv
 import {ReactComponent as LinkedinIco} from "../../../assets/img/icons/linkedin_ico.svg";
 import ImgBackground from '../../../assets/img/background-profile.webp'
 import ImgProfile from '../../../assets/img/profile-miguel.webp'
+import { FormattedMessage } from "react-intl";
 export const ContentAboutProfile = () => {
   return (
     <div className="contentAboutProfile">
@@ -26,17 +27,26 @@ export const ContentAboutProfile = () => {
                        <ProfileIco/> Miguel Armas
                     </div>
                     <div className="Card__top--title">
-                        Frontend and Mobile Developer
+                        <FormattedMessage
+                            id="app.ContentAboutProfileTitle"
+                            defaultMessage={`Desarrollador Frontend y Móvil`}
+                        />
                     </div>
                 </div>
             </div>
             <div className="Card__button">
                 <div className="Card__button--div">
                     <div className="Card__button--title">
-                        <CalendarIco/> EXPERIENCIA
+                        <CalendarIco/> <FormattedMessage
+                            id="app.ContentAboutProfileExp"
+                            defaultMessage={`EXPERIENCIA`}
+                        />
                     </div>
                     <div className="Card__button--description">
-                        4 Años
+                        4 <FormattedMessage
+                            id="app.ContentSkillsAges"
+                            defaultMessage={`años`}
+                        />
                     </div>
                 </div>
                 <div className="Card__button--div">
@@ -64,45 +74,66 @@ export const ContentAboutProfile = () => {
         <div className="Card Card__mt">
             <div className="Card__description">
                 <div className="Card__description--title">
-                    Sobre mi
+                    <FormattedMessage
+                        id="app.ContentAboutBtnMe"
+                        defaultMessage={`Sobre mi`}
+                    />
                 </div>
                 <div className="Card__description--description">
-                    Me apasiona la informática, siempre busco estar al día en las tecnologías que utilizo, además soy autodidacta y proactivo
+                    <FormattedMessage
+                        id="app.ContentAboutProfileDescription"
+                        defaultMessage={`Me apasiona la informática, siempre busco estar al día en las tecnologías que utilizo, además soy autodidacta y proactivo`}
+                    />
                 </div>
             </div>
             <div className="Card__item">
                 <div className="Card__item--left">
                     <div className="Card__item--text">
                         <OccupationIco/>
-                        Ocupación
+                            <FormattedMessage
+                                id="app.ContentAboutProfileOccupation"
+                                defaultMessage={`Ocupación`}
+                            />
                     </div>
                     <div className="Card__item--ico">
                       <ArrowLeftIco/>
                     </div>
                 </div>
                 <div className="Card__item--right">
-                    Frontend and Mobile Developer
+                    <FormattedMessage
+                        id="app.ContentAboutProfileTitle"
+                        defaultMessage={`Desarrollador Frontend y Móvil`}
+                    />
                 </div>
             </div>
             <div className="Card__item">
                 <div className="Card__item--left">
                     <div className="Card__item--text">
                         <BirthDateIco/>
-                        Fecha de cumpleaños
+                            <FormattedMessage
+                                id="app.ContentAboutProfileBirthDate"
+                                defaultMessage={`Fecha de cumpleaños`}
+                            />
                     </div>
                     <div className="Card__item--ico">
                       <ArrowLeftIco/>
                     </div>
                 </div>
                 <div className="Card__item--right">
-                    13 de Junio de 1989
+                    <FormattedMessage
+                        id="app.ContentAboutProfileBirthDateDate"
+                        defaultMessage={`13 de Junio de 1989`}
+                    />
                 </div>
             </div>
             <div className="Card__item">
                 <div className="Card__item--left">
                     <div className="Card__item--text">
                         <MobileIco/>
-                        Teléfono
+                        <FormattedMessage
+                            id="app.ContentAboutProfilePhone"
+                            defaultMessage={`Teléfono`}
+                        />
                     </div>
                     <div className="Card__item--ico">
                       <ArrowLeftIco/>
@@ -116,7 +147,10 @@ export const ContentAboutProfile = () => {
                 <div className="Card__item--left">
                     <div className="Card__item--text">
                         <MapIco/>
-                        Ubicación
+                        <FormattedMessage
+                            id="app.ContentAboutProfileLocation"
+                            defaultMessage={`Ubicación`}
+                        />
                     </div>
                     <div className="Card__item--ico">
                       <ArrowLeftIco/>
@@ -130,7 +164,10 @@ export const ContentAboutProfile = () => {
                 <div className="Card__item--left">
                     <div className="Card__item--text">
                         <PageIco/>
-                        Sitio Web
+                        <FormattedMessage
+                            id="app.ContentAboutProfileWebSite"
+                            defaultMessage={`Sitio Web`}
+                        />
                     </div>
                     <div className="Card__item--ico">
                       <ArrowLeftIco/>
@@ -144,7 +181,10 @@ export const ContentAboutProfile = () => {
                 <div className="Card__item--left">
                     <div className="Card__item--text">
                         <EmailIco/>
-                        Correo
+                        <FormattedMessage
+                            id="app.ContentAboutProfileEmail"
+                            defaultMessage={`Correo`}
+                        />
                     </div>
                     <div className="Card__item--ico">
                       <ArrowLeftIco/>
@@ -155,18 +195,23 @@ export const ContentAboutProfile = () => {
                 </div>
             </div>
         </div>
-        
         <div className="Card Card__mt">
             <div className="Card__description">
                 <div className="Card__description--titleTwo">
-                    Últimas actividades
+                    <FormattedMessage
+                        id="app.ContentAboutProfileLatestActivities"
+                        defaultMessage={`Últimas actividades`}
+                    />
                 </div>
             </div>
             <div className="Card__timeLine--body">
                 <ul className="Card__timeLine">
                     <li className="Card__timeLine--last">
                         <div className="Card__timeLine--date">
-                            18 DE ABRIL DE 2022 - ACTUALMENTE
+                            <FormattedMessage
+                                id="app.ContentAboutProfileDateITGlobers"
+                                defaultMessage={`Últimas actividades`}
+                            />
                         </div>
                         <div className="Card__timeLine--title">
                             ITGlobers
@@ -175,12 +220,15 @@ export const ContentAboutProfile = () => {
                             </a>
                         </div>
                         <div className="Card__timeLine--description">
-                            Desarrollador Front End Specialist ( Vtex frontend )
+                            Developer Front End Specialist ( Vtex frontend )
                         </div>
                     </li>
                     <li className="Card__timeLine--pass">
                         <div className="Card__timeLine--date">
-                            25 DE OCTUBRE DE 2021 - 08 DE ABRIL DE 2022
+                            <FormattedMessage
+                                id="app.ContentAboutProfileDateTitaMedia"
+                                defaultMessage={`25 DE OCTUBRE DE 2021 - 08 DE ABRIL DE 2022`}
+                            />
                         </div>
                         <div className="Card__timeLine--title">
                             Tita Media 
@@ -194,24 +242,36 @@ export const ContentAboutProfile = () => {
                     </li>
                     <li className="Card__timeLine--pass">
                         <div className="Card__timeLine--date">
-                            29 DE ENERO DE 2020 - 21 DE OCTUBRE DE 2021
+                            <FormattedMessage
+                                id="app.ContentAboutProfileDateEAndS"
+                                defaultMessage={`29 DE ENERO DE 2020 - 21 DE OCTUBRE DE 2021`}
+                            />
                         </div>
                         <div className="Card__timeLine--title">
                             Engineering & Services
                         </div>
                         <div className="Card__timeLine--description">
-                            Desarrollador de sitios web, aplicaciones móviles, publicidad ADS.
+                            <FormattedMessage
+                                id="app.ContentAboutProfileEAndS"
+                                defaultMessage={`Desarrollador de sitios web, aplicaciones móviles, publicidad ADS.`}
+                            />
                         </div>
                     </li>
                     <li className="Card__timeLine--pass">
                         <div className="Card__timeLine--date">
-                            01 DE MAYO DE 2018 - 20 DE MARZO DE 2019
+                            <FormattedMessage
+                                id="app.ContentAboutProfileDateUniversity"
+                                defaultMessage={`01 DE MAYO DE 2018 - 20 DE MARZO DE 2019`}
+                            />
                         </div>
                         <div className="Card__timeLine--title">
                             Instituto Universitario de Tecnología Dr. Cristóbal Mendoza
                         </div>
                         <div className="Card__timeLine--description">
-                            Profesor programación.
+                            <FormattedMessage
+                                id="app.ContentAboutProfileDateUniversityTitle"
+                                defaultMessage={`Profesor programación.`}
+                            />
                         </div>
                     </li>
                     <li className="Card__timeLine--pass">
@@ -222,7 +282,10 @@ export const ContentAboutProfile = () => {
                             Instituto Universitario de Tecnología Dr. Cristóbal Mendoza
                         </div>
                         <div className="Card__timeLine--description">
-                            Titulo: Técnico Superior Universitario en Informática
+                            <FormattedMessage
+                                id="app.ContentAboutProfileDateUniversityTitleTitle"
+                                defaultMessage={`Titulo`}
+                            />: Técnico Superior Universitario en Informática
                         </div>
                     </li>
                 </ul>

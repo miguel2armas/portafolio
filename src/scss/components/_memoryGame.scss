@@ -72,6 +72,11 @@
             border: 2px solid var(--primary-color);
             padding: 5px;
         }
+        &--tdNumber{
+            border: 2px solid var(--primary-color);
+            padding: 5px;
+            text-align: center;
+        }
         &--right{
             text-align: end;
         }

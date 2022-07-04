@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { FormattedMessage } from "react-intl"
 import { ContentAboutPage } from "./ContentAboutPage"
 import { ContentAboutProfile } from "./ContentAboutProfile"
 
@@ -12,10 +13,16 @@ export const ContentAbout = () => {
     <div className="contentAbout">
       <div className="contentAbout__top">
         <button className={`${pageSelect === Pages.page ? 'contentAbout__top--btnSelect': 'contentAbout__top--btn'}`} onClick={()=>setPageSelect(Pages.page)}>
-          Sobre el sitio web
+          <FormattedMessage
+            id="app.ContentAboutBtnSite"
+            defaultMessage={`Sobre el sitio web`}
+          />
         </button>
         <button className={`${pageSelect === Pages.profile ? 'contentAbout__top--btnSelect': 'contentAbout__top--btn'}`} onClick={()=>setPageSelect(Pages.profile)}>
-          Sobre mi
+          <FormattedMessage
+            id="app.ContentAboutBtnMe"
+            defaultMessage={`Sobre mi`}
+          />
         </button>
       </div>
       {pageSelect === Pages.page ? <ContentAboutPage/> : <ContentAboutProfile/>}

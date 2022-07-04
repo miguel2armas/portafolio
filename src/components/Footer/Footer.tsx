@@ -35,7 +35,10 @@ export const Footer = () => {
                   </a>
                 </div>
                 <div>
-                  Eres visitante número:
+                <FormattedMessage
+                    id="app.FooterVisitor"
+                    defaultMessage={`Eres visitante número:`}
+                  />
                   <span className="footer__right--span">
                     {countPage}
                   </span>

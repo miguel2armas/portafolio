@@ -38,13 +38,22 @@ export const ContentContact = injectIntl(({intl}:Props) => {
   const sendEmail = async(e:SyntheticEvent) =>{
     e.preventDefault();
     if(name.value.length<2){
-      setNotification('Por favor escribe un nombre valido', 'warning');
+      setNotification(intl.formatMessage({
+        defaultMessage: 'Por favor escribe un nombre valido',
+        id: "app.NotificationInvalidName",
+      }), 'warning');
       setErrorName(true);
     }else if(!emailValid.test(email.value)){
-      setNotification('Por favor escribe un correo valido', 'warning');
+      setNotification(intl.formatMessage({
+        defaultMessage: 'Por favor escribe un correo valido',
+        id: "app.NotificationInvalidEmail",
+      }), 'warning');
       setErrorMail(true);
     }else if(message.value.length<15){
-      setNotification('Por favor escribe un mensaje más largo', 'warning');
+      setNotification(intl.formatMessage({
+        defaultMessage: 'Por favor escribe un mensaje más largo',
+        id: "app.NotificationInvalidMessage",
+      }), 'warning');
       setErrorMessage(true);
     }else{
       setLoading(true);
@@ -54,9 +63,16 @@ export const ContentContact = injectIntl(({intl}:Props) => {
         email.onChange('');
         message.onChange('');
         setLoading(false);
-        setNotification('El mensaje ha sido enviado correctamente, gracias!', 'success');
+        setNotification(intl.formatMessage({
+          defaultMessage: 'El mensaje ha sido enviado correctamente, gracias!',
+          id: "app.NotificationSendMail",
+        }), 'success');
       } catch (error) {
-        setNotification('Ha ocurrido un error por favor vuelve a intentarlo', 'warning');
+        setLoading(false);
+        setNotification(intl.formatMessage({
+          defaultMessage: 'Ha ocurrido un error por favor vuelve a intentarlo',
+          id: "app.NotificationFailMail",
+        }), 'warning');
       }
     }
   }
@@ -90,13 +106,16 @@ export const ContentContact = injectIntl(({intl}:Props) => {
                 </div>
                 <div className="contentContact__right--content">
                 <textarea disabled={loading} placeholder={intl.formatMessage({
-                      defaultMessage: 'Mensaje',
+                      defaultMessage: 'Escríbeme un mensaje',
                       id: "app.ContentContactInputPlaceHolderMessage",
                     })} className={`contentContact__right--textarea ${errorMessage ? 'contentContact__right--error' : ''}`} {...message} name="message" />
                 </div>
             <div className="contentContact__right--contentBtn">
               <Button ClickBtn={()=>{}} type={'submit'} loading={loading} disabled={loading}>
-                Enviar
+                <FormattedMessage
+                  id="app.modalEndGameSend"
+                  defaultMessage={`Enviar`}
+                />
               </Button>
             </div>
           </form>

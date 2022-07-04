@@ -36,12 +36,11 @@ export const Header = () => {
                   id="app.about"
                   defaultMessage={`Acerca de`}
                 />
-
               </div>
             </div>
             <div className="header__right">
               <div className="header__link" onClick={() => dispatch(changeLanguage(currentLanguage==="es-CO"?"en-US":"es-CO"))}>
-                {currentLanguage==="es-CO"?<Es className="header__animation--text"/>:<En className="header__animation--text"/>}
+                {currentLanguage==="es-CO"?<En className="header__animation--text"/>:<Es className="header__animation--text"/>}
               </div>
               <div className="header__link" onClick={() => dispatch(changeTheme(currentTheme==="light"?"dark":"light"))}>
                 {currentTheme==="light"?<Moon className="header__animation"/>:<Sun className="header__animation"/>}

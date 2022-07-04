@@ -6,6 +6,9 @@ import { GripGame } from "./GripGame"
 import {ReactComponent as Loading} from "../../../assets/img/icons/loading.svg";
 import {ReactComponent as Puzzle} from "../../../assets/img/icons/puzzle.svg";
 import {ReactComponent as Skull} from "../../../assets/img/icons/skull.svg";
+import {ReactComponent as FirstReward} from "../../../assets/img/icons/first_reward.svg";
+import {ReactComponent as SecondReward} from "../../../assets/img/icons/second_reward.svg";
+import {ReactComponent as ThreeReward} from "../../../assets/img/icons/three_reward.svg";
 import {ReactComponent as Easy} from "../../../assets/img/img/easy.svg";
 import {ReactComponent as Normal} from "../../../assets/img/img/normal.svg";
 import {ReactComponent as Hard} from "../../../assets/img/img/hard.svg";
@@ -173,10 +176,15 @@ export const MemoryGame = () => {
                     </thead>
                     <tbody className="TableReward__body">
                       {memoryHistory?.map((history) =>{
-                        if(history.typeGame===getTypeGame(modeGame) && position<20){
+                        if(history.typeGame===getTypeGame(modeGame) && history.time > 15 && position<20){
                           position = position+1
                           return <tr key={history.id} className="TableReward__body--tr">
-                                <td className="TableReward__body--td">{position}</td>
+                                <td className="TableReward__body--tdNumber">
+                                  {position ===1 ? <FirstReward/>:
+                                  position ===2 ? <SecondReward/> :
+                                  position ===3 ? <ThreeReward/>:
+                                  position}
+                                </td>
                                 <td className="TableReward__body--td">{history.name}</td>
                                 <td className="TableReward__body--td TableReward__body--right">{history.time}</td>
                                 <td className="TableReward__body--td TableReward__body--right">{history.failCount}</td>

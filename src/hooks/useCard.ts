@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-import useSound from 'use-sound';
 import { useInterval } from 'usehooks-ts'
 import { CardData, getCards } from "../static/cards";
 import {db} from "../firebase/firebase";
 import { MemoryHistory } from '../types/types';
+import { useSound } from './useSound';
 
 export enum ModeGame {
     EASY,
@@ -21,11 +21,11 @@ export const getTypeGame = (type:ModeGame) =>{
     if(type===ModeGame.NIGHTMARE) return 'NIGHTMARE'
 }
 export const useCard = () =>{
-    const [soundStartGame] = useSound('/src/assets/sounds/startGame.mp3', { volume: 0.1 });
-    const [soundViewCard]  = useSound('/src/assets/sounds/viewCard.mp3', { volume: 0.1 });
-    const [soundCorrect]   = useSound('/src/assets/sounds/correct.wav', { volume: 0.1 });
-    const [soundError]     = useSound('/src/assets/sounds/error.wav', { volume: 0.1 });
-    const [soundEndGame]   = useSound('/src/assets/sounds/endGame.mp3', { volume: 0.1 });
+    const soundStartGame = useSound('/src/assets/sounds/startGame.mp3', 0.1);
+    const soundViewCard  = useSound('/src/assets/sounds/viewCard.mp3', 0.1);
+    const soundCorrect   = useSound('/src/assets/sounds/correct.wav', 0.1);
+    const soundError     = useSound('/src/assets/sounds/error.wav', 0.1);
+    const soundEndGame   = useSound('/src/assets/sounds/endGame.mp3', 0.1);
 
     const [cardData, setCardData] = useState([] as CardData[]);
     const [progress, setProgress] = useState(false);
@@ -91,11 +91,11 @@ export const useCard = () =>{
     const onCheck = (index:number) =>{
         if(!initGame){
             setInitGame(true);
-            soundStartGame();
+            soundStartGame.play();
         };
         let newCardData = [...cardData]
         newCardData[index].check=true;
-        soundViewCard();
+        soundViewCard.play();
         if(!currentSelectCard.id){
             setCardsCorrect(0);
             setCurrentSelectCard(newCardData[index]);
@@ -117,10 +117,10 @@ export const useCard = () =>{
                 if(!newCardData.some((card)=>card.check===false)){
                     setInitGame(false);
                     setModalEndGame(true);
-                    soundEndGame();
+                    soundEndGame.play();
                 }
                 setCardData(newCardData);
-                soundCorrect();
+                soundCorrect.play();
             }
             setTimeout(()=>{
                 if(!cardCorrect){
@@ -134,7 +134,7 @@ export const useCard = () =>{
                     setProgress(false);
                     setCurrentSelectCard({} as CardData);
                     setCardData(newCardData);
-                    soundError();
+                    soundError.play();
                 }
             }, 600)
 
