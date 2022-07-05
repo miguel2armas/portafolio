@@ -1,4 +1,5 @@
 import {useRef, useEffect, useCallback, useState, ReactNode, TouchEvent} from "react"
+import { useInterval } from "usehooks-ts";
 import {ReactComponent as ArrowLeft} from "../../assets/img/icons/arrow_left_slider.svg";
 import {ReactComponent as ArrowRight} from "../../assets/img/icons/arrow_right_slider.svg";
 interface Props {
@@ -8,12 +9,12 @@ interface Props {
     speed?:number;
     interval?:number;
 }
-export const Slider = ({ children, controls, autoplay, speed=1500, interval=6000 }:Props) =>{
+export const Slider = ({ children, controls, autoplay, speed=1500, interval=5000 }:Props) =>{
     const slideshow = useRef<HTMLDivElement | null>(null);
-    let intervalSlideshow:NodeJS.Timeout;
-    const [ondrag, setOndrag] = useState({init:0, end:0})
-    const clearTime = () => clearInterval(intervalSlideshow);
-    const setTime = () => intervalSlideshow =  setInterval(btn_next, interval);
+    const [ondrag, setOndrag] = useState({init:0, end:0});
+    const [pauseAutoPlay, setPauseAutoPlay] = useState(false);
+    const setTime = () =>setPauseAutoPlay(false);
+    const clearTime = () => setPauseAutoPlay(true);
 	useEffect(() => {
 		if(autoplay){
                setTime();
@@ -29,7 +30,12 @@ export const Slider = ({ children, controls, autoplay, speed=1500, interval=6000
             }
         }
 	}, []);
-
+    useInterval(
+        ()=>{
+            btn_next()
+        },
+        !pauseAutoPlay ? interval : null,
+      )
     const btn_next = useCallback(() => {
 		if(slideshow.current!==null && slideshow.current.children.length > 0){
             const firstChildren = slideshow.current.children[0] as typeof slideshow.current.children[0] & {

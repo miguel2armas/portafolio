@@ -92,5 +92,17 @@ export const es_CO = {
     "app.ContentAboutPageSiteFreePik": `Imágenes recopiladas en el sitio web.`,
     "app.ContentAboutPageSiteSvg": `Usada para crear las animaciones en las imágenes SVG.`,
     "app.FooterVisitor": `Eres visitante número:`,
+    "app.ContentPortfolioTitle": `Portafolio`,
+    "app.ContentPortfolioSubTitle": `Trabajos más recientes`,
+    "app.ContentPortfolioYamaha2Title": `Componente customizado buscador de partes`,
+    "app.ContentPortfolioComponentDescription": `Componente customizado en`,
+    "app.ContentPortfolioComponentDescriptionYamaha2": `con React que a partir de una lista de partes (productos) crea un buscador con opciones de modelo, año y tipo, ademas al seleccionar una parte, esta envia a una pagina adicional donde salen los componentes relacionados (productos) a esa parte y se pueden agregar al carrito uno a uno.`,
+    "app.ContentPortfolioComponentLinkWebSite": `ir al sitio web.`,
+    "app.ContentPortfolioComponentDescriptionYamaha3": `con React que reemplaza el componente nativo de lista de deseos el cual aumenta las funcionalidades y ademas funciona usando contexto de los productos y botones de compra nativo.`,
+    "app.ContentPortfolioComponentPageMap": `Página custom de mapa de tiendas`,
+    "app.ContentPortfolioComponentPageMap2": `con React para mostrar y buscar las tiendas de la empresa.`,
+    "app.ContentPortfolioComponentMyWebTitle": `Sitio web portafolio`,
+    "app.ContentPortfolioComponentMyWebDescription": `Sitio web creado con react usando typescript y scss como preprocesadores, ademas de usar algunas librerias para la base de datos y envio de correo electronico, se crearon imagenes SVG con animaciones y un juego de memoria con diferentes niveles.`,
+    "app.ContentPortfolioComponentLinkMyWeb": `ir al repositorio.`,
     
 }

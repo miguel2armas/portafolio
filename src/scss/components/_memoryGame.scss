@@ -37,29 +37,85 @@
         &--grip{
             padding: 0 5px 0 30px;
             display: flex;
-            width: 70%;
+            width: inherit;
         }
         &--data{
             padding: 0 30px 0 5px;
             display: flex;
-            width: 30%;
         }
-        
     }
 }
 .TableReward{
     width: 100%;
     border-color: #dee2e6;
     border-collapse: collapse;
+    &__none{
+        display: none;
+    }
     &__div{
-        margin: 0 auto;
+        margin: 5px auto;
     }
     &__content{
+        &--close{
+            background-color: var(--game-description-back-color);
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            border-radius: 5px;
+            margin: 0 auto;
+            height:320px;
+        }
+        &--text{
+            transform: rotate(90deg);
+            white-space: nowrap;
+            position: absolute;
+            bottom: -40px;
+            width: 0;
+            left: 18px;
+        }
+        &--textClose{
+            display: none;
+        }
         background-color: var(--game-description-back-color);
         padding: 0.5rem 1rem;
         border: 1px solid rgba(0, 0, 0, 0.125);
         border-radius: 5px;
         margin: 0 auto;
+        &--contentArrow{
+            flex-direction: column;
+            position: relative;
+        }
+        &--arrow{
+            margin-top: 5px;
+            display: flex;
+            background-color: var(--game-description-back-color);
+            padding: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.308);
+            border-radius: 18px;
+            width: fit-content;
+            box-shadow: 0 .2rem .5rem rgba(82, 82, 82, 0.596);
+            transform: translateY(0);
+            transition: transform .15s ease-in-out;
+            &:hover{
+                transform: translateY(-0.25em);
+                transition: transform .15s ease-in-out;
+            }
+        }
+        &--arrowClose{
+            margin-top: 5px;
+            display: flex;
+            background-color: var(--game-description-back-color);
+            padding: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.308);
+            border-radius: 18px;
+            width: fit-content;
+            box-shadow: 0 .2rem .5rem rgba(82, 82, 82, 0.596);
+            transform: translateY(0) rotate(180deg);
+            transition: transform .15s ease-in-out;
+            &:hover{
+                transform: translateY(-0.25em) rotate(180deg);
+                transition: transform .15s ease-in-out;
+            }
+        }
     }
     &__head{
         &--th{
@@ -76,6 +132,7 @@
             border: 2px solid var(--primary-color);
             padding: 5px;
             text-align: center;
+            filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
         }
         &--right{
             text-align: end;
@@ -89,7 +146,13 @@
 .TableIco{
     text-align: center;
     filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+    &__none{
+        display: none;
+    }
 }
 .TableH3{
     margin-top:0;
+    &__none{
+        display: none;
+    }
 }

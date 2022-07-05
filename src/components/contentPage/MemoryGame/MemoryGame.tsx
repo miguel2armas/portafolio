@@ -14,13 +14,15 @@ import {ReactComponent as Normal} from "../../../assets/img/img/normal.svg";
 import {ReactComponent as Hard} from "../../../assets/img/img/hard.svg";
 import {ReactComponent as Legend} from "../../../assets/img/img/legend.svg";
 import {ReactComponent as Nightmare} from "../../../assets/img/img/nightmare.svg";
+import {ReactComponent as Arrow} from "../../../assets/img/icons/arrow_link.svg";
 import { ModalEndGame } from "./ModalEndGame"
+import { useLocalStorage } from "../../../hooks/useLocalStorage";
 
 export const MemoryGame = () => {
   const { getCard, onCheck, cardData, cardsCorrect, progress, twoSelectCard, setModalEndGame, memoryHistory,
     errorCheck, timeGame, initGame, setModeGame, modeGame, modalEndGame } = useCard();
-
     let position = 0;
+    const [showBest, setShowBest ] = useLocalStorage('showBest', true);
   return (
     <div>
       <div className="MemoryGame__title">
@@ -136,21 +138,34 @@ export const MemoryGame = () => {
           </div>
           <div className="MemoryGame__content--data">
               <div className="TableReward__div">
-                <div className="TableReward__content">
-                  <div className="TableIco">
+                <div className={`${showBest ? 'TableReward__content' : 'TableReward__content--close'}`}>
+                    <div className="TableReward__content--contentArrow">
+                      <div className={`${showBest ? 'TableReward__content--arrow' : 'TableReward__content--arrowClose'}`} onClick={()=>setShowBest(!showBest)}>
+                        <Arrow/>
+                      </div>
+                      <div className={`${showBest ? 'TableReward__content--textClose' : 'TableReward__content--text'}`}>
+                        <h3>
+                        <FormattedMessage
+                          id="app.memoryTableTitle"
+                          defaultMessage={`Mejores jugadores`}
+                        />: <FormattedMessage id={`app.memoryName${getTypeGame(modeGame)}`} defaultMessage={`modo`}/>
+                        </h3>
+                      </div>
+                    </div>
+                  <div className={`${showBest ? 'TableIco':'TableIco__none'}`}>
                     {modeGame===ModeGame.EASY ? (<Easy/>):
                     modeGame===ModeGame.NORMAL ? (<Normal/>):
                     modeGame===ModeGame.HARD ? (<Hard/>):
                     modeGame===ModeGame.LEGEND ? (<Legend/>):
                     modeGame===ModeGame.NIGHTMARE ? (<Nightmare/>):null}
                   </div>
-                  <h3 className="TableH3">
+                  <h3 className={`${showBest ? 'TableH3':'TableH3__none'}`}>
                     <FormattedMessage
                       id="app.memoryTableTitle"
                       defaultMessage={`Mejores jugadores`}
                     />: <FormattedMessage id={`app.memoryName${getTypeGame(modeGame)}`} defaultMessage={`modo`}/>
                   </h3>
-                  <table className="TableReward">
+                  <table className={`${showBest ? 'TableReward':'TableReward__none'}`}>
                     <thead className="TableReward__head">
                       <tr className="TableReward__head--tr">
                         <th className="TableReward__head--th">#</th>
