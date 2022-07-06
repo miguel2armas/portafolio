@@ -1,6 +1,9 @@
 .MemoryGame{
     &__title{
         padding: 30px;
+        @media (max-width: $sm-desktop) {
+            padding: 10px 5px;
+        }
     }
     &__description{
         align-items: center;
@@ -73,6 +76,12 @@
     border-collapse: collapse;
     &__none{
         display: none;
+        @media (max-width: $sm-desktop) {
+            width: 100%;
+            border-color: #dee2e6;
+            border-collapse: collapse;
+            display: inline-table;
+        }
     }
     &__div{
         margin: 5px auto;
@@ -88,6 +97,9 @@
             border-radius: 5px;
             margin: 0 auto;
             height:320px;
+            @media (max-width: $sm-desktop) {
+                height:auto;
+            }
         }
         &--text{
             transform: rotate(90deg);
@@ -176,11 +188,22 @@
     filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
     &__none{
         display: none;
+        @media (max-width: $sm-desktop) {
+            display: block;
+            text-align: center;
+            filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+        }
     }
 }
 .TableH3{
     margin-top:0;
+    text-align: center;
     &__none{
         display: none;
+        @media (max-width: $sm-desktop) {
+            display: block;
+            margin-top:0;
+            text-align: center;
+        }
     }
 }
