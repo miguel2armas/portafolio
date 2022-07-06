@@ -3,9 +3,16 @@
     justify-content: space-between;
     margin: 80px auto 30px auto;
     width: 100%;
+    @media (max-width: $sm-desktop) {
+        flex-wrap: wrap;
+    }
     &__left{
         padding: 30px;
         width: 40%;
+        @media (max-width: $sm-desktop) {
+            width: 100%;
+            padding: 10px;
+        }
         &--svg{
             margin: 25px 0;
         }
@@ -15,6 +22,9 @@
     }
     &__right{
         width: 60%;
+        @media (max-width: $sm-desktop) {
+            width: 100%;
+        }
         &--svg{
             padding: 30px;
         }
@@ -22,6 +32,9 @@
     &__h1{
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
+        @media (max-width: $sm-desktop) {
+            font-size: 30px;
+        }
     }
     &__btn{
         width: 180px;

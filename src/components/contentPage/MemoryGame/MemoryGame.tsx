@@ -10,6 +10,7 @@ import {ReactComponent as FirstReward} from "../../../assets/img/icons/first_rew
 import {ReactComponent as SecondReward} from "../../../assets/img/icons/second_reward.svg";
 import {ReactComponent as ThreeReward} from "../../../assets/img/icons/three_reward.svg";
 import {ReactComponent as Easy} from "../../../assets/img/img/easy.svg";
+import { MutableRefObject } from "react";
 import {ReactComponent as Normal} from "../../../assets/img/img/normal.svg";
 import {ReactComponent as Hard} from "../../../assets/img/img/hard.svg";
 import {ReactComponent as Legend} from "../../../assets/img/img/legend.svg";
@@ -17,14 +18,17 @@ import {ReactComponent as Nightmare} from "../../../assets/img/img/nightmare.svg
 import {ReactComponent as Arrow} from "../../../assets/img/icons/arrow_link.svg";
 import { ModalEndGame } from "./ModalEndGame"
 import { useLocalStorage } from "../../../hooks/useLocalStorage";
+interface Props {
+  memoryGameRef:MutableRefObject<HTMLDivElement | null>
+}
 
-export const MemoryGame = () => {
+export const MemoryGame = ({memoryGameRef}:Props) => {
   const { getCard, onCheck, cardData, cardsCorrect, progress, twoSelectCard, setModalEndGame, memoryHistory,
     errorCheck, timeGame, initGame, setModeGame, modeGame, modalEndGame } = useCard();
     let position = 0;
     const [showBest, setShowBest ] = useLocalStorage('showBest', true);
   return (
-    <div>
+    <div ref={memoryGameRef}>
       <div className="MemoryGame__title">
         <h2>
           <FormattedMessage

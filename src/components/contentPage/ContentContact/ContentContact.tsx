@@ -1,4 +1,4 @@
-import { SyntheticEvent, useEffect, useRef, useState } from "react";
+import { MutableRefObject, SyntheticEvent, useEffect, useRef, useState } from "react";
 import { FormattedMessage, injectIntl, IntlShape } from "react-intl";
 import { useInputValue } from "../../../hooks/useInputValue";
 import { Button } from "../../Atom/Button";
@@ -10,9 +10,11 @@ const emailValid = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
 interface Props {
   intl:IntlShape;
+  contactRef:MutableRefObject<HTMLDivElement | null>
 }
 
-export const ContentContact = injectIntl(({intl}:Props) => {
+
+export const ContentContact = injectIntl(({intl, contactRef}:Props) => {
   const form = useRef<HTMLFormElement | null>(null);
   const dispatch = useAppDispatch();
   const name = useInputValue('');
@@ -80,7 +82,7 @@ export const ContentContact = injectIntl(({intl}:Props) => {
     dispatch(setShowNotification({text, type, show: true }));
   }
   return (
-    <div>
+    <div ref={contactRef}>
       <h3 className="contentContact__h3">
         <FormattedMessage 
           id="app.contentContactTitle" 

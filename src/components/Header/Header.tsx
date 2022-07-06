@@ -7,8 +7,15 @@ import {ReactComponent as En} from "../../assets/img/icons/en_white.svg";
 import LogoImg from "../../assets/img/img/logo.svg"
 import { changeLanguage, selectLanguage } from "../../redux/reducers/languageReducer";
 import { FormattedMessage } from "react-intl";
-
-export const Header = () => {
+import { BtnHover } from "../Page";
+interface Props {
+  goToMemoryDiv:() => void;
+  goToContentTopDiv:() => void;
+  goToContactRefDiv:() => void;
+  goToAboutRefRefDiv:() => void;
+  btnHover:BtnHover;
+}
+export const Header = ({goToMemoryDiv, goToContentTopDiv, goToContactRefDiv, goToAboutRefRefDiv, btnHover}:Props) => {
   const currentTheme = useAppSelector(selectTheme);
   const currentLanguage = useAppSelector(selectLanguage);
   const dispatch = useAppDispatch();
@@ -16,22 +23,22 @@ export const Header = () => {
         <header className="header">
           <div className="header__container">
             <div className="header__left">
-              <a className="header__link" href="/" rel="noreferrer">
+              <div className="header__link" onClick={goToContentTopDiv}>
                 <img className="header__link--img" src={LogoImg} alt="mad"/>
-              </a>
-              <div className="header__link--text">
+              </div>
+              <div className={`header__link--text ${btnHover === BtnHover.MEMORY? 'header__link--textHover': ''}`} onClick={goToMemoryDiv}>
               <FormattedMessage
                   id="app.memory_game"
                   defaultMessage={`juego de memoria`}
                 />
               </div>
-              <div className="header__link--text">
+              <div className={`header__link--text ${btnHover === BtnHover.CONTACT? 'header__link--textHover': ''}`} onClick={goToContactRefDiv}>
               <FormattedMessage
                   id="app.contact"
                   defaultMessage={`contacto`}
                 />
               </div>
-              <div className="header__link--text">
+              <div className={`header__link--text ${btnHover === BtnHover.ABOUT? 'header__link--textHover': ''}`} onClick={goToAboutRefRefDiv}>
               <FormattedMessage
                   id="app.about"
                   defaultMessage={`Acerca de`}

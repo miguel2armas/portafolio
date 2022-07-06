@@ -33,6 +33,9 @@
             min-height: calc(100% - 17.5rem);
             margin: 1.75rem auto;
             transition: transform .3s ease-out;
+            @media (max-width: $sm-desktop) {
+                max-width: 365px !important;
+            }
         }
     }
 }
@@ -64,6 +67,9 @@
             width: 69%;
             padding: 8px 20px;
             font-size: 22px;
+            @media (max-width: $sm-desktop) {
+                font-size: 14px;
+            }
         }
         &--error{
             border: 2px solid rgba(196, 4, 4, 0.74);

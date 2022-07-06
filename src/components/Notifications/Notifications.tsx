@@ -11,11 +11,7 @@ export const Notifications = () => {
     const notificationState = useAppSelector(NotificationOptions);
     
   const setCloseNotification = () => {
-    dispatch(setShowNotification({
-        text:'',
-        type: 'warning',
-        show: false
-      }));
+    dispatch(setShowNotification({...notificationState, show:false}));
     
   }
   const changeDelay =()=> {

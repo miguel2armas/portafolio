@@ -1,25 +1,27 @@
+import { MutableRefObject } from "react";
 import { FormattedMessage } from "react-intl"
 import { Button } from "../../Atom/Button"
 import { SvgLogoInitial } from "../../SvgAnimate/SvgLogoInitial"
 import { SvgLogoMiguel } from "../../SvgAnimate/SvgLogoMiguel"
 import {ReactComponent as Msn} from "../../../assets/img/icons/msn.svg";
-
-export const ContentTop = () => {
+interface Props {
+  contentTopRef:MutableRefObject<HTMLDivElement | null>
+  goToContactRefDiv:() => void;
+}
+export const ContentTop = ({contentTopRef, goToContactRefDiv}:Props) => {
   return (
-    <div className="contentTop">
+    <div className="contentTop" ref={contentTopRef}>
       <div className="contentTop__left">
         <div className="contentTop__left--svg">
           <SvgLogoMiguel/>
         </div>
         <div className="contentTop__left--text">
-          <div className="contentTop__h1">
-            <h1>
+            <h1 className="contentTop__h1">
               <FormattedMessage
                 id="app.salute"
                 defaultMessage={`Hola, Soy Miguel`}
               />
             </h1>
-          </div>
           <h5>
             <FormattedMessage
               id="app.developer_title"
@@ -39,7 +41,7 @@ export const ContentTop = () => {
             />
           </p>
           <div className="contentTop__btn">
-            <Button ClickBtn={()=>{}}>
+            <Button ClickBtn={()=>goToContactRefDiv()}>
               <>
                 <FormattedMessage
                   id="app.contact_me"

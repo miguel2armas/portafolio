@@ -34,7 +34,7 @@ export const Slider = ({ children, controls, autoplay, speed=1500, interval=5000
         ()=>{
             btn_next()
         },
-        !pauseAutoPlay ? interval : null,
+        autoplay && !pauseAutoPlay ? interval : null,
       )
     const btn_next = useCallback(() => {
 		if(slideshow.current!==null && slideshow.current.children.length > 0){

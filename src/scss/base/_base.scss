@@ -18,6 +18,9 @@ html[data-theme="dark"] {
     --header-color-link: #{$header_color_link_dark};
     --game-description-back-color: #{$description_color_back_dark};
 }
+/* *{
+    border: 1px solid red;
+} */
 body{
     background-color: var(--secondary-color);
     color: var(--primary-color);

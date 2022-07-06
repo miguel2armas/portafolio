@@ -23,7 +23,7 @@ export const ContentPortfolio = () => {
             defaultMessage={`Trabajos más recientes`}
           />
       </h3>
-      <Slider autoplay={true} controls={true}> 
+      <Slider autoplay={false} controls={true}> 
         <div className="ContentSlider">
           <div className="ContentSlider__left">
             <img src={Yamaha2Img} alt="yamaha" className="ContentSlider__left--img" />
