@@ -2,7 +2,10 @@
   "name": "miguel-armas",
   "private": true,
   "version": "0.2.0",
+  "homepage": "https://miguel-armas.com",
   "scripts": {
+    "predeploy": "npm run build && echo miguel-armas.com > ./build/CNAME",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
@@ -30,6 +33,6 @@
     "ts-node": "^10.8.2",
     "typescript": "^4.7.4",
     "vite": "^2.9.9",
-    "whatwg-fetch": "^3.6.2"
+    "gh-pages": "^3.2.3"
   }
 }
