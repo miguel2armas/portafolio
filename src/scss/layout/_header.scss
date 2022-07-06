@@ -1,0 +1,191 @@
+.header{
+    align-items: center;
+    background-color: var(--background-color-header);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 1px 0 0 rgb(58 58 58 / 70%);
+    &__container{
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        padding: 0 30px;
+        width: 100%;
+        @media (max-width: $sm-desktop) {
+            padding: 10px 0;
+        }
+    }
+    &__left{
+        display: flex;
+    }
+    &__right{
+        display: flex;
+    }
+    &__link{
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        padding: 0 15px;
+        @media (max-width: $sm-desktop) {
+            padding: 0 10px;
+        }
+        &--img{
+            height: 50px;
+        }
+        &--text{
+            align-items: center;
+            cursor: pointer;
+            display: flex;
+            font-weight: 700;
+            height: 80px;
+            padding: 0 15px;
+            &:hover{
+                background: var(--header-color-link);
+            }
+            @media (max-width: $sm-desktop) {
+                display: none;
+            }
+        }
+        &--textHover{
+            background: var(--header-color-link);
+        }
+    }
+    &__menu{
+        display: none;
+        align-items: center;
+        padding: 0 5px;
+        @media (max-width: $sm-desktop) {
+            display: flex;
+        }
+    }
+    &__animation{
+        animation: pulse 2s infinite, faBook 1s;
+        border-radius: 50%;
+        box-shadow: 0 0 0 0 rgb(58 58 58 / 70%);
+        transform: scale(1);
+    }
+    &__animation--text{
+        animation: pulse 2s infinite, flipRight 1s; 
+        border-radius: 50%;
+        box-shadow: 0 0 0 0 rgb(58 58 58 / 70%);
+        transform: scale(1);
+    }
+}
+.menuLine{
+    display: none;
+    fill: none;
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    @media (max-width: $sm-desktop) {
+        display: initial;
+    }
+    &__1 {
+        stroke-dasharray: 60 207;
+        stroke-width: 6;
+    }
+    &__2 {
+        stroke-dasharray: 60 60;
+        stroke-width: 6;
+    }
+    &__3 {
+        stroke-dasharray: 60 207;
+        stroke-width: 6;
+    }
+}
+.openMenu{
+    & .menuLine{
+        &__1 {
+            stroke-dasharray: 90 207;
+            stroke-dashoffset: -134;
+            stroke-width: 6;
+        }
+        &__2 {
+            stroke-dasharray: 1 60;
+            stroke-dashoffset: -30;
+            stroke-width: 6;
+        }
+        &__3 {
+            stroke-dasharray: 90 207;
+            stroke-dashoffset: -134;
+            stroke-width: 6;
+        }
+    }
+}
+.menuList{
+    display: none;
+    align-items: center;
+    background-color: var(--background-color-header);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 70px;
+    width: 100%;
+    z-index: 999;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .45s ease-in-out;
+    @media (max-width: $sm-desktop) {
+        display: initial;
+    }
+    &__open{
+        max-height: 500px;
+        transition: max-height .45s ease-in-out;
+    }
+    &__link{
+        text-align: center;
+        font-size:16px;
+        font-weight:500;
+        padding: 15px 0;
+        &--textHover{
+            font-size:18px;
+            font-weight:700;
+            filter: drop-shadow(5px 5px 5px rgb(121, 121, 121));
+        }
+    }
+}
+@keyframes flipRight {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+@keyframes faBook {
+    0% {
+        opacity: 0;
+        transform: rotate(-90deg);
+    }
+
+
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(58, 58, 58, 0.7);
+        transform: scale(0.8);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+        transform: scale(1);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        transform: scale(0.8);
+    }
+}

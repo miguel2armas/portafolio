@@ -1,0 +1,777 @@
+.ContentSkills{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap:15px;
+    max-width: 1545px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+    @media (max-width: $sm-desktop) {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap:5px;
+    }
+    &__h2{
+        text-align: center;
+    }
+}
+.Item{
+    background-color: var(--game-description-back-color);
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+    &__contentHtml{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #388E3C 50%, #C8E6C9 50%);
+        position: relative;
+        transform: rotate(180deg);
+        @media (max-width: $sm-desktop) {
+            width: 120px;
+            height: 120px;
+        }
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-180deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-180deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+    &__contentCss{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #388E3C 50%, #C8E6C9 50%);
+        position: relative;
+        transform: rotate(180deg);
+        @media (max-width: $sm-desktop) {
+            width: 120px;
+            height: 120px;
+        }
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-180deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-180deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+    &__contentJs{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #388E3C 50%, #C8E6C9 50%);
+        position: relative;
+        transform: rotate(171deg);
+        @media (max-width: $sm-desktop) {
+            width: 120px;
+            height: 120px;
+        }
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-171deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-171deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+    &__contentPhp{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #388E3C 50%, #C8E6C9 50%);
+        position: relative;
+        transform: rotate(171deg);
+        @media (max-width: $sm-desktop) {
+            width: 120px;
+            height: 120px;
+        }
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-171deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-171deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+    &__contentDart{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #388E3C 50%, #C8E6C9 50%);
+        position: relative;
+        transform: rotate(144deg);
+        @media (max-width: $sm-desktop) {
+            width: 120px;
+            height: 120px;
+        }
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-144deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-144deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+    &__contentJava{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #388E3C 50%, #C8E6C9 50%);
+        position: relative;
+        transform: rotate(90deg);
+        @media (max-width: $sm-desktop) {
+            width: 120px;
+            height: 120px;
+        }
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-90deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-90deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+    &__contentKotlin{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #388E3C 50%, #C8E6C9 50%);
+        position: relative;
+        transform: rotate(72deg);
+        @media (max-width: $sm-desktop) {
+            width: 120px;
+            height: 120px;
+        }
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-72deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-72deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+    &__contentTs{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #388E3C 50%, #C8E6C9 50%);
+        position: relative;
+        transform: rotate(171deg);
+        @media (max-width: $sm-desktop) {
+            width: 120px;
+            height: 120px;
+        }
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-171deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-171deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+    &__contentReact{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #0097A7 50%, #B2EBF2 50%);
+        position: relative;
+        transform: rotate(171deg);
+        @media (max-width: $sm-desktop) {
+            width: 120px;
+            height: 120px;
+        }
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-171deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-171deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+    &__contentSass{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #0097A7 50%, #B2EBF2 50%);
+        position: relative;
+        transform: rotate(171deg);
+        @media (max-width: $sm-desktop) {
+            width: 120px;
+            height: 120px;
+        }
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-171deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-171deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+    &__contentVtex{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #0097A7 50%, #B2EBF2 50%);
+        position: relative;
+        transform: rotate(153deg);
+        @media (max-width: $sm-desktop) {
+            width: 120px;
+            height: 120px;
+        }
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-153deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-153deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+    &__contentGit{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #0097A7 50%, #B2EBF2 50%);
+        position: relative;
+        transform: rotate(162deg);
+        @media (max-width: $sm-desktop) {
+            width: 120px;
+            height: 120px;
+        }
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-162deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-162deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+    &__contentFlutter{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #0097A7 50%, #B2EBF2 50%);
+        position: relative;
+        transform: rotate(144deg);
+        @media (max-width: $sm-desktop) {
+            width: 120px;
+            height: 120px;
+        }
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-144deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-144deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+    &__contentPrestashop{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #0097A7 50%, #B2EBF2 50%);
+        position: relative;
+        transform: rotate(144deg);
+        @media (max-width: $sm-desktop) {
+            width: 120px;
+            height: 120px;
+        }
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-144deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-144deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+    &__contentAndroid{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #0097A7 50%, #B2EBF2 50%);
+        position: relative;
+        transform: rotate(108deg);
+        @media (max-width: $sm-desktop) {
+            width: 120px;
+            height: 120px;
+        }
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-108deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-108deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+    &__contentLaravel{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        background: linear-gradient(0deg, #0097A7 50%, #B2EBF2 50%);
+        position: relative;
+        transform: rotate(162deg);
+        @media (max-width: $sm-desktop) {
+            width: 120px;
+            height: 120px;
+        }
+        &::before{
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: var(--game-description-back-color) content-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            transform: rotate(-162deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background: linear-gradient(transparent 50%, var(--game-description-back-color) 50%);
+            transform: scale(1.1) rotate(-162deg);
+            @media (max-width: $sm-desktop) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+    &__img{
+        width: 60%;
+        height: 60%;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        object-fit: contain;
+        margin: auto;
+        height: 105px;
+        bottom: 8px;
+        filter: drop-shadow(5px 5px 5px #222);
+        @media (max-width: $sm-desktop) {
+            height: 70px;
+        }
+    }
+    &__text{
+        top: 55px;
+        left: 0;
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        @media (max-width: $sm-desktop) {
+            font-size: 12px;
+        }
+    }
+    &__textYear{
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        z-index: 1;
+        font-weight: 700;
+        filter: drop-shadow(2px 2px 2px rgba(34, 34, 34, 0.5)) drop-shadow(2px 2px 2px rgba(34, 34, 34, 0.5));
+    }
+}
