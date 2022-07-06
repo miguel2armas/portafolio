@@ -8,7 +8,6 @@ import { db } from '../../../firebase/firebase';
 import { getTypeGame, ModeGame } from '../../../hooks/useCard';
 import { useAppDispatch } from '../../../redux/hooks';
 import { setShowNotification } from '../../../redux/reducers/notificationReducer';
-
 interface Props {
     modalEndGame:boolean;
     errorCheck:number;
@@ -111,3 +110,4 @@ export const ModalEndGame = injectIntl(({modalEndGame, errorCheck, timeGame, set
         </Modal>
   )
 })
+

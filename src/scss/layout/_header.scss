@@ -57,9 +57,12 @@
         }
     }
     &__menu{
-        display: flex;
+        display: none;
         align-items: center;
         padding: 0 5px;
+        @media (max-width: $sm-desktop) {
+            display: flex;
+        }
     }
     &__animation{
         animation: pulse 2s infinite, faBook 1s;

@@ -3,6 +3,7 @@ import LogoImg from "../../assets/img/img/logo.svg"
 import {ReactComponent as Facebook} from "../../assets/img/icons/facebook.svg";
 import {ReactComponent as GitHub} from "../../assets/img/icons/git_hub.svg";
 import {ReactComponent as WhatsApp} from "../../assets/img/icons/whatsapp.svg";
+import {ReactComponent as Linkedin} from "../../assets/img/icons/linkedin.svg";
 import { useCountPage } from "../../hooks/useCountPage";
 
 export const Footer = () => {
@@ -26,6 +27,9 @@ export const Footer = () => {
                 <div className="footer__right--link">
                   <a className="footer__right--ico" href="https://www.facebook.com/miguel.armasmoreno/" target={"_blank"} rel="noreferrer">
                     <Facebook/>
+                  </a>
+                  <a className="footer__right--ico" href="https://www.linkedin.com/in/miguel-angel-armas/" target={"_blank"} rel="noreferrer">
+                    <Linkedin/>
                   </a>
                   <a className="footer__right--ico" href="https://github.com/miguel2armas" target={"_blank"} rel="noreferrer">
                     <GitHub/>

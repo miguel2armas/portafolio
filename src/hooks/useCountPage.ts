@@ -4,7 +4,8 @@ import { useCookie } from "./useCookie";
 
 export const useCountPage = () =>{
     const {value, setCookie } = useCookie('countPage', '');
-    const [count, setCount] = useState({id:'', value:0})
+    const [count, setCount] = useState({id:'', value:0});
+    
     const getCount = async ()=>{
         await db.collection("countPage")
             .onSnapshot((res)=>{
