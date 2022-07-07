@@ -41,6 +41,8 @@ export const en_US = {
     "app.modalEndGameEnterCantError": `Number of errors: {errorCheck} error(s)`,
     "app.modalEndGameEnterCantTime": `Elapsed time: {timeGame} second(s)`,
     "app.modalEndGameSend": `Send`,
+    "app.endGameSend": `Your information has been saved`,
+    "app.endGameFail": `Please write a longer name`,
     "app.modalEndGameInputPlaceHolder": `Name (max: 8 characters)`,
     "app.ContentContactInputPlaceHolderName": `Name`,
     "app.ContentContactInputPlaceHolderEmail": `Email`,

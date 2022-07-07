@@ -41,6 +41,8 @@ export const es_CO = {
     "app.modalEndGameEnterCantError": `Cantidad de errores: {errorCheck} error(es)`,
     "app.modalEndGameEnterCantTime": `Tiempo transcurrido: {timeGame} segundo(s)`,
     "app.modalEndGameSend": `Enviar`,
+    "app.endGameSend": `Tus datos han sido guardados`,
+    "app.endGameFail": `Por favor escribe un nombre más largo`,
     "app.modalEndGameInputPlaceHolder": `Nombre (max: 8 caracteres)`,
     "app.ContentContactInputPlaceHolderName": `Nombre`,
     "app.ContentContactInputPlaceHolderEmail": `Correo`,

@@ -37,10 +37,16 @@ export const ModalEndGame = injectIntl(({modalEndGame, errorCheck, timeGame, set
             setModalEndGame(false);
             getCard(modeGame);
             playerName?.onChange('');
-            setNotification('Tus datos han sido guardados', 'success');
+            setNotification(intl.formatMessage({
+              defaultMessage: 'Tus datos han sido guardados',
+              id: "app.endGameSend",
+            }), 'success');
         }else{
             setError(true);
-            setNotification('Por favor escribe un nombre más largo', 'warning');
+            setNotification(intl.formatMessage({
+              defaultMessage: 'Por favor escribe un nombre más largo',
+              id: "app.endGameFail",
+            }), 'warning');
         }
     }
     useEffect(() => {
