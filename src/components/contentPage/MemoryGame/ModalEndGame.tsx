@@ -23,10 +23,10 @@ export const ModalEndGame = injectIntl(({modalEndGame, errorCheck, timeGame, set
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
     const sendResultGame = async() => {
-        if(playerName.value!=='' && timeGame>0 && errorCheck>=0) {
+        if(playerName.value.trim()!=='' && timeGame>0 && errorCheck>=0) {
             setLoading(true);
             const data = {
-                name: playerName.value,
+                name: playerName.value.trim(),
                 time: timeGame,
                 failCount: errorCheck,
                 create_at: new Date().toISOString(),

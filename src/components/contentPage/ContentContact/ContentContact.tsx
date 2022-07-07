@@ -39,7 +39,7 @@ export const ContentContact = injectIntl(({intl, contactRef}:Props) => {
 
   const sendEmail = async(e:SyntheticEvent) =>{
     e.preventDefault();
-    if(name.value.length<2){
+    if(name.value.trim().length<2){
       setNotification(intl.formatMessage({
         defaultMessage: 'Por favor escribe un nombre valido',
         id: "app.NotificationInvalidName",
@@ -51,7 +51,7 @@ export const ContentContact = injectIntl(({intl, contactRef}:Props) => {
         id: "app.NotificationInvalidEmail",
       }), 'warning');
       setErrorMail(true);
-    }else if(message.value.length<15){
+    }else if(message.value.trim().length<15){
       setNotification(intl.formatMessage({
         defaultMessage: 'Por favor escribe un mensaje más largo',
         id: "app.NotificationInvalidMessage",
