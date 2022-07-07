@@ -40,7 +40,7 @@ export const ModalEndGame = injectIntl(({modalEndGame, errorCheck, timeGame, set
             setNotification('Tus datos han sido guardados', 'success');
         }else{
             setError(true);
-            setNotification('Por favor escribe un mensaje más largo', 'warning');
+            setNotification('Por favor escribe un nombre más largo', 'warning');
         }
     }
     useEffect(() => {
