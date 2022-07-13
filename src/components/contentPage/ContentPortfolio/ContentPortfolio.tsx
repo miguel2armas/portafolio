@@ -1,11 +1,11 @@
 import { Slider } from "../../Atom/Slider"
-import EstraImg from "../../../assets/img/portfolio/estra.webp"
-import Yamaha1Img from "../../../assets/img/portfolio/yamaha1.webp"
-import ElectrobelloImg from "../../../assets/img/portfolio/electrobello.webp"
-import Yamaha3Img from "../../../assets/img/portfolio/yamaha3.webp"
-import Yamaha2Img from "../../../assets/img/portfolio/yamaha2.webp"
-import MiguelArmasImg from "../../../assets/img/portfolio/miguel-armas.webp"
-import {ReactComponent as Arrow} from "../../../assets/img/icons/arrow_link.svg";
+import EstraImg from "../../../../assets/img/portfolio/estra.webp"
+import Yamaha1Img from "../../../../assets/img/portfolio/yamaha1.webp"
+import ElectrobelloImg from "../../../../assets/img/portfolio/electrobello.webp"
+import Yamaha3Img from "../../../../assets/img/portfolio/yamaha3.webp"
+import Yamaha2Img from "../../../../assets/img/portfolio/yamaha2.webp"
+import MiguelArmasImg from "../../../../assets/img/portfolio/miguel-armas.webp"
+import {ReactComponent as Arrow} from "../../../../assets/img/icons/arrow_link.svg";
 import { FormattedMessage } from "react-intl"
 const VtexLink = () => <a className="ContentSlider__a" href="https://developers.vtex.com/vtex-developer-docs/docs/welcome" target={"_blank"} rel="noreferrer">Vtex IO</a>;
 export const ContentPortfolio = () => {

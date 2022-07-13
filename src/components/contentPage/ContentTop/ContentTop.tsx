@@ -3,7 +3,7 @@ import { FormattedMessage } from "react-intl"
 import { Button } from "../../Atom/Button"
 import { SvgLogoInitial } from "../../SvgAnimate/SvgLogoInitial"
 import { SvgLogoMiguel } from "../../SvgAnimate/SvgLogoMiguel"
-import {ReactComponent as Msn} from "../../../assets/img/icons/msn.svg";
+import {ReactComponent as Msn} from "../../../../assets/img/icons/msn.svg";
 interface Props {
   contentTopRef:MutableRefObject<HTMLDivElement | null>
   goToContactRefDiv:() => void;

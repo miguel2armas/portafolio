@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FormattedMessage, injectIntl, IntlShape } from 'react-intl';
 import { Button } from '../../Atom/Button'
-import {ReactComponent as Close} from "../../../assets/img/icons/close.svg";
+import {ReactComponent as Close} from "../../../../assets/img/icons/close.svg";
 import { Modal } from "../../Atom/Modal"
 import { useInputValue } from '../../../hooks/useInputValue';
 import { db } from '../../../firebase/firebase';

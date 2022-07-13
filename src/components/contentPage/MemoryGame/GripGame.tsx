@@ -1,4 +1,4 @@
-import Check from '../../../assets/img/imgGame/check.webp'
+import Check from '../../../../assets/img/imgGame/check.webp'
 import { CardData } from '../../../static/cards';
 interface Props{
   onCheck:Function;

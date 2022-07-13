@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ReactComponent as Svg } from '../../assets/img/img/logo_init_miguel.svg';
+import { ReactComponent as Svg } from '../../../assets/img/img/logo_init_miguel.svg';
 
 export function SvgLogoInitial(){
     useEffect(() => {

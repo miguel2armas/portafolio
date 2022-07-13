@@ -10,7 +10,7 @@ const createCards = (index:number[]) =>{
     index.forEach((i)=>{
         let card ={
             id: i,
-            img: `/src/assets/image/${i}.webp`,
+            img: `/assets/image/${i}.webp`,
             check : false
         }
         cards = [...cards, card];

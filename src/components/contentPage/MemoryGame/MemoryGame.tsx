@@ -3,19 +3,19 @@ import { FormattedMessage } from "react-intl"
 import { getTypeGame, ModeGame, useCard } from "../../../hooks/useCard"
 import { Button } from "../../Atom/Button"
 import { GripGame } from "./GripGame"
-import {ReactComponent as Loading} from "../../../assets/img/icons/loading.svg";
-import {ReactComponent as Puzzle} from "../../../assets/img/icons/puzzle.svg";
-import {ReactComponent as Skull} from "../../../assets/img/icons/skull.svg";
-import {ReactComponent as FirstReward} from "../../../assets/img/icons/first_reward.svg";
-import {ReactComponent as SecondReward} from "../../../assets/img/icons/second_reward.svg";
-import {ReactComponent as ThreeReward} from "../../../assets/img/icons/three_reward.svg";
-import {ReactComponent as Easy} from "../../../assets/img/img/easy.svg";
+import {ReactComponent as Loading} from "../../../../assets/img/icons/loading.svg";
+import {ReactComponent as Puzzle} from "../../../../assets/img/icons/puzzle.svg";
+import {ReactComponent as Skull} from "../../../../assets/img/icons/skull.svg";
+import {ReactComponent as FirstReward} from "../../../../assets/img/icons/first_reward.svg";
+import {ReactComponent as SecondReward} from "../../../../assets/img/icons/second_reward.svg";
+import {ReactComponent as ThreeReward} from "../../../../assets/img/icons/three_reward.svg";
+import {ReactComponent as Easy} from "../../../../assets/img/img/easy.svg";
 import { MutableRefObject } from "react";
-import {ReactComponent as Normal} from "../../../assets/img/img/normal.svg";
-import {ReactComponent as Hard} from "../../../assets/img/img/hard.svg";
-import {ReactComponent as Legend} from "../../../assets/img/img/legend.svg";
-import {ReactComponent as Nightmare} from "../../../assets/img/img/nightmare.svg";
-import {ReactComponent as Arrow} from "../../../assets/img/icons/arrow_link.svg";
+import {ReactComponent as Normal} from "../../../../assets/img/img/normal.svg";
+import {ReactComponent as Hard} from "../../../../assets/img/img/hard.svg";
+import {ReactComponent as Legend} from "../../../../assets/img/img/legend.svg";
+import {ReactComponent as Nightmare} from "../../../../assets/img/img/nightmare.svg";
+import {ReactComponent as Arrow} from "../../../../assets/img/icons/arrow_link.svg";
 import { ModalEndGame } from "./ModalEndGame"
 import { useLocalStorage } from "../../../hooks/useLocalStorage";
 interface Props {

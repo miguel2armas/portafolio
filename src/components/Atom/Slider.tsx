@@ -1,7 +1,7 @@
 import {useRef, useEffect, useCallback, useState, ReactNode, TouchEvent} from "react"
 import { useInterval } from "usehooks-ts";
-import {ReactComponent as ArrowLeft} from "../../assets/img/icons/arrow_left_slider.svg";
-import {ReactComponent as ArrowRight} from "../../assets/img/icons/arrow_right_slider.svg";
+import {ReactComponent as ArrowLeft} from "../../../assets/img/icons/arrow_left_slider.svg";
+import {ReactComponent as ArrowRight} from "../../../assets/img/icons/arrow_right_slider.svg";
 interface Props {
     children:ReactNode;
     controls:boolean;

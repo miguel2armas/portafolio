@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ReactComponent as Svg } from '../../assets/img/img/pc_mail_contact.svg';
+import { ReactComponent as Svg } from '../../../assets/img/img/pc_mail_contact.svg';
 
 export function SvgLogoEmail(){
     useEffect(() => {

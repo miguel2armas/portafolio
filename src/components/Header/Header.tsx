@@ -1,11 +1,11 @@
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { changeTheme, selectTheme } from "../../redux/reducers/themeReducer";
-import {ReactComponent as Sun} from "../../assets/img/icons/sun.svg";
-import {ReactComponent as Moon} from "../../assets/img/icons/moon.svg";
-import {ReactComponent as Es} from "../../assets/img/icons/es_white.svg";
-import {ReactComponent as En} from "../../assets/img/icons/en_white.svg";
-import {ReactComponent as Menu} from "../../assets/img/icons/menu_ico.svg";
-import LogoImg from "../../assets/img/img/logo.svg"
+import {ReactComponent as Sun} from "../../../assets/img/icons/sun.svg";
+import {ReactComponent as Moon} from "../../../assets/img/icons/moon.svg";
+import {ReactComponent as Es} from "../../../assets/img/icons/es_white.svg";
+import {ReactComponent as En} from "../../../assets/img/icons/en_white.svg";
+import {ReactComponent as Menu} from "../../../assets/img/icons/menu_ico.svg";
+import LogoImg from "../../../assets/img/img/logo.svg"
 import { changeLanguage, selectLanguage } from "../../redux/reducers/languageReducer";
 import { FormattedMessage } from "react-intl";
 import { BtnHover } from "../Page";

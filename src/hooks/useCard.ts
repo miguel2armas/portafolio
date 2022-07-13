@@ -21,11 +21,11 @@ export const getTypeGame = (type:ModeGame) =>{
     if(type===ModeGame.NIGHTMARE) return 'NIGHTMARE'
 }
 export const useCard = () =>{
-    const soundStartGame = useSound('/src/assets/sounds/startGame.mp3', 0.1);
-    const soundViewCard  = useSound('/src/assets/sounds/viewCard.mp3', 0.1);
-    const soundCorrect   = useSound('/src/assets/sounds/correct.wav', 0.1);
-    const soundError     = useSound('/src/assets/sounds/error.wav', 0.1);
-    const soundEndGame   = useSound('/src/assets/sounds/endGame.mp3', 0.1);
+    const soundStartGame = useSound('/assets/sounds/startGame.mp3', 0.1);
+    const soundViewCard  = useSound('/assets/sounds/viewCard.mp3', 0.1);
+    const soundCorrect   = useSound('/assets/sounds/correct.wav', 0.1);
+    const soundError     = useSound('/assets/sounds/error.wav', 0.1);
+    const soundEndGame   = useSound('/assets/sounds/endGame.mp3', 0.1);
 
     const [cardData, setCardData] = useState([] as CardData[]);
     const [progress, setProgress] = useState(false);

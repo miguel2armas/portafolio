@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ReactComponent as Svg } from '../../assets/img/img/logoMiguel.svg';
+import { ReactComponent as Svg } from '../../../assets/img/img/logoMiguel.svg';
 export function SvgLogoMiguel(){
     useEffect(() => {
             (function(s:any,i:any,u:string,o:any,c:string,w:any,d:any,t:string,n:string,x:string,e,p,a,b){

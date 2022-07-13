@@ -1,6 +1,6 @@
-import {ReactComponent as SuccessSvg} from "../../assets/img/icons/success.svg";
-import {ReactComponent as WarningSvg} from "../../assets/img/icons/warning.svg";
-import {ReactComponent as CloseSvg} from "../../assets/img/icons/close.svg";
+import {ReactComponent as SuccessSvg} from "../../../assets/img/icons/success.svg";
+import {ReactComponent as WarningSvg} from "../../../assets/img/icons/warning.svg";
+import {ReactComponent as CloseSvg} from "../../../assets/img/icons/close.svg";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { useEffect, useState } from "react";
 import { NotificationOptions, setShowNotification } from "../../redux/reducers/notificationReducer";
