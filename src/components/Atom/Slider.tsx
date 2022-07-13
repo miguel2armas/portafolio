@@ -78,7 +78,11 @@ export const Slider = ({ children, controls, autoplay, speed=1500, interval=5000
 	}
         useEffect(() => {
             if(ondrag.init!==ondrag.end){
-                ondrag.init>ondrag.end ? btn_next() : btn_back();
+                const errorMarginTop = ondrag.init+20;
+                const errorMarginBottom = ondrag.init-20;
+                if(errorMarginTop<ondrag.end || errorMarginBottom>ondrag.end){
+                    ondrag.init>ondrag.end ? btn_next() : btn_back();
+                }
             }
         }, [ondrag])
        const dragStart=(e:TouchEvent<HTMLDivElement>)=>{
