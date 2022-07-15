@@ -87,7 +87,7 @@
             font-size: 16px;
             font-weight: 100;
             padding: 0 25px;
-            color: #858585;
+            color: #bdbdbd;
             @media (max-width: $sm-desktop) {
                 text-align:center;
             }
@@ -103,7 +103,7 @@
             padding: 5px 25px;
         }
         &--title{
-            color: #858585;
+            color: #bdbdbd;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -127,7 +127,7 @@
             padding-bottom: 5px;
         }
         &--description{
-            color: #858585;
+            color: #bdbdbd;
             padding-bottom: 25px;
             border-bottom: 2px solid #858585;
             margin-bottom: 25px;
@@ -229,7 +229,7 @@
             }
         }
         &--date{
-            color: #858585;
+            color: #bdbdbd;
             padding: 5px 0;
         }
         &--title{

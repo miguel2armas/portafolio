@@ -7,7 +7,7 @@ import Yamaha2Img from "../../../../assets/img/portfolio/yamaha2.webp"
 import MiguelArmasImg from "../../../../assets/img/portfolio/miguel-armas.webp"
 import {ReactComponent as Arrow} from "../../../../assets/img/icons/arrow_link.svg";
 import { FormattedMessage } from "react-intl"
-const VtexLink = () => <a className="ContentSlider__a" href="https://developers.vtex.com/vtex-developer-docs/docs/welcome" target={"_blank"} rel="noreferrer">Vtex IO</a>;
+const VtexLink = () => <a className="ContentSlider__a" href="https://developers.vtex.com/vtex-developer-docs/docs/welcome" target={"_blank"} rel="apple-touch-icon">Vtex IO</a>;
 export const ContentPortfolio = () => {
   return (
     <div className="ContentPortfolio">
@@ -26,7 +26,7 @@ export const ContentPortfolio = () => {
       <Slider autoplay={false} controls={true}> 
         <div className="ContentSlider">
           <div className="ContentSlider__left">
-            <img src={Yamaha2Img} alt="yamaha" className="ContentSlider__left--img" />
+            <img loading="lazy" src={Yamaha2Img} alt="yamaha" className="ContentSlider__left--img" />
           </div>
           <div className="ContentSlider__right">
             <div>
@@ -47,7 +47,7 @@ export const ContentPortfolio = () => {
               </div>
             </div>
             <div>
-              <a className="ContentSlider__right--a" href="https://www.tienda-yamaha.com.co/search-parts" target={"_blank"} rel="noreferrer">
+              <a className="ContentSlider__right--a" href="https://www.tienda-yamaha.com.co/search-parts" target={"_blank"} rel="apple-touch-icon">
                 <FormattedMessage
                     id="app.ContentPortfolioComponentLinkWebSite"
                     defaultMessage={`ir al sitio web.`}
@@ -79,7 +79,7 @@ export const ContentPortfolio = () => {
               </div>
             </div>
             <div>
-              <a className="ContentSlider__right--a" href="https://www.tienda-yamaha.com.co/favoritos" target={"_blank"} rel="noreferrer">
+              <a className="ContentSlider__right--a" href="https://www.tienda-yamaha.com.co/favoritos" target={"_blank"} rel="apple-touch-icon">
               <FormattedMessage
                     id="app.ContentPortfolioComponentLinkWebSite"
                     defaultMessage={`ir al sitio web.`}
@@ -111,7 +111,7 @@ export const ContentPortfolio = () => {
               </div>
             </div>
             <div>
-              <a className="ContentSlider__right--a" href="https://www.tienda-yamaha.com.co/tiendas" target={"_blank"} rel="noreferrer">
+              <a className="ContentSlider__right--a" href="https://www.tienda-yamaha.com.co/tiendas" target={"_blank"} rel="apple-touch-icon">
               <FormattedMessage
                     id="app.ContentPortfolioComponentLinkWebSite"
                     defaultMessage={`ir al sitio web.`}
@@ -143,7 +143,7 @@ export const ContentPortfolio = () => {
               </div>
             </div>
             <div>
-              <a className="ContentSlider__right--a" href="https://www.estra.com/mapa-tiendas" target={"_blank"} rel="noreferrer">
+              <a className="ContentSlider__right--a" href="https://www.estra.com/mapa-tiendas" target={"_blank"} rel="apple-touch-icon">
               <FormattedMessage
                     id="app.ContentPortfolioComponentLinkWebSite"
                     defaultMessage={`ir al sitio web.`}
@@ -175,7 +175,7 @@ export const ContentPortfolio = () => {
               </div>
             </div>
             <div>
-              <a className="ContentSlider__right--a" href="https://www.electrobello.com/mapa-tiendas" target={"_blank"} rel="noreferrer">
+              <a className="ContentSlider__right--a" href="https://www.electrobello.com/mapa-tiendas" target={"_blank"} rel="apple-touch-icon">
               <FormattedMessage
                     id="app.ContentPortfolioComponentLinkWebSite"
                     defaultMessage={`ir al sitio web.`}
@@ -204,7 +204,7 @@ export const ContentPortfolio = () => {
               </div>
             </div>
             <div>
-              <a className="ContentSlider__right--a" href="https://github.com/miguel2armas/portafolio" target={"_blank"} rel="noreferrer">
+              <a className="ContentSlider__right--a" href="https://github.com/miguel2armas/portafolio" target={"_blank"} rel="apple-touch-icon">
               <FormattedMessage
                     id="app.ContentPortfolioComponentLinkMyWeb"
                     defaultMessage={`ir al repositorio.`}

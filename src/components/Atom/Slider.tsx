@@ -103,11 +103,11 @@ export const Slider = ({ children, controls, autoplay, speed=1500, interval=5000
             </div>
             <div className="Slider__content">
                     {controls && <div className="Slider__content--controls">
-                        <button className="Slider__content--btnLeft" 
+                        <button className="Slider__content--btnLeft"  aria-label="button left"
                         onClick={()=>btn_back()}>
                             <ArrowLeft/>
                         </button>
-                        <button className="Slider__content--btnRight" 
+                        <button className="Slider__content--btnRight" aria-label="button right"
                         onClick={()=>btn_next()}>
                             <ArrowRight/>
                         </button>

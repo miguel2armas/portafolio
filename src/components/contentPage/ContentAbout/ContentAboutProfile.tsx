@@ -18,7 +18,7 @@ export const ContentAboutProfile = () => {
     <div className="contentAboutProfile">
         <div className="Card">
             <div className="Card__img">
-                <img className="Card__img--img" src={ImgBackground} alt="background-code" />
+                <img width="100%" height="100%" loading="lazy" className="Card__img--img" src={ImgBackground} alt="background-code" />
             </div>
             <div className="Card__top">
                 <img className="Card__top--img" src={ImgProfile} alt="img-profile" />
@@ -54,7 +54,7 @@ export const ContentAboutProfile = () => {
                         <GitHubIco/> GITHUB
                     </div>
                     <div className="Card__button--description">
-                        <a className="Card__button--descriptionA" href="https://github.com/miguel2armas" target={"_blank"} rel="noreferrer">
+                        <a className="Card__button--descriptionA" href="https://github.com/miguel2armas" target={"_blank"} rel="apple-touch-icon">
                             https://github.com/miguel2armas
                         </a>
                     </div>
@@ -64,7 +64,7 @@ export const ContentAboutProfile = () => {
                         <WhatsAppIco/> WHATSAPP
                     </div>
                     <div className="Card__button--description">
-                        <a className="Card__button--descriptionA" href="https://wa.me/573146869798" target={"_blank"} rel="noreferrer">
+                        <a className="Card__button--descriptionA" href="https://wa.me/573146869798" target={"_blank"} rel="apple-touch-icon">
                             +57 3146869798
                         </a>
                     </div>
@@ -215,7 +215,7 @@ export const ContentAboutProfile = () => {
                         </div>
                         <div className="Card__timeLine--title">
                             ITGlobers
-                            <a className="Card__timeLine--link" href="https://www.linkedin.com/company/itglobers/" target={"_blank"} rel="noreferrer">
+                            <a className="Card__timeLine--link" title="ITGlobers" href="https://www.linkedin.com/company/itglobers/" target={"_blank"} rel="apple-touch-icon">
                                 <LinkedinIco/>
                             </a>
                         </div>
@@ -232,7 +232,7 @@ export const ContentAboutProfile = () => {
                         </div>
                         <div className="Card__timeLine--title">
                             Tita Media 
-                            <a className="Card__timeLine--link" href="https://www.linkedin.com/company/tita-media/" target={"_blank"} rel="noreferrer">
+                            <a className="Card__timeLine--link" title="Tita Media" href="https://www.linkedin.com/company/tita-media/" target={"_blank"} rel="apple-touch-icon">
                                 <LinkedinIco/>
                             </a>
                         </div>

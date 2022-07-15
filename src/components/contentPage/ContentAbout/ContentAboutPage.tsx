@@ -31,7 +31,7 @@ export const ContentAboutPage = () => {
           </div>
           <div className="contentAboutPage__right">
             <div>
-              <a className="contentAboutPage__right--link" target={"_blank"} rel="noreferrer" href="https://es.reactjs.org/">https://es.reactjs.org/</a>
+              <a className="contentAboutPage__right--link" target={"_blank"} rel="apple-touch-icon" href="https://es.reactjs.org/">https://es.reactjs.org/</a>
             </div>
             <div className="contentAboutPage__right--description">
               <FormattedMessage
@@ -57,7 +57,7 @@ export const ContentAboutPage = () => {
           </div>
           <div className="contentAboutPage__right">
             <div>
-              <a className="contentAboutPage__right--link" target={"_blank"} rel="noreferrer" href="https://www.typescriptlang.org/">https://www.typescriptlang.org/</a>
+              <a className="contentAboutPage__right--link" target={"_blank"} rel="apple-touch-icon" href="https://www.typescriptlang.org/">https://www.typescriptlang.org/</a>
             </div>
             <div className="contentAboutPage__right--description">
               <FormattedMessage
@@ -73,7 +73,7 @@ export const ContentAboutPage = () => {
           </div>
           <div className="contentAboutPage__right">
             <div>
-              <a className="contentAboutPage__right--link" target={"_blank"} rel="noreferrer" href="https://sass-lang.com/">https://sass-lang.com/</a>
+              <a className="contentAboutPage__right--link" target={"_blank"} rel="apple-touch-icon" href="https://sass-lang.com/">https://sass-lang.com/</a>
             </div>
             <div className="contentAboutPage__right--description">
               <FormattedMessage
@@ -100,7 +100,7 @@ export const ContentAboutPage = () => {
           </div>
           <div className="contentAboutPage__right">
             <div>
-              <a className="contentAboutPage__right--link" target={"_blank"} rel="noreferrer" href="https://nodejs.org/es/">https://nodejs.org/es/</a>
+              <a className="contentAboutPage__right--link" target={"_blank"} rel="apple-touch-icon" href="https://nodejs.org/es/">https://nodejs.org/es/</a>
             </div>
             <div className="contentAboutPage__right--description">
               <FormattedMessage
@@ -116,7 +116,7 @@ export const ContentAboutPage = () => {
           </div>
           <div className="contentAboutPage__right">
             <div>
-              <a className="contentAboutPage__right--link" target={"_blank"} rel="noreferrer" href="https://vitejs.dev/">https://vitejs.dev/</a>
+              <a className="contentAboutPage__right--link" target={"_blank"} rel="apple-touch-icon" href="https://vitejs.dev/">https://vitejs.dev/</a>
             </div>
             <div className="contentAboutPage__right--description">
               <FormattedMessage
@@ -132,7 +132,7 @@ export const ContentAboutPage = () => {
           </div>
           <div className="contentAboutPage__right">
             <div>
-              <a className="contentAboutPage__right--link" target={"_blank"} rel="noreferrer" href="https://git-scm.com/">https://git-scm.com/</a>
+              <a className="contentAboutPage__right--link" target={"_blank"} rel="apple-touch-icon" href="https://git-scm.com/">https://git-scm.com/</a>
             </div>
             <div className="contentAboutPage__right--description">
               <FormattedMessage
@@ -148,7 +148,7 @@ export const ContentAboutPage = () => {
           </div>
           <div className="contentAboutPage__right">
             <div>
-              <a className="contentAboutPage__right--link" target={"_blank"} rel="noreferrer" href="https://github.com/">https://github.com/</a>
+              <a className="contentAboutPage__right--link" target={"_blank"} rel="apple-touch-icon" href="https://github.com/">https://github.com/</a>
             </div>
             <div className="contentAboutPage__right--description">
               <FormattedMessage
@@ -164,7 +164,7 @@ export const ContentAboutPage = () => {
           </div>
           <div className="contentAboutPage__right">
             <div>
-              <a className="contentAboutPage__right--link" target={"_blank"} rel="noreferrer" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a>
+              <a className="contentAboutPage__right--link" target={"_blank"} rel="apple-touch-icon" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a>
             </div>
             <div className="contentAboutPage__right--description">
               <FormattedMessage
@@ -190,7 +190,7 @@ export const ContentAboutPage = () => {
           </div>
           <div className="contentAboutPage__right">
             <div>
-              <a className="contentAboutPage__right--link" target={"_blank"} rel="noreferrer" href="https://firebase.google.com/docs/web/setup?hl=es">
+              <a className="contentAboutPage__right--link" target={"_blank"} rel="apple-touch-icon" href="https://firebase.google.com/docs/web/setup?hl=es">
                 https://firebase.google.com/docs/web/setup?hl=es
               </a>
             </div>
@@ -208,7 +208,7 @@ export const ContentAboutPage = () => {
           </div>
           <div className="contentAboutPage__right">
             <div>
-              <a className="contentAboutPage__right--link" target={"_blank"} rel="noreferrer" href="https://www.emailjs.com/docs/examples/reactjs/">
+              <a className="contentAboutPage__right--link" target={"_blank"} rel="apple-touch-icon" href="https://www.emailjs.com/docs/examples/reactjs/">
                 https://www.emailjs.com/docs/examples/reactjs/
               </a>
             </div>
@@ -226,7 +226,7 @@ export const ContentAboutPage = () => {
           </div>
           <div className="contentAboutPage__right">
             <div>
-              <a className="contentAboutPage__right--link" target={"_blank"} rel="noreferrer" href="https://usehooks-ts.com/">
+              <a className="contentAboutPage__right--link" target={"_blank"} rel="apple-touch-icon" href="https://usehooks-ts.com/">
                 https://usehooks-ts.com/
               </a>
             </div>
@@ -244,7 +244,7 @@ export const ContentAboutPage = () => {
           </div>
           <div className="contentAboutPage__right">
             <div>
-              <a className="contentAboutPage__right--link" target={"_blank"} rel="noreferrer" href="https://formatjs.io/docs/getting-started/installation/">
+              <a className="contentAboutPage__right--link" target={"_blank"} rel="apple-touch-icon" href="https://formatjs.io/docs/getting-started/installation/">
                 https://formatjs.io/docs/getting-started/installation/
               </a>
             </div>
@@ -262,7 +262,7 @@ export const ContentAboutPage = () => {
           </div>
           <div className="contentAboutPage__right">
             <div>
-              <a className="contentAboutPage__right--link" target={"_blank"} rel="noreferrer" href="https://redux.js.org/usage/usage-with-typescript">
+              <a className="contentAboutPage__right--link" target={"_blank"} rel="apple-touch-icon" href="https://redux.js.org/usage/usage-with-typescript">
                 https://redux.js.org/usage/usage-with-typescript
               </a>
             </div>
@@ -290,7 +290,7 @@ export const ContentAboutPage = () => {
           </div>
           <div className="contentAboutPage__right">
             <div>
-              <a className="contentAboutPage__right--link" target={"_blank"} rel="noreferrer" href="https://www.freepik.es/">https://www.freepik.es/</a>
+              <a className="contentAboutPage__right--link" target={"_blank"} rel="apple-touch-icon" href="https://www.freepik.es/">https://www.freepik.es/</a>
             </div>
             <div className="contentAboutPage__right--description">
               <FormattedMessage
@@ -306,7 +306,7 @@ export const ContentAboutPage = () => {
           </div>
           <div className="contentAboutPage__right">
             <div>
-              <a className="contentAboutPage__right--link" target={"_blank"} rel="noreferrer" href="https://www.svgator.com/">https://www.svgator.com/</a>
+              <a className="contentAboutPage__right--link" target={"_blank"} rel="apple-touch-icon" href="https://www.svgator.com/">https://www.svgator.com/</a>
             </div>
             <div className="contentAboutPage__right--description">
               <FormattedMessage

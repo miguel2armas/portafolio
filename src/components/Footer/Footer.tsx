@@ -25,16 +25,16 @@ export const Footer = () => {
         <div className="footer__right">
               <div>
                 <div className="footer__right--link">
-                  <a className="footer__right--ico" href="https://www.facebook.com/miguel.armasmoreno/" target={"_blank"} rel="noreferrer">
+                  <a title="facebook" className="footer__right--ico" href="https://www.facebook.com/miguel.armasmoreno/" target={"_blank"} rel="apple-touch-icon">
                     <Facebook/>
                   </a>
-                  <a className="footer__right--ico" href="https://www.linkedin.com/in/miguel-angel-armas/" target={"_blank"} rel="noreferrer">
+                  <a title="linkedin" className="footer__right--ico" href="https://www.linkedin.com/in/miguel-angel-armas/" target={"_blank"} rel="apple-touch-icon">
                     <Linkedin/>
                   </a>
-                  <a className="footer__right--ico" href="https://github.com/miguel2armas" target={"_blank"} rel="noreferrer">
+                  <a title="github" className="footer__right--ico" href="https://github.com/miguel2armas" target={"_blank"} rel="apple-touch-icon">
                     <GitHub/>
                   </a>
-                  <a className="footer__right--ico" href="https://wa.me/573146869798" target={"_blank"} rel="noreferrer">
+                  <a title="whatsApp" className="footer__right--ico" href="https://wa.me/573146869798" target={"_blank"} rel="apple-touch-icon">
                     <WhatsApp/>
                   </a>
                 </div>
