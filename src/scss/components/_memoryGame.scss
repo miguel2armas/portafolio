@@ -132,6 +132,7 @@
             border: 1px solid rgba(255, 255, 255, 0.308);
             border-radius: 18px;
             width: fit-content;
+            width: -moz-fit-content;
             box-shadow: 0 .2rem .5rem rgba(82, 82, 82, 0.596);
             transform: translateY(0);
             transition: transform .15s ease-in-out;
@@ -148,6 +149,7 @@
             border: 1px solid rgba(255, 255, 255, 0.308);
             border-radius: 18px;
             width: fit-content;
+            width: -moz-fit-content;
             box-shadow: 0 .2rem .5rem rgba(82, 82, 82, 0.596);
             transform: translateY(0) rotate(180deg);
             transition: transform .15s ease-in-out;

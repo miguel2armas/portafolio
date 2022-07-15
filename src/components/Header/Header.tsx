@@ -28,7 +28,7 @@ export const Header = ({goToMemoryDiv, goToContentTopDiv, goToContactRefDiv, goT
           <div className="header__container">
             <div className="header__left">
               <div className="header__link" onClick={goToContentTopDiv}>
-                <img className="header__link--img" src={LogoImg} alt="mad"/>
+                <img width="100%" height="100%" className="header__link--img" src={LogoImg} alt="mad"/>
               </div>
               <div className={`header__link--text ${btnHover === BtnHover.MEMORY? 'header__link--textHover': ''}`} onClick={goToMemoryDiv}>
               <FormattedMessage

@@ -18,10 +18,10 @@ export const GripGame = ({cardData, onCheck, cardsCorrect, progress, twoSelectCa
                 ${twoSelectCard.some((i)=>i===index) && cardsCorrect===2?'GripGame__card--fail':''}`
                 }>
                   <div className={`${!card.check?'GripGame__card--one':'GripGame__card--two'}`}>
-                    <img width="100%" height="100%" className='GripGame__item--img' src={Check} alt={"back-card"}/>
+                    <img loading="lazy" width="100%" height="100%" className='GripGame__item--img' src={Check} alt={"back-card"}/>
                   </div>
                   <div className={`${card.check?'GripGame__card--one':'GripGame__card--two'}`}>
-                    <img width="100%" height="100%" className='GripGame__item--img' src={card.check? card.img : Check} alt={"card"}/>
+                    <img loading="lazy" width="100%" height="100%" className='GripGame__item--img' src={card.check? card.img : Check} alt={"card"}/>
                   </div>
                 </div>
             </div>

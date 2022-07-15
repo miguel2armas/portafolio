@@ -11,7 +11,7 @@ export const Footer = () => {
   return (
     <footer className="footer">
         <div className="footer__left">
-          <img className="header__link--img" src={LogoImg} alt="mad"/>
+          <img width="100%" height="100%" className="header__link--img" src={LogoImg} alt="mad"/>
           <span className="footer__left--span">
             <FormattedMessage
               id="app.footer_text"

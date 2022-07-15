@@ -10,7 +10,7 @@
         padding: .25rem;
         &--img{
             width: 100%;
-            aspect-ratio: 82/131;
+            aspect-ratio: 513/763;
             border-radius: .25rem;
             box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
             border: 1px solid #fff;
@@ -22,6 +22,7 @@
         width: 100%;
         &--one{
             backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
             height: 100%;
             left: 0px;
             position: relative;
@@ -34,6 +35,7 @@
         }
         &--two{
             backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
             height: 100%;
             left: 0px;
             position: absolute;
