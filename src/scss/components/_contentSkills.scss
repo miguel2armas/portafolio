@@ -24,12 +24,11 @@
     &__img{
         width: 60%;
         height: 60%;
-        
         object-fit: contain;
         margin: 25px auto 0 auto;
         height: 125px;
         bottom: 8px;
-        filter: drop-shadow(5px 5px 5px #222);
+        filter: var(--shadow-skill-back);
         @media (max-width: $sm-desktop) {
             height: 70px;
         }
