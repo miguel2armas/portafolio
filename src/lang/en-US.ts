@@ -59,7 +59,6 @@ export const en_US = {
     "app.ContentAboutProfileExp": `EXPERIENCE`,
     "app.ContentAboutProfileDescription": `I am passionate about computing, I always seek to be up to date on the technologies I use, I am also self-taught and proactive`,
     "app.ContentAboutProfileOccupation": `Occupation`,
-    "app.ContentAboutProfileBirthDate": `Birthday date`,
     "app.ContentAboutProfileBirthDateDate": `June 13, 1989`,
     "app.ContentAboutProfilePhone": `Phone`,
     "app.ContentAboutProfileLocation": `Location`,

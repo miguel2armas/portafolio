@@ -1,6 +1,6 @@
 import { MutableRefObject, SyntheticEvent, useEffect, useRef, useState } from "react";
 import { FormattedMessage, injectIntl, IntlShape } from "react-intl";
-import { useInputValue } from "../../../hooks/useInputValue";
+import { useInputValue } from "../../../hooks";
 import { Button } from "../../Atom/Button";
 import { SvgLogoEmail } from "../../SvgAnimate/SvgLogoEmail"
 import emailjs from '@emailjs/browser';

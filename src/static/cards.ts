@@ -1,4 +1,4 @@
-import { randomArray } from "./Funtions";
+import { randomArray } from "./Functions";
 
 export interface CardData {
     id: number;

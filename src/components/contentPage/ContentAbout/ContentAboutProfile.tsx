@@ -109,26 +109,6 @@ export const ContentAboutProfile = () => {
             <div className="Card__item">
                 <div className="Card__item--left">
                     <div className="Card__item--text">
-                        <BirthDateIco/>
-                            <FormattedMessage
-                                id="app.ContentAboutProfileBirthDate"
-                                defaultMessage={`Fecha de cumpleaños`}
-                            />
-                    </div>
-                    <div className="Card__item--ico">
-                      <ArrowLeftIco/>
-                    </div>
-                </div>
-                <div className="Card__item--right">
-                    <FormattedMessage
-                        id="app.ContentAboutProfileBirthDateDate"
-                        defaultMessage={`13 de Junio de 1989`}
-                    />
-                </div>
-            </div>
-            <div className="Card__item">
-                <div className="Card__item--left">
-                    <div className="Card__item--text">
                         <MobileIco/>
                         <FormattedMessage
                             id="app.ContentAboutProfilePhone"

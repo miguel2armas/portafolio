@@ -3,9 +3,8 @@ import { FormattedMessage, injectIntl, IntlShape } from 'react-intl';
 import { Button } from '../../Atom/Button'
 import {ReactComponent as Close} from "../../../../assets/img/icons/close.svg";
 import { Modal } from "../../Atom/Modal"
-import { useInputValue } from '../../../hooks/useInputValue';
 import { db } from '../../../firebase/firebase';
-import { getTypeGame, ModeGame } from '../../../hooks/useCard';
+import { getTypeGame, ModeGame, useInputValue } from '../../../hooks';
 import { useAppDispatch } from '../../../redux/hooks';
 import { setShowNotification } from '../../../redux/reducers/notificationReducer';
 interface Props {

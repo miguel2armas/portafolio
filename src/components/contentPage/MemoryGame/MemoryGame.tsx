@@ -1,6 +1,6 @@
 
 import { FormattedMessage } from "react-intl"
-import { getTypeGame, ModeGame, useCard } from "../../../hooks/useCard"
+import { getTypeGame, ModeGame, useCard, useLocalStorage } from "../../../hooks"
 import { Button } from "../../Atom/Button"
 import { GripGame } from "./GripGame"
 import {ReactComponent as Loading} from "../../../../assets/img/icons/loading.svg";
@@ -17,7 +17,6 @@ import {ReactComponent as Legend} from "../../../../assets/img/img/legend.svg";
 import {ReactComponent as Nightmare} from "../../../../assets/img/img/nightmare.svg";
 import {ReactComponent as Arrow} from "../../../../assets/img/icons/arrow_link.svg";
 import { ModalEndGame } from "./ModalEndGame"
-import { useLocalStorage } from "../../../hooks/useLocalStorage";
 interface Props {
   memoryGameRef:MutableRefObject<HTMLDivElement | null>
 }

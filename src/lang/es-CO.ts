@@ -59,7 +59,6 @@ export const es_CO = {
     "app.ContentAboutProfileExp": `EXPERIENCIA`,
     "app.ContentAboutProfileDescription": `Me apasiona la informática, siempre busco estar al día en las tecnologías que utilizo, además soy autodidacta y proactivo`,
     "app.ContentAboutProfileOccupation": `Ocupación`,
-    "app.ContentAboutProfileBirthDate": `Fecha de cumpleaños`,
     "app.ContentAboutProfileBirthDateDate": `13 de Junio de 1989`,
     "app.ContentAboutProfilePhone": `Teléfono`,
     "app.ContentAboutProfileLocation": `Ubicación`,

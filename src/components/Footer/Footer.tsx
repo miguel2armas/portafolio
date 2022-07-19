@@ -4,7 +4,7 @@ import {ReactComponent as Facebook} from "../../../assets/img/icons/facebook.svg
 import {ReactComponent as GitHub} from "../../../assets/img/icons/git_hub.svg";
 import {ReactComponent as WhatsApp} from "../../../assets/img/icons/whatsapp.svg";
 import {ReactComponent as Linkedin} from "../../../assets/img/icons/linkedin.svg";
-import { useCountPage } from "../../hooks/useCountPage";
+import { useCountPage } from "../../hooks";
 
 export const Footer = () => {
   const { countPage } = useCountPage();
