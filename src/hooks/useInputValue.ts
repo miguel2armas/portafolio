@@ -10,9 +10,7 @@ export const useInputValue = (initialValue:string, maxCharter = -1) => {
         value:string
       }
       if(maxCharter>-1){
-        if(maxCharter>=value.length){
-          setValue(target.value);
-        }
+        setValue(target.value.length<=maxCharter ? target.value : value);
       }else{
         setValue(target.value);
       }

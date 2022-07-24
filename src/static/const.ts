@@ -1,0 +1,23 @@
+export let excludedWords = [
+    'puto',
+    'teta',
+    'eyaculacion',
+    'eyaculación',
+    'gay',
+    'gey',
+    'marico',
+    'Bellaco',
+    'wuevo',
+    'wuebo',
+    'guebo',
+    'guevo',
+    'fuck',
+    'puta',
+    'gonorrea',
+    'gordo',
+    'gorda',
+    'concha',
+    'cuca',
+    'paja',
+    'pajero'
+];

@@ -43,6 +43,7 @@ export const es_CO = {
     "app.modalEndGameSend": `Enviar`,
     "app.endGameSend": `Tus datos han sido guardados`,
     "app.endGameFail": `Por favor escribe un nombre más largo`,
+    "app.endGameFailWords": `Por favor no escribas malas palabras`,
     "app.modalEndGameInputPlaceHolder": `Nombre (max: 8 caracteres)`,
     "app.ContentContactInputPlaceHolderName": `Nombre`,
     "app.ContentContactInputPlaceHolderEmail": `Correo`,

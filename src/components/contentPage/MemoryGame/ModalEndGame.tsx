@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { SyntheticEvent, useEffect, useState } from 'react';
 import { FormattedMessage, injectIntl, IntlShape } from 'react-intl';
 import { Button } from '../../Atom/Button'
 import {ReactComponent as Close} from "../../../../assets/img/icons/close.svg";
@@ -7,6 +7,7 @@ import { db } from '../../../firebase/firebase';
 import { getTypeGame, ModeGame, useInputValue } from '../../../hooks';
 import { useAppDispatch } from '../../../redux/hooks';
 import { setShowNotification } from '../../../redux/reducers/notificationReducer';
+import { checkWords } from '../../../static/Functions';
 interface Props {
     modalEndGame:boolean;
     errorCheck:number;
@@ -21,8 +22,10 @@ export const ModalEndGame = injectIntl(({modalEndGame, errorCheck, timeGame, set
     const playerName = useInputValue('', 8);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
-    const sendResultGame = async() => {
+    const sendResultGame = async(e:SyntheticEvent) => {
+      e.preventDefault();
         if(playerName.value.trim()!=='' && timeGame>0 && errorCheck>=0) {
+          if(!checkWords(playerName.value.trim().toLowerCase())){
             setLoading(true);
             const data = {
                 name: playerName.value.trim(),
@@ -40,6 +43,14 @@ export const ModalEndGame = injectIntl(({modalEndGame, errorCheck, timeGame, set
               defaultMessage: 'Tus datos han sido guardados',
               id: "app.endGameSend",
             }), 'success');
+          }else{
+            setError(true);
+            setNotification(intl.formatMessage({
+              defaultMessage: 'Por favor no coloques malas palabras',
+              id: "app.endGameFailWords",
+            }), 'warning');
+          }
+
         }else{
             setError(true);
             setNotification(intl.formatMessage({
@@ -96,20 +107,20 @@ export const ModalEndGame = injectIntl(({modalEndGame, errorCheck, timeGame, set
                       />
                       
                     </div>
-                    <div className="ModalEndGame_input">
+                    <form className="ModalEndGame_input" onSubmit={sendResultGame}>
                     <input type="text" placeholder={intl.formatMessage({
                           defaultMessage: 'Nombre (max: 8 caracteres)',
                           id: "app.modalEndGameInputPlaceHolder",
                         })} className={`ModalEndGame_input--input ${error ? 'ModalEndGame_input--error' : ''}`} {...playerName} />
                       <div className="ModalEndGame_input--btn">
-                          <Button ClickBtn={sendResultGame} loading={loading} disabled={loading}>
+                          <Button ClickBtn={()=>{}} loading={loading} disabled={loading}>
                             <FormattedMessage
                               id="app.modalEndGameSend"
                               defaultMessage={`Enviar`}
                             />
                           </Button>
                       </div>
-                    </div>
+                    </form>
                     
                 </div>
         </Modal>
