@@ -5,7 +5,9 @@ import { en_US } from './lang/en-US'
 import { es_CO } from './lang/es-CO'
 import { useAppSelector } from "./redux/hooks";
 import { selectLanguage } from "./redux/reducers/languageReducer";
+import LogRocket from 'logrocket';
 
+LogRocket.init('vdqy85/miguel-armas');
 
 function App() {
   const currentLanguage = useAppSelector(selectLanguage);
