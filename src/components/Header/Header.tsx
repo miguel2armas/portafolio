@@ -5,6 +5,9 @@ import {ReactComponent as Moon} from "../../../assets/img/icons/moon.svg";
 import {ReactComponent as Es} from "../../../assets/img/icons/es_white.svg";
 import {ReactComponent as En} from "../../../assets/img/icons/en_white.svg";
 import {ReactComponent as Menu} from "../../../assets/img/icons/menu_ico.svg";
+import {ReactComponent as GitHub} from "../../../assets/img/icons/git_hub.svg";
+import {ReactComponent as WhatsApp} from "../../../assets/img/icons/whatsapp.svg";
+import {ReactComponent as Linkedin} from "../../../assets/img/icons/linkedin.svg";
 import LogoImg from "../../../assets/img/img/logo.svg"
 import { changeLanguage, selectLanguage } from "../../redux/reducers/languageReducer";
 import { FormattedMessage } from "react-intl";
@@ -50,6 +53,18 @@ export const Header = ({goToMemoryDiv, goToContentTopDiv, goToContactRefDiv, goT
               </div>
             </div>
             <div className="header__right">
+              <a title="linkedin" className="header__link--ico" href="https://www.linkedin.com/in/miguel-angel-armas/" target={"_blank"} rel="apple-touch-icon">
+                <Linkedin width={16} height={16}/>
+              </a>
+              <a title="github" className="header__link--ico" href="https://github.com/miguel2armas" target={"_blank"} rel="apple-touch-icon">
+                <GitHub width={16} height={16}/>
+              </a>
+              <a title="whatsApp" className="header__link--ico" href="https://wa.me/573146869798" target={"_blank"} rel="apple-touch-icon">
+                <WhatsApp width={16} height={16}/>
+              </a>
+              <div className="header__link--lineC">
+                <div className="header__link--line"/>
+              </div>
               <div className="header__link" onClick={() => dispatch(changeLanguage(currentLanguage==="es-CO"?"en-US":"es-CO"))}>
                 {currentLanguage==="es-CO"?<En className="header__animation--text"/>:<Es className="header__animation--text"/>}
               </div>
@@ -81,6 +96,19 @@ export const Header = ({goToMemoryDiv, goToContentTopDiv, goToContactRefDiv, goT
                   defaultMessage={`Acerca de`}
                 />
               </div>
+              <div className={`menuList__link--icoC`}>
+                <a title="linkedin" className="menuList__link--ico" href="https://www.linkedin.com/in/miguel-angel-armas/" target={"_blank"} rel="apple-touch-icon">
+                  <Linkedin width={26} height={26}/>
+                </a>
+                <a title="github" className="menuList__link--ico" href="https://github.com/miguel2armas" target={"_blank"} rel="apple-touch-icon">
+                  <GitHub width={26} height={26}/>
+                </a>
+                <a title="whatsApp" className="menuList__link--ico" href="https://wa.me/573146869798" target={"_blank"} rel="apple-touch-icon">
+                  <WhatsApp width={26} height={26}/>
+                </a>
+              </div>
+              
+              
           </div>
         </>
       )
