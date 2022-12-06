@@ -7,7 +7,7 @@ export const en_US = {
     "app.salute": "Hi, I'm Miguel",
     "app.developer_title": "Full Stack developer",
     "app.developer_p1": `I am passionate about programming and new challenges, creating and improving, always looking for a better level, I have great experience creating web pages using "react" in frontend and "laravel" in backend.`,
-    "app.developer_p2": `I work with the latest technologies, always seeking to improve and optimize the projects I work on, seeking excellence in each one of them.`,
+    "app.developer_p2": `I work with the latest technologies, always seeking to improve and optimize the projects that I do or in which I collaborate, seeking excellence in each one of them.`,
     "app.footer_text": `{date} Miguel Armas, Developer`,
     "app.gameTitleMemory": `Memory game`,
     "app.gameDescriptionMemory": `Exercise your memory while trying to get first place!`,

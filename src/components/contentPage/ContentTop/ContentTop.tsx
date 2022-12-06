@@ -38,7 +38,7 @@ export const ContentTop = ({contentTopRef, goToContactRefDiv}:Props) => {
             <p>
               <FormattedMessage
                 id="app.developer_p2"
-                defaultMessage={`Trabajo con las últimas tecnologías, buscando siempre mejorar y optimizar los proyectos en los que trabajo, buscando la excelencia en cada uno de ellos.`}
+                defaultMessage={`Trabajo con las últimas tecnologías, buscando siempre mejorar y optimizar los proyectos que hago o en los que colaboro, buscando la excelencia en cada uno de ellos.`}
               />
             </p>
           </section>

@@ -7,7 +7,7 @@ export const es_CO = {
     "app.salute": `Hola, Soy Miguel`,
     "app.developer_title": `Desarrollador Full Stack`,
     "app.developer_p1": `Me apasiona la programación y los nuevos retos, crear y mejorar, siempre buscando un mejor nivel, tengo gran experiencia creando páginas web usando "react" en frontend y "laravel" en backend.`,
-    "app.developer_p2": `Trabajo con las últimas tecnologías, buscando siempre mejorar y optimizar los proyectos en los que trabajo, buscando la excelencia en cada uno de ellos.`,
+    "app.developer_p2": `Trabajo con las últimas tecnologías, buscando siempre mejorar y optimizar los proyectos que hago o en los que colaboro, buscando la excelencia en cada uno de ellos.`,
     "app.footer_text": `{date} Miguel Armas, Desarrollador`,
     "app.gameTitleMemory": `Juego de memoria`,
     "app.gameDescriptionMemory": `¡Ejercita tu memoria mientras intentas conseguir el primer lugar!`,
