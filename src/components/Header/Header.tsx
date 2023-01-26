@@ -18,9 +18,10 @@ interface Props {
   goToContentTopDiv:() => void;
   goToContactRefDiv:() => void;
   goToAboutRefRefDiv:() => void;
+  goToOpenAiRefDiv:() => void;
   btnHover:BtnHover;
 }
-export const Header = ({goToMemoryDiv, goToContentTopDiv, goToContactRefDiv, goToAboutRefRefDiv, btnHover}:Props) => {
+export const Header = ({goToMemoryDiv, goToContentTopDiv, goToContactRefDiv, goToAboutRefRefDiv, goToOpenAiRefDiv, btnHover}:Props) => {
   const currentTheme = useAppSelector(selectTheme);
   const currentLanguage = useAppSelector(selectLanguage);
   const [openMenu, setOpenMenu] = useState(false)
@@ -43,6 +44,12 @@ export const Header = ({goToMemoryDiv, goToContentTopDiv, goToContactRefDiv, goT
               <FormattedMessage
                   id="app.contact"
                   defaultMessage={`contacto`}
+                />
+              </div>
+              <div className={`header__link--text ${btnHover === BtnHover.OPEN_AI? 'header__link--textHover': ''}`} onClick={goToOpenAiRefDiv}>
+              <FormattedMessage
+                  id="app.open_ai"
+                  defaultMessage={`Openai`}
                 />
               </div>
               <div className={`header__link--text ${btnHover === BtnHover.ABOUT? 'header__link--textHover': ''}`} onClick={goToAboutRefRefDiv}>
@@ -88,6 +95,12 @@ export const Header = ({goToMemoryDiv, goToContentTopDiv, goToContactRefDiv, goT
               <FormattedMessage
                   id="app.contact"
                   defaultMessage={`contacto`}
+                />
+              </div>
+              <div className={`menuList__link ${btnHover === BtnHover.OPEN_AI? 'menuList__link--textHover': ''}`} onClick={()=>{ setOpenMenu(false); goToOpenAiRefDiv();}}>
+              <FormattedMessage
+                  id="app.open_ai"
+                  defaultMessage={`Openai`}
                 />
               </div>
               <div className={`menuList__link ${btnHover === BtnHover.ABOUT? 'menuList__link--textHover': ''}`} onClick={()=>{ setOpenMenu(false); goToAboutRefRefDiv();}}>

@@ -20,12 +20,19 @@
     border-radius: .3rem;
     transform: translateY(0);
     transition: transform .15s ease-in-out, color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    &__content{
+        &:hover > .Button{
+            transform: translateY(-0.25em);
+            &:disabled{
+                transform: translateY(0);
+            }
+        }
+    }
     &__success{
         background: #388e3c;
         &:hover{
             background-color: #27a416;
             box-shadow: 0 0.5em 0.5em -0.4em rgba(13, 253, 13, 0.25);
-            transform: translateY(-0.25em);
         }
         &:active{
             background-color: #31c224;
@@ -72,7 +79,6 @@
     &:hover{
         background-color: #27a416;
         box-shadow: 0 0.5em 0.5em -0.4em rgba(13, 253, 13, 0.25);
-        transform: translateY(-0.25em);
         transition: transform .15s ease-in-out,color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     }
     &:active{

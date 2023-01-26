@@ -6,7 +6,7 @@ interface Props {
     ClickBtn:Function;
     loading?:boolean | undefined;
     children:ReactNode
-    variant?:string
+    variant?: "success" | "primary" | "gold" | "danger"
     disabled?:boolean
     type?:"button" | "submit" | "reset" | undefined
 }
@@ -20,8 +20,10 @@ export const Button = ({paddingDesktop, paddingMobile, ClickBtn, loading, childr
         paddingRight:`${paddingDesktop}px`
     }:{}
   return (
-    <button type={type} style={paddingStyle} className={`Button__${variant ? variant:''} Button`} onClick={()=>ClickBtn()} disabled={disabled}>
-        {loading?<Loading/>:children}
-    </button>
+    <div className="Button__content">
+        <button type={type} style={paddingStyle} className={`Button__${variant ? variant:''} Button`} onClick={()=>ClickBtn()} disabled={disabled}>
+            {loading?<Loading/>:children}
+        </button>
+    </div>
   )
 }

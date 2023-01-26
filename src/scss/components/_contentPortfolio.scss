@@ -30,6 +30,7 @@
             height: 350px;
             object-fit: cover;
             border-radius: 15px 0 0 15px;
+            aspect-ratio: 305/176;
             @media (max-width: $sm-desktop) {
                 border-radius: 15px 15px 0 0;
             }

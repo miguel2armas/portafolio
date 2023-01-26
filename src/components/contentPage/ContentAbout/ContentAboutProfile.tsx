@@ -4,14 +4,13 @@ import {ReactComponent as GitHubIco} from "../../../../assets/img/icons/github_i
 import {ReactComponent as WhatsAppIco} from "../../../../assets/img/icons/whatsapp_ico.svg";
 import {ReactComponent as ArrowLeftIco} from "../../../../assets/img/icons/arrow_left_ico.svg";
 import {ReactComponent as OccupationIco} from "../../../../assets/img/icons/occupation_ico.svg";
-import {ReactComponent as BirthDateIco} from "../../../../assets/img/icons/birth_date_ico.svg";
 import {ReactComponent as MobileIco} from "../../../../assets/img/icons/mobile_ico.svg";
 import {ReactComponent as MapIco} from "../../../../assets/img/icons/map_ico.svg";
 import {ReactComponent as PageIco} from "../../../../assets/img/icons/page_ico.svg";
 import {ReactComponent as EmailIco} from "../../../../assets/img/icons/email_ico.svg";
 import {ReactComponent as LinkedinIco} from "../../../../assets/img/icons/linkedin_ico.svg";
 import ImgBackground from '../../../../assets/img/background-profile.webp'
-import ImgProfile from '../../../../assets/img/profile-miguel.webp'
+import ImgProfile from '../../../../assets/img/profile-miguel-img.webp'
 import { FormattedMessage } from "react-intl";
 export const ContentAboutProfile = () => {
   return (

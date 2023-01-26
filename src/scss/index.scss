@@ -2,6 +2,7 @@
 @import 'base/base';
 @import 'atom/button';
 @import 'atom/modal';
+@import 'atom/selector';
 @import 'atom/slider';
 @import 'layout/header';
 @import 'components/notifications';
@@ -11,5 +12,6 @@
 @import 'components/gripGame';
 @import 'components/memoryGame';
 @import 'components/contentContact';
+@import 'components/openAi';
 @import 'components/contentAbout';
 @import 'layout/footer';

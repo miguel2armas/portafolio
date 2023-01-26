@@ -8,6 +8,7 @@ html {
     --header-color-link: #{$header_color_link_light};
     --game-description-back-color: #{$description_color_back_light};
     --shadow-skill-back: #{$shadow_skill_light};
+    --background-color-down: #{$background_color_light};
 }
 
 /* Variables de color si el tema es dark */
@@ -19,6 +20,7 @@ html[data-theme="dark"] {
     --header-color-link: #{$header_color_link_dark};
     --game-description-back-color: #{$description_color_back_dark};
     --shadow-skill-back: #{$shadow_skill_dark};
+    --background-color-down: #{$background_color_dark};
 }
 /* *{
     border: 1px solid red;
@@ -52,4 +54,8 @@ h5{
 }
 p{
     font-size: 1rem;
+}
+.main{
+    max-width: 1545px;
+    margin: 0 auto;
 }

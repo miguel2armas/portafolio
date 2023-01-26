@@ -1,0 +1,60 @@
+.selector{
+    width: 100%;
+    max-width: 390px;
+    position: relative;
+    &__btn{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        text-decoration: none;
+        vertical-align: middle;
+        user-select: none;
+        color: currentColor;
+        cursor: pointer;
+        -webkit-user-select: none;
+        border: var(--border-color-page);
+        padding: 11.5px 18px;
+        background-color: var(--game-description-back-color);
+        font-size: 18px;
+        border-radius: 12px;
+        justify-content: space-between;
+        @media (max-width: $sm-desktop) {
+            font-size: 0.8rem;
+        }
+        &--ico{
+            color: currentColor;
+        }
+    }
+    &__list{
+        padding-left: 2%;
+        padding-right: 2%;
+        background-color: var(--secondary-color);
+        position: absolute;
+        display: block;
+        width: 96%;
+        inset: 0 auto auto 0;
+        transform: translateY(45px);
+        border-radius: 12px;
+        max-height: 0px;
+        overflow-y: auto;
+        &--ul{
+            margin: 0;
+            padding: 0;
+        }
+        &--li{
+            border-top: var(--border-color-page);
+            text-decoration: none;
+            list-style: none;
+            display: flex;
+            justify-content: flex-start;
+            padding: 10px;
+            cursor: pointer;
+        }
+        &--show{
+            max-height: 215px;
+            z-index: 1;
+            border: var(--border-color-page);
+            box-shadow: 0 2px 3px rgb(0 0 0 / 40%);
+        }
+    }
+}

@@ -22,6 +22,9 @@ export const ModalEndGame = injectIntl(({modalEndGame, errorCheck, timeGame, set
     const playerName = useInputValue('', 8);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
+    const setNotification = (text:string, type:'warning' | 'success') => {
+      dispatch(setShowNotification({text, type, show: true }));
+    }
     const sendResultGame = async(e:SyntheticEvent) => {
       e.preventDefault();
         if(playerName.value.trim()!=='' && timeGame>0 && errorCheck>=0) {
@@ -65,9 +68,7 @@ export const ModalEndGame = injectIntl(({modalEndGame, errorCheck, timeGame, set
         }
     }, [playerName])
     
-    const setNotification = (text:string, type:'warning' | 'success') => {
-      dispatch(setShowNotification({text, type, show: true }));
-    }
+    
   return (
         <Modal show={modalEndGame} maxWidth={450}>
                 <div className="ModalEndGame">
@@ -113,7 +114,7 @@ export const ModalEndGame = injectIntl(({modalEndGame, errorCheck, timeGame, set
                           id: "app.modalEndGameInputPlaceHolder",
                         })} className={`ModalEndGame_input--input ${error ? 'ModalEndGame_input--error' : ''}`} {...playerName} />
                       <div className="ModalEndGame_input--btn">
-                          <Button ClickBtn={()=>{}} loading={loading} disabled={loading}>
+                          <Button ClickBtn={()=>{}} loading={loading} type="submit" disabled={loading || playerName.value.length === 0}>
                             <FormattedMessage
                               id="app.modalEndGameSend"
                               defaultMessage={`Enviar`}
