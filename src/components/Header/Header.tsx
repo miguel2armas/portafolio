@@ -46,12 +46,12 @@ export const Header = ({goToMemoryDiv, goToContentTopDiv, goToContactRefDiv, goT
                   defaultMessage={`contacto`}
                 />
               </div>
-              <div className={`header__link--text ${btnHover === BtnHover.OPEN_AI? 'header__link--textHover': ''}`} onClick={goToOpenAiRefDiv}>
+              {/* <div className={`header__link--text ${btnHover === BtnHover.OPEN_AI? 'header__link--textHover': ''}`} onClick={goToOpenAiRefDiv}>
               <FormattedMessage
                   id="app.open_ai"
                   defaultMessage={`Openai`}
                 />
-              </div>
+              </div> */}
               <div className={`header__link--text ${btnHover === BtnHover.ABOUT? 'header__link--textHover': ''}`} onClick={goToAboutRefRefDiv}>
               <FormattedMessage
                   id="app.about"
@@ -97,12 +97,12 @@ export const Header = ({goToMemoryDiv, goToContentTopDiv, goToContactRefDiv, goT
                   defaultMessage={`contacto`}
                 />
               </div>
-              <div className={`menuList__link ${btnHover === BtnHover.OPEN_AI? 'menuList__link--textHover': ''}`} onClick={()=>{ setOpenMenu(false); goToOpenAiRefDiv();}}>
+              {/* <div className={`menuList__link ${btnHover === BtnHover.OPEN_AI? 'menuList__link--textHover': ''}`} onClick={()=>{ setOpenMenu(false); goToOpenAiRefDiv();}}>
               <FormattedMessage
                   id="app.open_ai"
                   defaultMessage={`Openai`}
                 />
-              </div>
+              </div> */}
               <div className={`menuList__link ${btnHover === BtnHover.ABOUT? 'menuList__link--textHover': ''}`} onClick={()=>{ setOpenMenu(false); goToAboutRefRefDiv();}}>
               <FormattedMessage
                   id="app.about"

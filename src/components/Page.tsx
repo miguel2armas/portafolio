@@ -31,20 +31,20 @@ export const Page = () => {
                 scrollTop:number;
             }
         }
-        if(memoryGameRef.current && contactRef.current && aboutRef.current && openAiRef.current){
+        if(memoryGameRef.current && contactRef.current && aboutRef.current/*  && openAiRef.current */){
             const siteMemory =  memoryGameRef.current.getBoundingClientRect().top + scrollY - 100;
             const siteContact =  contactRef.current.getBoundingClientRect().top + scrollY - 150;
-            const siteOpenAi =  openAiRef.current.getBoundingClientRect().top + scrollY - 150;
+            //const siteOpenAi =  openAiRef.current.getBoundingClientRect().top + scrollY - 150;
             const siteAbout =  aboutRef.current.getBoundingClientRect().top + scrollY - 150;
             const siteCurrent = target?.documentElement?.scrollTop;
             if(siteCurrent<siteMemory){
                 setBtnHover(BtnHover.TOP);
             }else if(siteCurrent>siteMemory && siteCurrent<siteContact){
                 setBtnHover(BtnHover.MEMORY);
-            }else if(siteCurrent>siteContact && siteCurrent<siteOpenAi){
+            }else if(siteCurrent>siteContact && siteCurrent<siteAbout){
                 setBtnHover(BtnHover.CONTACT);
-            }else if(siteCurrent>siteOpenAi && siteCurrent<siteAbout){
-                setBtnHover(BtnHover.OPEN_AI);
+            //}else if(siteCurrent>siteOpenAi && siteCurrent<siteAbout){
+            //    setBtnHover(BtnHover.OPEN_AI);
             }else if(siteCurrent>siteAbout){
                 setBtnHover(BtnHover.ABOUT);
             }
@@ -103,7 +103,7 @@ export const Page = () => {
                 <ContentPortfolio/>
                 <MemoryGame memoryGameRef={memoryGameRef}/>
                 <ContentContact contactRef={contactRef}/>
-                <OpenAi openAiRef={openAiRef}/>
+                {/* <OpenAi openAiRef={openAiRef}/> */}
                 <ContentAbout aboutRef={aboutRef}/>
                 <Footer/>
             </main>

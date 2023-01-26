@@ -9,7 +9,7 @@ import { setShowNotification } from '../redux/reducers/notificationReducer';
 export const useOpenAi = (intl: IntlShape) =>{
 
     const configuration = new Configuration({
-        apiKey: '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'
+        apiKey: "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"
     });
     const openAi = new OpenAIApi(configuration);
     const dispatch = useAppDispatch();
@@ -108,34 +108,34 @@ export const useOpenAi = (intl: IntlShape) =>{
                         }
                     )
                 );
-              }else{
-                dispatch(
-                    setShowNotification(
-                        {
-                            text: intl.formatMessage({
-                                defaultMessage: 'Hay problemas al conextarse al servicio, por favor vuelve a intentarlo',
-                                id: "app.open_ai_error",
-                              }), 
-                            type: 'warning', 
-                            show: true 
-                        }
-                    )
-                );
-              }
-            } else {
-                dispatch(
-                    setShowNotification(
-                        {
-                            text: intl.formatMessage({
-                                defaultMessage: 'Ha ocurrido un error, por favor vuelve a intentarlo',
-                                id: "app.open_ai_error",
-                              }), 
-                            type: 'warning', 
-                            show: true 
-                        }
-                    )
-                );
+            }else{
+              dispatch(
+                  setShowNotification(
+                      {
+                          text: intl.formatMessage({
+                              defaultMessage: 'Hay problemas al conectarse al servicio, por favor vuelve a intentarlo',
+                              id: "app.open_ai_error2",
+                            }), 
+                          type: 'warning', 
+                          show: true 
+                      }
+                  )
+              );
             }
+          } else {
+              dispatch(
+                  setShowNotification(
+                      {
+                          text: intl.formatMessage({
+                              defaultMessage: 'Ha ocurrido un error, por favor vuelve a intentarlo',
+                              id: "app.open_ai_error3",
+                            }), 
+                          type: 'warning', 
+                          show: true 
+                      }
+                  )
+              );
+          }
             setLoadingImg(false)
         }
     }
