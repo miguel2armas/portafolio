@@ -221,7 +221,7 @@ export const ContentAboutPage = () => {
             </div>
           </div>
         </div>
-        <div className="contentAboutPage">
+        {/* <div className="contentAboutPage">
           <div className="contentAboutPage__img">
             <img  src={OpenAIIco} width={32} height={32} alt="openai ico" />
           </div>
@@ -238,7 +238,7 @@ export const ContentAboutPage = () => {
               />
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="contentAboutPage">
           <div className="contentAboutPage__img">
             <img  src={TsIco} width={32} height={32} alt="ts ico" />
