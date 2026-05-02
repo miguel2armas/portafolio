@@ -6,11 +6,33 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+
+# Environment variables
 .env
+.env.*
+!.env.example
+*.local
+
+# Dependencies & build output
 node_modules
 dist
 dist-ssr
-*.local
+
+# Firebase CLI cache
+.firebase/
+
+# Firebase service account credentials (never commit these)
+serviceAccountKey.json
+*-serviceAccountKey.json
+*.pem
+*.key
+*.p12
+
+# Test coverage
+coverage/
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +44,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# claude code assistant
+.claude/
+.agents/

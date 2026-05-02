@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /memoryHistory/{doc} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly(['name', 'time', 'failCount', 'create_at', 'typeGame'])
+                   && request.resource.data.name is string
+                   && request.resource.data.name.size() <= 8
+                   && request.resource.data.time is int
+                   && request.resource.data.time > 0
+                   && request.resource.data.failCount is int
+                   && request.resource.data.failCount >= 0;
+    }
+    match /countPage/{doc} {
+      allow read: if true;
+      allow update: if request.resource.data.count == resource.data.count + 1;
+    }
+  }
+}

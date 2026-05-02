@@ -5,7 +5,6 @@ import { ContentPortfolio } from "./contentPage/ContentPortfolio/ContentPortfoli
 import { ContentSkills } from "./contentPage/ContentSkills/ContentSkills"
 import { ContentTop } from "./contentPage/ContentTop/ContentTop"
 import { MemoryGame } from "./contentPage/MemoryGame/MemoryGame"
-import { OpenAi } from "./contentPage/OpenAi/OpenAi"
 import { Footer } from "./Footer/Footer"
 import { Header } from "./Header/Header"
 import { Notifications } from "./Notifications/Notifications"
@@ -14,14 +13,13 @@ export enum BtnHover {
     TOP,
     MEMORY,
     CONTACT,
-    OPEN_AI,
-    ABOUT
+    ABOUT,
+    CODE_EDITOR
 }
 export const Page = () => {
     const contentTopRef = useRef<HTMLDivElement>(null);
     const memoryGameRef = useRef<HTMLDivElement>(null);
     const contactRef = useRef<HTMLDivElement>(null);
-    const openAiRef = useRef<HTMLDivElement>(null);
     const aboutRef = useRef<HTMLDivElement>(null);
     const [btnHover, setBtnHover] = useState(BtnHover.TOP)
 
@@ -31,10 +29,9 @@ export const Page = () => {
                 scrollTop:number;
             }
         }
-        if(memoryGameRef.current && contactRef.current && aboutRef.current/*  && openAiRef.current */){
+        if(memoryGameRef.current && contactRef.current && aboutRef.current){
             const siteMemory =  memoryGameRef.current.getBoundingClientRect().top + scrollY - 100;
             const siteContact =  contactRef.current.getBoundingClientRect().top + scrollY - 150;
-            //const siteOpenAi =  openAiRef.current.getBoundingClientRect().top + scrollY - 150;
             const siteAbout =  aboutRef.current.getBoundingClientRect().top + scrollY - 150;
             const siteCurrent = target?.documentElement?.scrollTop;
             if(siteCurrent<siteMemory){
@@ -43,13 +40,11 @@ export const Page = () => {
                 setBtnHover(BtnHover.MEMORY);
             }else if(siteCurrent>siteContact && siteCurrent<siteAbout){
                 setBtnHover(BtnHover.CONTACT);
-            //}else if(siteCurrent>siteOpenAi && siteCurrent<siteAbout){
-            //    setBtnHover(BtnHover.OPEN_AI);
             }else if(siteCurrent>siteAbout){
                 setBtnHover(BtnHover.ABOUT);
             }
         }
-        
+
     }
 
     useEffect(() => {
@@ -84,26 +79,18 @@ export const Page = () => {
             scrollTo({top: y, behavior: 'smooth'});
         }
     }
-    const goToOpenAiRefDiv = () =>{
-        if(openAiRef.current){
-            openAiRef.current.offsetTop;
-            const y =  openAiRef.current.getBoundingClientRect().top + scrollY -100;
-            scrollTo({top: y, behavior: 'smooth'});
-        }
-    }
-    
+
   return (
             <main className="main">
                 <Notifications/>
-                <Header btnHover={btnHover} goToMemoryDiv={goToMemoryDiv} goToOpenAiRefDiv={goToOpenAiRefDiv}
-                goToContentTopDiv={goToContentTopDiv} goToContactRefDiv={goToContactRefDiv} 
+                <Header btnHover={btnHover} goToMemoryDiv={goToMemoryDiv}
+                goToContentTopDiv={goToContentTopDiv} goToContactRefDiv={goToContactRefDiv}
                 goToAboutRefRefDiv={goToAboutRefRefDiv} />
                 <ContentTop contentTopRef={contentTopRef} goToContactRefDiv={goToContactRefDiv}/>
                 <ContentSkills/>
                 <ContentPortfolio/>
                 <MemoryGame memoryGameRef={memoryGameRef}/>
                 <ContentContact contactRef={contactRef}/>
-                {/* <OpenAi openAiRef={openAiRef}/> */}
                 <ContentAbout aboutRef={aboutRef}/>
                 <Footer/>
             </main>

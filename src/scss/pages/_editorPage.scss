@@ -1,0 +1,301 @@
+// ── Shared editor toolbar ──────────────────────────────────────────────────
+%editorToolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 16px;
+    height: 48px;
+    flex-shrink: 0;
+    background-color: var(--background-color-header);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+// ── TS Editor ─────────────────────────────────────────────────────────────
+.tsEditor {
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    height: 100vh;
+    overflow: hidden;
+
+    &__toolbar {
+        @extend %editorToolbar;
+    }
+
+    &__monaco {
+        flex-shrink: 0;
+        border-bottom: 2px solid rgba(128, 128, 128, 0.2);
+    }
+
+    // ── Toolbar buttons ──
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 14px;
+        border-radius: 4px;
+        font-size: 13px;
+        font-weight: 600;
+        font-family: inherit;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: opacity 0.15s, background 0.15s;
+
+        &:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+
+        &--run {
+            background: #017b94;
+            color: #fff;
+            border-color: #016880;
+            &:not(:disabled):hover {
+                background: #016880;
+            }
+        }
+
+        &--running {
+            background: #444;
+            border-color: #555;
+        }
+
+        &--clear {
+            background: transparent;
+            color: var(--primary-color);
+            border-color: rgba(128, 128, 128, 0.4);
+            &:not(:disabled):hover {
+                border-color: var(--primary-color);
+            }
+        }
+    }
+
+    &__autoLog {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        cursor: pointer;
+        user-select: none;
+
+        input[type="checkbox"] {
+            width: 14px;
+            height: 14px;
+            accent-color: #017b94;
+            cursor: pointer;
+        }
+    }
+
+    // ── Console ──
+    &__consoleBar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0 16px;
+        height: 32px;
+        flex-shrink: 0;
+        background-color: var(--background-color-header);
+        border-top: 2px solid rgba(128, 128, 128, 0.2);
+        border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+    }
+
+    &__consoleTitle {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        opacity: 0.65;
+    }
+
+    &__consoleBadge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 18px;
+        height: 18px;
+        padding: 0 5px;
+        border-radius: 9px;
+        background: #017b94;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    &__console {
+        flex: 1;
+        overflow-y: auto;
+        overflow-x: hidden;
+        font-family: 'Fira Code', 'Cascadia Code', Consolas, monospace;
+        font-size: 13px;
+        padding: 4px 0;
+
+        // Light theme bg matches Monaco "vs"
+        .tsEditor--light & {
+            background: #ffffff;
+        }
+        // Dark theme bg matches Monaco "vs-dark"
+        .tsEditor--dark & {
+            background: #1e1e1e;
+        }
+    }
+
+    &__consoleEmpty {
+        padding: 16px 20px;
+        opacity: 0.4;
+        font-size: 12px;
+        font-style: italic;
+    }
+
+    &__consoleLine {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        padding: 3px 16px;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+            .tsEditor--light & { background: rgba(0,0,0,0.04); }
+            .tsEditor--dark  & { background: rgba(255,255,255,0.05); }
+        }
+
+        &--log   { color: inherit; }
+        &--error {
+            color: #f48771;
+            .tsEditor--light & { background: rgba(244,135,113,0.08); }
+            .tsEditor--dark  & { background: rgba(244,135,113,0.1); }
+        }
+        &--warn {
+            color: #cca700;
+            .tsEditor--light & { background: rgba(204,167,0,0.08); }
+            .tsEditor--dark  & { background: rgba(204,167,0,0.1); }
+        }
+        &--info  { color: #3b8eea; }
+    }
+
+    &__consoleIcon {
+        font-size: 14px;
+        opacity: 0.7;
+        flex-shrink: 0;
+        width: 14px;
+    }
+
+    &__consoleLineNum {
+        font-size: 11px;
+        opacity: 0.4;
+        flex-shrink: 0;
+        min-width: 24px;
+        text-align: right;
+    }
+
+    &__consoleContent {
+        margin: 0;
+        white-space: pre-wrap;
+        word-break: break-word;
+        font-family: inherit;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}
+
+// ── Compare Editor ──────────────────────────────────────────────────────────
+.compareEditor {
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    height: 100vh;
+    overflow: hidden;
+
+    &__toolbar {
+        @extend %editorToolbar;
+    }
+
+    &__langLabel {
+        font-size: 13px;
+        font-weight: 600;
+        opacity: 0.75;
+    }
+
+    &__langSelect {
+        padding: 5px 28px 5px 10px;
+        border-radius: 4px;
+        font-size: 13px;
+        font-family: inherit;
+        cursor: pointer;
+        border: 1px solid rgba(128, 128, 128, 0.4);
+        background-color: var(--background-color-header);
+        color: var(--primary-color);
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 9px center;
+
+        &:focus {
+            outline: none;
+            border-color: #017b94;
+        }
+    }
+
+    &__labels {
+        display: flex;
+        flex: 1;
+        justify-content: space-around;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        opacity: 0.5;
+
+        @media (max-width: $sm-desktop) {
+            display: none;
+        }
+    }
+
+    &__editor {
+        flex: 1;
+        min-height: 0;
+    }
+
+    // ── Mobile stacked panels ──────────────────────────────────────────────
+    &__stacked {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    &__stackedPanel {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+    }
+
+    &__stackedLabel {
+        height: 28px;
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        opacity: 0.5;
+        flex-shrink: 0;
+        background-color: var(--background-color-header);
+    }
+
+    &__stackedDivider {
+        height: 2px;
+        flex-shrink: 0;
+        background: rgba(128, 128, 128, 0.25);
+    }
+}
+
+// Monaco decoration classes injected via deltaDecorations in mobile stacked view
+.mobile-diff-delete {
+    background-color: rgba(255, 80, 80, 0.18) !important;
+}
+.mobile-diff-insert {
+    background-color: rgba(80, 180, 80, 0.18) !important;
+}

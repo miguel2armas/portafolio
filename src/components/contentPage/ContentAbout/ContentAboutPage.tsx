@@ -12,7 +12,6 @@ import ReactReduxIco from '../../../../assets/img/ico/react-reduxico.ico'
 import FreePikIco from '../../../../assets/img/ico/frepikico.ico'
 import SvGatorIco from '../../../../assets/img/ico/svgatorico.ico'
 import ViteIco from '../../../../assets/img/ico/viteico.ico'
-import OpenAIIco from '../../../../assets/img/ico/openai.ico'
 import { FormattedMessage } from 'react-intl'
 export const ContentAboutPage = () => {
   return (
@@ -221,24 +220,6 @@ export const ContentAboutPage = () => {
             </div>
           </div>
         </div>
-        {/* <div className="contentAboutPage">
-          <div className="contentAboutPage__img">
-            <img  src={OpenAIIco} width={32} height={32} alt="openai ico" />
-          </div>
-          <div className="contentAboutPage__right">
-            <div>
-              <a className="contentAboutPage__right--link" target={"_blank"} rel="apple-touch-icon" href="https://beta.openai.com/">
-                https://beta.openai.com/
-              </a>
-            </div>
-            <div className="contentAboutPage__right--description">
-              <FormattedMessage
-                  id="app.ContentAboutPageLibraryOpenAI"
-                  defaultMessage={`Documentación usada para consultas con servicios de OpenAI.`}
-              />
-            </div>
-          </div>
-        </div> */}
         <div className="contentAboutPage">
           <div className="contentAboutPage__img">
             <img  src={TsIco} width={32} height={32} alt="ts ico" />

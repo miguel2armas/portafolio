@@ -84,6 +84,50 @@
             background: var(--header-color-link);
         }
     }
+    &__dropdown{
+        position: relative;
+        display: flex;
+        align-items: center;
+        @media (max-width: $sm-desktop) {
+            display: none;
+        }
+        &--trigger{
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            user-select: none;
+        }
+        &--arrow{
+            display: inline-block;
+            font-size: 11px;
+            margin-left: 3px;
+            transition: transform 0.2s ease;
+            &Open{
+                transform: rotate(180deg);
+            }
+        }
+        &--menu{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--background-color-header);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+            min-width: 170px;
+            z-index: 1001;
+            border-top: 2px solid var(--primary-color);
+        }
+        &--item{
+            display: block;
+            padding: 12px 16px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            color: currentColor;
+            &:hover{
+                background: var(--header-color-link);
+            }
+        }
+    }
     &__menu{
         display: none;
         align-items: center;
@@ -194,6 +238,29 @@
             &:active{
                 text-decoration: none;
             }
+        }
+    }
+    &__arrow{
+        display: inline-block;
+        font-size: 11px;
+        margin-left: 6px;
+        transition: transform 0.2s ease;
+        &Open{
+            transform: rotate(180deg);
+        }
+    }
+    &__sublink{
+        display: block;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 10px 0 10px 30px;
+        text-decoration: none;
+        color: currentColor;
+        opacity: 0.85;
+        &:hover{
+            opacity: 1;
+            background: var(--header-color-link);
         }
     }
 }

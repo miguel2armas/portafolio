@@ -11,6 +11,6 @@ export const randomArray = (array:any[]) => {
 }
 
 export const checkWords = (text:string) => {
-    var rgx = new RegExp(excludedWords.join("|")+"|" + "/gi");
+    var rgx = new RegExp(excludedWords.join("|"), "gi");
     return (rgx.test(text));
   }
