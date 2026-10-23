@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+/* Mismos colores que el portafolio (src/scss/config/_variables.scss) */
+:root {
+  --text: #282c34;
+  --muted: #5a606b;
+  --bg: #ffffff;
+  --header: #F8F9FA;
+  --card: #F2F2F2;
+  --accent: #017b94;
+  --border: rgba(0, 0, 0, .12);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #ffffff;
+    --muted: #b8bcc4;
+    --bg: #282c34;
+    --header: #212529;
+    --card: #212529;
+    --accent: #00d6ff;
+    --border: rgba(255, 255, 255, .14);
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.65;
+}
+header {
+  background: var(--header);
+  border-bottom: 1px solid var(--border);
+}
+header .bar {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+header a.home { color: var(--text); text-decoration: none; font-weight: 700; font-size: 1.1rem; }
+nav.lang a { color: var(--accent); font-weight: 600; text-decoration: none; margin-left: 14px; }
+main { max-width: 780px; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 8px 0 4px; }
+h2 { font-size: 1.15rem; margin: 28px 0 6px; }
+.updated { color: var(--muted); margin-top: 0; }
+a { color: var(--accent); }
+section + section { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
+ul { padding-left: 22px; }
+.apps { list-style: none; padding: 0; display: grid; gap: 12px; }
+.apps a {
+  display: block;
+  padding: 16px 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text);
+}
+.apps strong { color: var(--accent); font-size: 1.1rem; }
+.apps span { display: block; color: var(--muted); }
+footer { text-align: center; color: var(--muted); font-size: .9rem; padding: 24px 16px; border-top: 1px solid var(--border); }
