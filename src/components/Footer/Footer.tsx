@@ -20,6 +20,12 @@ export const Footer = () => {
               }
             />
           </span>
+          <a className="footer__left--privacy" href="/privacy/">
+            <FormattedMessage
+              id="app.FooterPrivacy"
+              defaultMessage={`Políticas de privacidad`}
+            />
+          </a>
         </div>
         <div className="footer__right">
               <div>

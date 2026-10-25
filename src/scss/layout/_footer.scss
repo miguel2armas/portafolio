@@ -21,6 +21,11 @@
             color: #a5a3a3;
             font-weight: 700;
         }
+        &--privacy{
+            color: #a5a3a3;
+            font-weight: 700;
+            white-space: nowrap;
+        }
     }
     &__right{
         justify-content: flex-end;

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { ContentAbout } from "./contentPage/ContentAbout/ContentAbout"
+import { ContentApps } from "./contentPage/ContentApps/ContentApps"
 import { ContentContact } from "./contentPage/ContentContact/ContentContact"
 import { ContentPortfolio } from "./contentPage/ContentPortfolio/ContentPortfolio"
 import { ContentSkills } from "./contentPage/ContentSkills/ContentSkills"
@@ -88,6 +89,7 @@ export const Page = () => {
                 goToAboutRefRefDiv={goToAboutRefRefDiv} />
                 <ContentTop contentTopRef={contentTopRef} goToContactRefDiv={goToContactRefDiv}/>
                 <ContentSkills/>
+                <ContentApps/>
                 <ContentPortfolio/>
                 <MemoryGame memoryGameRef={memoryGameRef}/>
                 <ContentContact contactRef={contactRef}/>

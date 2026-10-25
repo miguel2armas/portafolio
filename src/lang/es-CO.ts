@@ -118,4 +118,10 @@ export const es_CO = {
     "app.ContentPortfolioComponentMyWebTitle": `Sitio web portafolio`,
     "app.ContentPortfolioComponentMyWebDescription": `Sitio web creado con react usando typescript y scss como preprocesadores, ademas de usar algunas librerias para la base de datos y envio de correo electronico, se crearon imagenes SVG con animaciones y un juego de memoria con diferentes niveles.`,
     "app.ContentPortfolioComponentLinkMyWeb": `ir al repositorio.`,
+    "app.ContentAppsTitle": `Mis apps`,
+    "app.ContentAppsSubTitle": `Aplicaciones publicadas en Google Play`,
+    "app.ContentAppsAuthMeDescription": `Autenticador de dos pasos (2FA) para Android, sin anuncios ni registro. Tus códigos se guardan cifrados en el teléfono, protegidos con PIN o huella, y la copia de seguridad opcional va cifrada de extremo a extremo a tu propio Google Drive: ni siquiera el desarrollador puede verla.`,
+    "app.ContentAppsGooglePlay": `Descargar en Google Play`,
+    "app.ContentAppsPrivacy": `Política de privacidad`,
+    "app.FooterPrivacy": `Políticas de privacidad`,
 }

@@ -118,4 +118,10 @@ export const en_US = {
     "app.ContentPortfolioComponentMyWebTitle": `portfolio website`,
     "app.ContentPortfolioComponentMyWebDescription": `Website built with React, using TypeScript and SCSS as preprocessors. It integrates libraries for database management and email delivery, features animated SVG images, and includes a multi-level memory game.`,
     "app.ContentPortfolioComponentLinkMyWeb": `go to repository.`,
+    "app.ContentAppsTitle": `My apps`,
+    "app.ContentAppsSubTitle": `Apps published on Google Play`,
+    "app.ContentAppsAuthMeDescription": `Two-factor authentication (2FA) app for Android, with no ads and no sign-up. Your codes are stored encrypted on your phone, protected by PIN or fingerprint, and the optional backup is end-to-end encrypted to your own Google Drive: not even the developer can read it.`,
+    "app.ContentAppsGooglePlay": `Get it on Google Play`,
+    "app.ContentAppsPrivacy": `Privacy policy`,
+    "app.FooterPrivacy": `Privacy policies`,
 }
